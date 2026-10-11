@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-	compileSdk 34
+	compileSdk 33
 	
 	defaultConfig {
 		applicationId "ru.mona.ai"
 		namespace "ru.mona.ai"
-		minSdkVersion 24
-		targetSdkVersion 34
+		minSdkVersion 21
+		targetSdkVersion 28
 		versionCode 1
 		versionName "1.0"
 	}
