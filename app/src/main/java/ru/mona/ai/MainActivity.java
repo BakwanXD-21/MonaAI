@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Insets;
+import android.graphics.Outline;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -18,8 +19,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -27,12 +30,13 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.ViewOutlineProvider;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
-import android.view.inputmethod.EditorInfo;
+import android.view.animation.LinearInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -93,9 +97,9 @@ public class MainActivity extends Activity {
 	private static final int ICON_PROFILE  = R.drawable.icon_account_circle_outline;
 	private static final int ICON_CREDITS  = R.drawable.icon_info_outline;
 	private static final int ICON_DELETE   = R.drawable.icon_delete_outline;
-    private static final int RIPPLE10      = R.drawable.inoripple10;
-    private static final int RIPPLE0       = R.drawable.inoripple0;
-    
+	private static final int RIPPLE10      = R.drawable.inoripple10;
+	private static final int RIPPLE0       = R.drawable.inoripple0;
+	
 	private static final int EDGE_DP = 40; // lebar zona swipe dari tepi kiri untuk membuka drawer
 	private static final String WELCOME = "Halo! Saya asisten AI Anda. Ada yang bisa saya bantu hari ini?";
 	private static final String CREDITS_TEXT =
@@ -163,6 +167,8 @@ public class MainActivity extends Activity {
 	
 	private int insetTop, insetBottom, insetNav;
 	private LinearLayout headerView, inputOuter, drawerView;
+	private LinearLayout inputTopRow, inputBottomRow;
+	private boolean inputExpanded;
 	
 	private DrawerLayoutView drawerLayout;
 	private LinearLayout chatContainer;
@@ -488,6 +494,11 @@ public class MainActivity extends Activity {
 		return header;
 	}
 	
+	/**
+	 * Input ala Gemini: satu baris -> kolom + tombol send sejajar.
+	 * Teks >1 baris -> tombol send pindah ke baris bawah (kanan).
+	 * Hanya tombol send yang dipindah, EditText tidak, jadi fokus/keyboard tidak terganggu.
+	 */
 	private LinearLayout buildInputBar() {
 		LinearLayout outer = new LinearLayout(this);
 		outer.setOrientation(LinearLayout.VERTICAL);
@@ -495,10 +506,13 @@ public class MainActivity extends Activity {
 		outer.setPadding(dp(12), dp(8), dp(12), dp(12));
 		
 		LinearLayout inputBox = new LinearLayout(this);
-		inputBox.setOrientation(LinearLayout.HORIZONTAL);
-		inputBox.setGravity(Gravity.CENTER_VERTICAL);
-		inputBox.setBackground(roundedBg(cInputBg, 30, cLine, 1));
+		inputBox.setOrientation(LinearLayout.VERTICAL);
+		inputBox.setBackground(roundedBg(cInputBg, 26, cLine, 1));
 		inputBox.setPadding(dp(8), dp(4), dp(6), dp(4));
+		
+		inputTopRow = new LinearLayout(this);
+		inputTopRow.setOrientation(LinearLayout.HORIZONTAL);
+		inputTopRow.setGravity(Gravity.CENTER_VERTICAL);
 		
 		inputField = new EditText(this);
 		inputField.setHint("Tanya Mona...");
@@ -506,25 +520,63 @@ public class MainActivity extends Activity {
 		inputField.setTextColor(cText);
 		inputField.setTextSize(15);
 		inputField.setBackground(null);
-		inputField.setMaxLines(5);
-		inputField.setImeOptions(EditorInfo.IME_ACTION_SEND);
+		inputField.setInputType(InputType.TYPE_CLASS_TEXT
+		| InputType.TYPE_TEXT_FLAG_CAP_SENTENCES | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+		inputField.setMaxLines(6);
 		inputField.setPadding(dp(8), dp(8), dp(8), dp(8));
-		inputField.setOnEditorActionListener((v, actionId, event) -> {
-			if (actionId == EditorInfo.IME_ACTION_SEND) { handleSend(); return true; }
-			return false;
-		});
-		inputBox.addView(inputField, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+		inputTopRow.addView(inputField, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
 		
 		sendButton = iconButton(ICON_SEND, Color.WHITE, v -> handleSend());
 		sendButton.setBackground(roundedBg(cAccent, 100, 0, 0));
 		sendButton.setPadding(dp(10), dp(10), dp(10), dp(10));
-		LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(dp(40), dp(40));
-		btnParams.setMarginStart(dp(6));
-		inputBox.addView(sendButton, btnParams);
+		LinearLayout.LayoutParams sp = new LinearLayout.LayoutParams(dp(40), dp(40));
+		sp.setMarginStart(dp(6));
+		inputTopRow.addView(sendButton, sp);
+		
+		inputBottomRow = new LinearLayout(this);
+		inputBottomRow.setOrientation(LinearLayout.HORIZONTAL);
+		inputBottomRow.setGravity(Gravity.END);
+		inputBottomRow.setVisibility(View.GONE);
+		
+		inputBox.addView(inputTopRow, new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		inputBox.addView(inputBottomRow, new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		
+		// expand begitu teks jadi >1 baris
+		inputField.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, orr, ob) -> {
+			if (!inputExpanded && inputField.getLineCount() > 1) {
+				inputField.post(() -> setInputExpanded(true));
+			}
+		});
+		// collapse hanya saat kosong (hindari bolak-balik)
+		inputField.addTextChangedListener(new TextWatcher() {
+			@Override public void beforeTextChanged(CharSequence s, int a, int b, int c) {}
+			@Override public void onTextChanged(CharSequence s, int a, int b, int c) {}
+			@Override public void afterTextChanged(Editable s) {
+				if (inputExpanded && s.length() == 0) setInputExpanded(false);
+			}
+		});
 		
 		outer.addView(inputBox, new LinearLayout.LayoutParams(
 		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		return outer;
+	}
+	
+	private void setInputExpanded(boolean ex) {
+		if (inputExpanded == ex) return;
+		inputExpanded = ex;
+		ViewGroup p = (ViewGroup) sendButton.getParent();
+		if (p != null) p.removeView(sendButton);
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(dp(40), dp(40));
+		lp.setMarginStart(dp(6));
+		if (ex) {
+			inputBottomRow.setVisibility(View.VISIBLE);
+			inputBottomRow.addView(sendButton, lp);
+		} else {
+			inputBottomRow.setVisibility(View.GONE);
+			inputTopRow.addView(sendButton, lp);
+		}
 	}
 	
 	// =====================================================================
@@ -599,7 +651,7 @@ public class MainActivity extends Activity {
 		// --- List history (dengan fade gradasi atas & bawah) ---
 		FrameLayout listFrame = new FrameLayout(this);
 		ListView list = new ListView(this);
-        list.setSelector(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+		list.setSelector(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
 		list.setDivider(null);
 		list.setPadding(dp(8), dp(12), dp(8), dp(12));
 		list.setClipToPadding(false);
@@ -765,15 +817,37 @@ public class MainActivity extends Activity {
 		box.setBackground(roundedBg(cInputBg, 14, cLine, 1));
 		box.setPadding(0, dp(6), 0, dp(6));
 		
+		// clip semua anak (termasuk ripple) mengikuti bentuk rounded
+		final float radius = dp(14);
+		box.setOutlineProvider(new ViewOutlineProvider() {
+			@Override public void getOutline(View v, Outline o) {
+				o.setRoundRect(0, 0, v.getWidth(), v.getHeight(), radius);
+			}
+		});
+		box.setClipToOutline(true);
+		
 		final PopupWindow popup = new PopupWindow(box, dp(200), ViewGroup.LayoutParams.WRAP_CONTENT, true);
 		popup.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 		popup.setElevation(dp(8));
 		
 		box.addView(popupRow(ICON_SETTINGS, "Setting", () -> { popup.dismiss(); showSettingsDialog(); }));
+		box.addView(popupDivider());
 		box.addView(popupRow(ICON_PROFILE, "Profile", () -> { popup.dismiss(); showProfileDialog(); }));
+		box.addView(popupDivider());
 		box.addView(popupRow(ICON_CREDITS, "Credits", () -> { popup.dismiss(); showCreditsDialog(); }));
 		
 		popup.showAsDropDown(anchor, 0, 0, Gravity.END);
+	}
+	
+	/** Garis tipis, tidak full: mulai sejajar teks, berhenti sebelum tepi kanan. */
+	private View popupDivider() {
+		View v = new View(this);
+		v.setBackgroundColor(cLine);
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, dp(1) / 2));
+		lp.setMargins(dp(46), 0, dp(14), 0);
+		v.setLayoutParams(lp);
+		return v;
 	}
 	
 	private View popupRow(int icon, String text, final Runnable action) {
@@ -1202,10 +1276,11 @@ public class MainActivity extends Activity {
 		
 		addUserMessage(text);
 		inputField.setText("");
+		keepInputFocus();
 		
 		busy = true;
 		pendingSession = target;
-		typingRow = addAiMessage("…");
+		typingRow = addTypingMessage();
 		
 		final String base = getBaseUrl(p), model = getModel(p);
 		final List<ChatMessage> snapshot = new ArrayList<>(target.messages);
@@ -1343,6 +1418,7 @@ public class MainActivity extends Activity {
 			saveSessions();
 		}
 		if (current == target) addAiMessage(reply);
+		keepInputFocus();
 	}
 	
 	/** Gabung pesan berurutan dengan role sama supaya valid untuk semua API. */
@@ -1632,7 +1708,7 @@ public class MainActivity extends Activity {
 		for (ChatMessage m : current.messages) {
 			if (m.isUser) addUserMessage(m.content); else addAiMessage(m.content);
 		}
-		if (busy && current == pendingSession) typingRow = addAiMessage("…");
+		if (busy && current == pendingSession) typingRow = addTypingMessage();
 	}
 	
 	private View addUserMessage(String text) {
@@ -1653,7 +1729,7 @@ public class MainActivity extends Activity {
 		LinearLayout.LayoutParams bp = new LinearLayout.LayoutParams(
 		ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		bp.leftMargin = dp(48);
-        bp.bottomMargin = dp(8);
+		bp.bottomMargin = dp(8);
 		row.addView(bubble, bp);
 		chatContainer.addView(row);
 		scrollToBottom();
@@ -1675,8 +1751,76 @@ public class MainActivity extends Activity {
 		return tv;
 	}
 	
+	/** Animasi loading: tiga titik melompat bergantian. Animator berhenti otomatis saat view dilepas. */
+	private class TypingDots extends LinearLayout {
+		private final View[] dots = new View[3];
+		private ValueAnimator va;
+		
+		TypingDots(Context c) {
+			super(c);
+			setOrientation(HORIZONTAL);
+			setGravity(Gravity.CENTER_VERTICAL);
+			setPadding(dp(4), dp(14), dp(4), dp(14));
+			for (int i = 0; i < 3; i++) {
+				View d = new View(c);
+				GradientDrawable g = new GradientDrawable();
+				g.setShape(GradientDrawable.OVAL);
+				g.setColor(cSub);
+				d.setBackground(g);
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(dp(8), dp(8));
+				lp.setMargins(dp(3), 0, dp(3), 0);
+				addView(d, lp);
+				dots[i] = d;
+			}
+		}
+		
+		@Override protected void onAttachedToWindow() {
+			super.onAttachedToWindow();
+			va = ValueAnimator.ofFloat(0f, 1f);
+			va.setDuration(1000);
+			va.setRepeatCount(ValueAnimator.INFINITE);
+			va.setInterpolator(new LinearInterpolator());
+			va.addUpdateListener(a -> {
+				float t = (float) a.getAnimatedValue();
+				for (int i = 0; i < 3; i++) {
+					float p = ((t - i * 0.15f) % 1f + 1f) % 1f;
+					float y = p < 0.5f
+					? -dp(6) * (float) java.lang.Math.sin(p * 2 * java.lang.Math.PI)
+					: 0f;
+					dots[i].setTranslationY(y);
+				}
+			});
+			va.start();
+		}
+		
+		@Override protected void onDetachedFromWindow() {
+			if (va != null) { va.cancel(); va = null; }
+			super.onDetachedFromWindow();
+		}
+	}
+	
+	private View addTypingMessage() {
+		TypingDots d = new TypingDots(this);
+		chatContainer.addView(d, new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		scrollToBottom();
+		return d;
+	}
+	
+	/** Scroll murni (tanpa fullScroll) supaya fokus tidak berpindah dari kolom input. */
 	private void scrollToBottom() {
-		scrollView.post(() -> scrollView.fullScroll(View.FOCUS_DOWN));
+		scrollView.post(() -> {
+			View c = scrollView.getChildAt(0);
+			if (c != null) scrollView.scrollTo(0, c.getBottom());
+		});
+	}
+	
+	private void keepInputFocus() {
+		inputField.post(() -> {
+			inputField.requestFocus();
+			InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			if (imm != null) imm.showSoftInput(inputField, 0);
+		});
 	}
 	
 	// =====================================================================
@@ -1730,9 +1874,7 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-    // ICON BUTTON SEBELUMNYA
-    
-	/*private ImageButton iconButton(int res, int tint, View.OnClickListener l) {
+	private ImageButton iconButton(int res, int tint, View.OnClickListener l) {
 		ImageButton b = new ImageButton(this);
 		b.setImageResource(res);
 		b.setColorFilter(tint, PorterDuff.Mode.SRC_IN);
@@ -1740,32 +1882,16 @@ public class MainActivity extends Activity {
 		Drawable bg = attrDrawable(android.R.attr.selectableItemBackgroundBorderless);
 		if (bg != null) b.setBackground(bg); else b.setBackgroundColor(Color.TRANSPARENT);
 		b.setPadding(dp(8), dp(8), dp(8), dp(8));
+		
+		ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams(
+		ViewGroup.LayoutParams.WRAP_CONTENT,
+		ViewGroup.LayoutParams.WRAP_CONTENT);
+		params.setMargins(dp(4), dp(4), dp(4), dp(4));
+		b.setLayoutParams(params);
+		
 		b.setOnClickListener(l);
 		return b;
-	}*/
-	
-	private ImageButton iconButton(int res, int tint, View.OnClickListener l) { 
-		      ImageButton b = new ImageButton(this); 
-		      b.setImageResource(res); 
-		      b.setColorFilter(tint, PorterDuff.Mode.SRC_IN); 
-		      b.setScaleType(ImageView.ScaleType.CENTER_INSIDE); 
-		      Drawable bg = attrDrawable(android.R.attr.selectableItemBackgroundBorderless); 
-		      if (bg != null) b.setBackground(bg); else b.setBackgroundColor(Color.TRANSPARENT); 
-		      b.setPadding(dp(8), dp(8), dp(8), dp(8)); 
-		   
-		      // --- TAMBAHKAN KODE MARGIN DI SINI --- 
-		      ViewGroup.MarginLayoutParams params = new ViewGroup.MarginLayoutParams( 
-		          ViewGroup.LayoutParams.WRAP_CONTENT,  
-		          ViewGroup.LayoutParams.WRAP_CONTENT 
-		      ); 
-		      // setMargins(left, top, right, bottom) 
-		      params.setMargins(dp(4), dp(4), dp(4), dp(4));  
-		      b.setLayoutParams(params); 
-		      // ------------------------------------- 
-		   
-		      b.setOnClickListener(l); 
-		      return b; 
-	} 
+	}
 	
 	private TextView makeAvatar(String letter, int textSize, int color) {
 		TextView t = new TextView(this);
