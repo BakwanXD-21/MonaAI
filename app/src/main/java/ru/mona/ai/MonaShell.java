@@ -40,7 +40,7 @@ public class MonaShell {
 
 	/* ================= CALLBACK ================= */
 
-	/** Penjawab untuk perintah "mona ...": offline -> ModeChanger, online -> API provider. */
+	/** Penjawab untuk perintah "mona ...": dijawab lewat API provider. */
 	public interface MonaHandler { String ask(String prompt) throws Exception; }
 
 	private MonaHandler monaHandler;
@@ -251,14 +251,7 @@ public class MonaShell {
 	/* ================= MONA: perintah "mona <pertanyaan>" ================= */
 
 	private void runMona(final String command, final Callback callback) {
-		// 1) perintah bahasa natural ("pindah ke Download", "buka path /x", "lihat isi folder DCIM")
-		CommandIntent.Result intent = CommandIntent.parse(command);
-		if (intent != null && (intent.explicit || (intent.alias != null && new File(intent.alias).exists()))) {
-			runIntent(intent, callback);
-			return;
-		}
-
-		// 2) sisanya diteruskan ke Mona (offline: kamus/intent/kalkulator, online: API)
+		// diteruskan ke Mona (API provider)
 		final String prompt = command.length() > 4 ? command.substring(4).trim() : "";
 		if (prompt.isEmpty()) {
 			callback.onOutput("Pakai: mona <pertanyaan>  (contoh: mona arti makan)");

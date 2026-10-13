@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -80,9 +81,7 @@ import java.util.regex.Pattern;
 * Pure Java: tanpa XML, tanpa androidx / appcompat.
 * Butuh: <uses-permission android:name="android.permission.INTERNET"/>
 * (dan android:usesCleartextTraffic="true" kalau mau pakai server http lokal)
-* Mode Offline: taruh model.json di assets/ (atau <filesDir>/model.json).
-*
-* Catatan: Math di file ini adalah ru.mona.ai.Math (satu package) yang meneruskan ke java.lang.Math.
+* Full online: semua balasan datang dari API provider yang dipilih.
 */
 public class MainActivity extends Activity {
 	
@@ -101,7 +100,6 @@ public class MainActivity extends Activity {
 	private static final int RIPPLE0       = R.drawable.inoripple0;
 	
 	private static final int EDGE_DP = 40; // lebar zona swipe dari tepi kiri untuk membuka drawer
-	private static final String WELCOME = "Halo! Saya asisten AI Anda. Ada yang bisa saya bantu hari ini?";
 	private static final String CREDITS_TEXT =
 	"Mona AI\n\nUI terinspirasi Claude.\nDibuat dengan Java murni (tanpa XML, androidx, appcompat).\n\n"
 	+ "Dibuat oleh: IqwanoIno";
@@ -156,7 +154,6 @@ public class MainActivity extends Activity {
 	
 	// ===== State =====
 	private SharedPreferences prefs;
-	private ModeChanger modeChanger;
 	private MonaShell shell;          // satu shell untuk chat (folder aktif ikut berubah)
 	private final Handler handler = new Handler(Looper.getMainLooper());
 	private List<ChatSession> sessions = new ArrayList<>();
@@ -177,20 +174,20 @@ public class MainActivity extends Activity {
 	private ImageButton sendButton;
 	private TextView subtitle, drawerModelText, userNameText, userAvatarText, emptyHistory;
 	private HistoryAdapter historyAdapter;
+	private boolean showAllHistory = false;
+	private ImageButton newChatHeaderButton;
+	private Dialog activeDialog;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		prefs = getSharedPreferences("mona_ai", MODE_PRIVATE);
-		modeChanger = new ModeChanger(this, prefs);
 		shell = new MonaShell(this);
-		applyUserName();
 		loadSessions();
 		if (savedInstanceState != null) {
 			String cur = savedInstanceState.getString("cur");
 			if (cur != null) for (ChatSession s : sessions) if (s.id.equals(cur)) current = s;
 		}
-		if (modeChanger.isOffline()) new Thread(() -> modeChanger.ensureLoaded()).start();
 		
 		initTheme();
 		setupWindow();
@@ -238,23 +235,23 @@ public class MainActivity extends Activity {
 	//  TEMA + WINDOW (edge-to-edge)
 	// =====================================================================
 	private void initTheme() {
-		String t = prefs.getString("theme", "system");
+		String t = prefs.getString("theme", "dark");
 		if ("dark".equals(t)) dark = true;
 		else if ("light".equals(t)) dark = false;
 		else dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK)
 		== Configuration.UI_MODE_NIGHT_YES;
 		
 		if (dark) {
-			cBg = 0xFF1F1E1D; cHeader = 0xFF1F1E1D; cDrawer = 0xFF262624;
-			cText = 0xFFF0EEE6; cSub = 0xFF9C9A92; cUserBubble = 0xFF393937;
-			cInputBg = 0xFF30302E; cAccent = 0xFFD97757; cLine = 0xFF3D3D3A; cSelected = 0xFF3A3936;
+			cBg = 0xFF151515; cHeader = 0xFF151515; cDrawer = 0xFF1B1B1A;
+			cText = 0xFFF5F4EF; cSub = 0xFF9C9A92; cUserBubble = 0xFF2B2B29;
+			cInputBg = 0xFF20201E; cAccent = 0xFFDA7757; cLine = 0xFF3A3A38; cSelected = 0xFF2B2B29;
 		} else {
 			cBg = 0xFFF5F4EF; cHeader = 0xFFF5F4EF; cDrawer = 0xFFFAF9F5;
 			cText = 0xFF1F1E1D; cSub = 0xFF6B6B68; cUserBubble = 0xFFE8E6DC;
 			cInputBg = 0xFFFFFFFF; cAccent = 0xFFD97757; cLine = 0xFFE5E3DA; cSelected = 0xFFEAE8DF;
 		}
 		mdStyle = new OutputHelper.Style(cText, cSub, cAccent,
-		dark ? 0xFF2B2A28 : 0xFFEFEDE4,
+		dark ? 0xFF20201E : 0xFFEFEDE4,
 		dark ? 0xFFE8A27F : 0xFF8A3B1F,
 		getResources().getDisplayMetrics().density);
 	}
@@ -489,6 +486,9 @@ public class MainActivity extends Activity {
 		titleBox.addView(subtitle);
 		header.addView(titleBox, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
 		
+		newChatHeaderButton = iconButton(ICON_NEW_CHAT, cSub, v -> startNewChat());
+		newChatHeaderButton.setBackgroundColor(Color.TRANSPARENT);
+		header.addView(newChatHeaderButton, new LinearLayout.LayoutParams(dp(40), dp(44)));
 		header.addView(iconButton(ICON_MORE, cSub, v -> showMorePopup(v)),
 		new LinearLayout.LayoutParams(dp(44), dp(44)));
 		return header;
@@ -588,72 +588,22 @@ public class MainActivity extends Activity {
 		d.setBackgroundColor(cDrawer);
 		drawerView = d;
 		
-		// --- Profil Mona (klik -> Setting) ---
-		LinearLayout profile = new LinearLayout(this);
-		profile.setOrientation(LinearLayout.HORIZONTAL);
-		profile.setGravity(Gravity.CENTER_VERTICAL);
-		profile.setPadding(dp(16), dp(16), dp(12), dp(16));
-		profile.setBackground(attrDrawable(android.R.attr.selectableItemBackground));
-		profile.setOnClickListener(v -> { drawerLayout.close(); showSettingsDialog(); });
-		
-		LinearLayout texts = new LinearLayout(this);
-		texts.setOrientation(LinearLayout.VERTICAL);
-		TextView name = new TextView(this);
-		name.setText("Mona");
-		name.setTextColor(cText);
-		name.setTextSize(18);
-		name.setTypeface(Typeface.DEFAULT_BOLD);
-		drawerModelText = new TextView(this);
-		drawerModelText.setTextColor(cSub);
-		drawerModelText.setTextSize(14);
-		drawerModelText.setSingleLine(true);
-		drawerModelText.setEllipsize(TextUtils.TruncateAt.END);
-		texts.addView(name);
-		texts.addView(drawerModelText);
-		profile.addView(texts, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
-		
-		ImageView gear = new ImageView(this);
-		gear.setImageResource(ICON_SETTINGS);
-		gear.setColorFilter(cSub, PorterDuff.Mode.SRC_IN);
-		profile.addView(gear, new LinearLayout.LayoutParams(dp(22), dp(22)));
-		d.addView(profile, new LinearLayout.LayoutParams(
+		// --- Judul drawer ---
+		TextView drawerTitle = new TextView(this);
+		drawerTitle.setText("Mona");
+		drawerTitle.setTextColor(cText);
+		drawerTitle.setTextSize(30);
+		drawerTitle.setTypeface(Typeface.SERIF, Typeface.NORMAL);
+		drawerTitle.setPadding(dp(22), dp(24), dp(18), dp(20));
+		d.addView(drawerTitle, new LinearLayout.LayoutParams(
 		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		
-		// --- Tombol chat baru ---
-		LinearLayout newChat = new LinearLayout(this);
-		newChat.setOrientation(LinearLayout.HORIZONTAL);
-		newChat.setGravity(Gravity.CENTER_VERTICAL);
-		newChat.setPadding(dp(14), dp(10), dp(14), dp(10));
-		newChat.setBackground(roundedBg(cInputBg, 12, cLine, 1));
-		newChat.setClickable(true);
-		newChat.setOnClickListener(v -> { startNewChat(); drawerLayout.close(); });
-		ImageView plus = new ImageView(this);
-		plus.setImageResource(ICON_NEW_CHAT);
-		plus.setColorFilter(cAccent, PorterDuff.Mode.SRC_IN);
-		newChat.addView(plus, new LinearLayout.LayoutParams(dp(20), dp(20)));
-		TextView ncText = new TextView(this);
-		ncText.setText("Chat baru");
-		ncText.setTextColor(cText);
-		ncText.setTextSize(14);
-		ncText.setTypeface(Typeface.DEFAULT_BOLD);
-		ncText.setPadding(dp(10), 0, 0, 0);
-		newChat.addView(ncText);
-		LinearLayout.LayoutParams ncp = new LinearLayout.LayoutParams(
-		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		ncp.setMargins(dp(12), dp(16), dp(12), dp(8));
-		d.addView(newChat, ncp);
-		
-		// --- Label riwayat ---
-		TextView hist = label("RIWAYAT CHAT");
-		hist.setPadding(dp(18), dp(10), dp(16), dp(4));
-		d.addView(hist);
-		
-		// --- List history (dengan fade gradasi atas & bawah) ---
+
+		// --- Daftar obrolan terbaru; tanpa label "Terbaru" ---
 		FrameLayout listFrame = new FrameLayout(this);
 		ListView list = new ListView(this);
-		list.setSelector(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+		list.setSelector(new android.graphics.drawable.ColorDrawable(Color.TRANSPARENT));
 		list.setDivider(null);
-		list.setPadding(dp(8), dp(12), dp(8), dp(12));
+		list.setPadding(dp(8), dp(4), dp(8), dp(4));
 		list.setClipToPadding(false);
 		list.setVerticalScrollBarEnabled(false);
 		list.setVerticalFadingEdgeEnabled(true);
@@ -662,23 +612,44 @@ public class MainActivity extends Activity {
 		historyAdapter = new HistoryAdapter();
 		list.setAdapter(historyAdapter);
 		list.setOnItemClickListener((p, v, pos, id) -> {
-			current = sessions.get(pos);
-			renderCurrent();
-			historyAdapter.notifyDataSetChanged();
-			drawerLayout.close();
+			int actual = showAllHistory ? pos : pos;
+			if (actual >= 0 && actual < sessions.size()) {
+				current = sessions.get(actual);
+				renderCurrent();
+				historyAdapter.notifyDataSetChanged();
+				drawerLayout.close();
+			}
 		});
-		list.setOnItemLongClickListener((p, v, pos, id) -> { confirmDelete(sessions.get(pos)); return true; });
+		list.setOnItemLongClickListener((p, v, pos, id) -> {
+			if (pos >= 0 && pos < sessions.size()) confirmDelete(sessions.get(pos));
+			return true;
+		});
 		listFrame.addView(list, new FrameLayout.LayoutParams(
 		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		emptyHistory = new TextView(this);
-		emptyHistory.setText("Belum ada riwayat");
+		emptyHistory.setText("Belum ada obrolan");
 		emptyHistory.setTextColor(cSub);
 		emptyHistory.setTextSize(13);
 		emptyHistory.setGravity(Gravity.CENTER);
 		listFrame.addView(emptyHistory, new FrameLayout.LayoutParams(
 		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		d.addView(listFrame, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
-		
+
+		TextView seeAll = new TextView(this);
+		seeAll.setText("Lihat semua");
+		seeAll.setTextColor(cSub);
+		seeAll.setTextSize(14);
+		seeAll.setGravity(Gravity.CENTER_VERTICAL);
+		seeAll.setPadding(dp(24), dp(12), dp(20), dp(12));
+		seeAll.setBackgroundResource(RIPPLE10);
+		seeAll.setOnClickListener(v -> {
+			showAllHistory = !showAllHistory;
+			seeAll.setText(showAllHistory ? "Tampilkan lebih sedikit" : "Lihat semua");
+			if (historyAdapter != null) historyAdapter.notifyDataSetChanged();
+		});
+		d.addView(seeAll, new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
 		// --- Footer: profil user ---
 		View line = new View(this);
 		line.setBackgroundColor(cLine);
@@ -689,7 +660,7 @@ public class MainActivity extends Activity {
 		footer.setGravity(Gravity.CENTER_VERTICAL);
 		footer.setPadding(dp(16), dp(12), dp(16), dp(12));
 		footer.setBackground(attrDrawable(android.R.attr.selectableItemBackground));
-		footer.setOnClickListener(v -> { drawerLayout.close(); showProfileDialog(); });
+		footer.setOnClickListener(v -> { drawerLayout.close(); showSettingsScreen(); });
 		userAvatarText = makeAvatar("U", 14, cSub);
 		LinearLayout.LayoutParams uav = new LinearLayout.LayoutParams(dp(32), dp(32));
 		uav.setMarginEnd(dp(12));
@@ -705,7 +676,7 @@ public class MainActivity extends Activity {
 	}
 	
 	private class HistoryAdapter extends BaseAdapter {
-		@Override public int getCount() { return sessions.size(); }
+		@Override public int getCount() { return showAllHistory ? sessions.size() : Math.min(3, sessions.size()); }
 		@Override public Object getItem(int i) { return sessions.get(i); }
 		@Override public long getItemId(int i) { return i; }
 		
@@ -749,19 +720,9 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	private void applyUserName() {
-		String n = prefs.getString("user_name", "Pengguna");
-		modeChanger.setUserName("Pengguna".equals(n) ? "" : n);
-	}
-	
 	private void updateSubtitle() {
-		String s;
-		if (modeChanger.isOffline()) {
-			s = "Offline · model.json";
-		} else {
-			Provider p = getProvider();
-			s = p.name + " · " + getModel(p);
-		}
+		Provider p = getProvider();
+		String s = p.name + " · " + getModel(p);
 		if (subtitle != null) subtitle.setText(s);
 		if (drawerModelText != null) drawerModelText.setText(s);
 	}
@@ -812,12 +773,11 @@ public class MainActivity extends Activity {
 	//  POPUP MENU "MORE"
 	// =====================================================================
 	private void showMorePopup(View anchor) {
+		final PopupWindow popup;
 		LinearLayout box = new LinearLayout(this);
 		box.setOrientation(LinearLayout.VERTICAL);
 		box.setBackground(roundedBg(cInputBg, 14, cLine, 1));
 		box.setPadding(0, dp(6), 0, dp(6));
-		
-		// clip semua anak (termasuk ripple) mengikuti bentuk rounded
 		final float radius = dp(14);
 		box.setOutlineProvider(new ViewOutlineProvider() {
 			@Override public void getOutline(View v, Outline o) {
@@ -825,20 +785,42 @@ public class MainActivity extends Activity {
 			}
 		});
 		box.setClipToOutline(true);
-		
-		final PopupWindow popup = new PopupWindow(box, dp(200), ViewGroup.LayoutParams.WRAP_CONTENT, true);
+		popup = new PopupWindow(box, dp(200), ViewGroup.LayoutParams.WRAP_CONTENT, true);
 		popup.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 		popup.setElevation(dp(8));
-		
-		box.addView(popupRow(ICON_SETTINGS, "Setting", () -> { popup.dismiss(); showSettingsDialog(); }));
+
+		final ChatSession selected = current;
+		box.addView(popupRow(ICON_CREDITS, "Bagikan", () -> {
+			popup.dismiss();
+			if (selected == null || selected.messages.isEmpty()) {
+				Toast.makeText(this, "Belum ada obrolan untuk dibagikan", Toast.LENGTH_SHORT).show();
+				return;
+			}
+			StringBuilder body = new StringBuilder();
+			for (ChatMessage m : selected.messages) body.append(m.isUser ? "Kamu: " : "Mona: ").append(m.content).append("\n\n");
+			Intent send = new Intent(Intent.ACTION_SEND);
+			send.setType("text/plain");
+			send.putExtra(Intent.EXTRA_TEXT, body.toString());
+			startActivity(Intent.createChooser(send, "Bagikan obrolan"));
+		}));
 		box.addView(popupDivider());
-		box.addView(popupRow(ICON_PROFILE, "Profile", () -> { popup.dismiss(); showProfileDialog(); }));
+		box.addView(popupRow(ICON_PROFILE, "Ganti nama", () -> {
+			popup.dismiss();
+			if (selected == null) {
+				Toast.makeText(this, "Pilih obrolan terlebih dahulu", Toast.LENGTH_SHORT).show();
+				return;
+			}
+			showRenameChat(selected);
+		}));
 		box.addView(popupDivider());
-		box.addView(popupRow(ICON_CREDITS, "Credits", () -> { popup.dismiss(); showCreditsDialog(); }));
-		
+		box.addView(popupRow(ICON_DELETE, "Hapus", () -> {
+			popup.dismiss();
+			if (selected != null) confirmDelete(selected);
+			else Toast.makeText(this, "Pilih obrolan terlebih dahulu", Toast.LENGTH_SHORT).show();
+		}));
 		popup.showAsDropDown(anchor, 0, 0, Gravity.END);
 	}
-	
+
 	/** Garis tipis, tidak full: mulai sejajar teks, berhenti sebelum tepi kanan. */
 	private View popupDivider() {
 		View v = new View(this);
@@ -910,8 +892,7 @@ public class MainActivity extends Activity {
 	
 	private void showSettingsDialog() {
 		final Provider[] sel = { getProvider() };
-		final int[] modeSel = { modeChanger.isOffline() ? 1 : 0 };
-		String curTheme = prefs.getString("theme", "system");
+		String curTheme = prefs.getString("theme", "dark");
 		int ti = 0;
 		for (int i = 0; i < THEME_KEYS.length; i++) if (THEME_KEYS[i].equals(curTheme)) ti = i;
 		final int[] themeSel = { ti };
@@ -925,45 +906,10 @@ public class MainActivity extends Activity {
 		box.addView(label("TEMA"));
 		box.addView(segmented(new String[]{ "Sistem", "Terang", "Gelap" }, ti, i -> themeSel[0] = i));
 		
-		// ---- Mode ----
-		box.addView(label("MODE"));
 		final LinearLayout onlineBox = new LinearLayout(this);
 		onlineBox.setOrientation(LinearLayout.VERTICAL);
-		final TextView modeStatus = new TextView(this);
-		modeStatus.setTextColor(cSub);
-		modeStatus.setTextSize(12);
-		modeStatus.setPadding(dp(2), dp(6), 0, 0);
 		
-		final Runnable refreshStatus = () -> {
-			if (modeSel[0] == 1) {
-				modeStatus.setText("Memuat model.json...");
-				new Thread(() -> {
-					modeChanger.ensureLoaded();
-					final String st = modeChanger.getStatus();
-					handler.post(() -> modeStatus.setText(st + "\nKetuk untuk muat ulang."));
-				}).start();
-			} else {
-				modeStatus.setText("Chat dikirim ke API provider yang dipilih.");
-			}
-		};
-		modeStatus.setOnClickListener(v -> {
-			if (modeSel[0] != 1) return;
-			modeStatus.setText("Memuat ulang model.json...");
-			new Thread(() -> {
-				modeChanger.reload();
-				final String st = modeChanger.getStatus();
-				handler.post(() -> modeStatus.setText(st + "\nKetuk untuk muat ulang."));
-			}).start();
-		});
-		
-		box.addView(segmented(new String[]{ "Online", "Offline" }, modeSel[0], i -> {
-			modeSel[0] = i;
-			onlineBox.setVisibility(i == 0 ? View.VISIBLE : View.GONE);
-			refreshStatus.run();
-		}));
-		box.addView(modeStatus);
-		
-		// ---- Provider (hanya mode Online) ----
+		// ---- Provider ----
 		onlineBox.addView(label("PROVIDER AI"));
 		String[] names = new String[PROVIDERS.length];
 		int idx = 0;
@@ -1043,8 +989,6 @@ public class MainActivity extends Activity {
 			? ml.size() + " model tersimpan." : ""));
 		};
 		fill.run();
-		onlineBox.setVisibility(modeSel[0] == 0 ? View.VISIBLE : View.GONE);
-		refreshStatus.run();
 		
 		final int[] last = { idx };
 		spinner.setSelection(idx, false);
@@ -1118,9 +1062,8 @@ public class MainActivity extends Activity {
 			.putString("key_" + p.name, keyEt.getText().toString().trim())
 			.putString("model_" + p.name, model.isEmpty() ? p.models[0] : model)
 			.apply();
-			modeChanger.setMode(modeSel[0] == 1 ? ModeChanger.Mode.OFFLINE : ModeChanger.Mode.ONLINE);
 			
-			String oldTheme = prefs.getString("theme", "system");
+			String oldTheme = prefs.getString("theme", "dark");
 			String newTheme = THEME_KEYS[themeSel[0]];
 			boolean themeChanged = !oldTheme.equals(newTheme);
 			if (themeChanged && busy) {
@@ -1137,6 +1080,47 @@ public class MainActivity extends Activity {
 		showDialog(dialog);
 	}
 	
+	private void showRenameChat(final ChatSession session) {
+		final EditText name = field("Nama obrolan");
+		name.setText(session.title);
+		LinearLayout box = new LinearLayout(this);
+		box.setOrientation(LinearLayout.VERTICAL);
+		box.setPadding(dp(20), dp(20), dp(20), dp(16));
+		box.addView(dialogTitle("Ganti nama obrolan"));
+		box.addView(name);
+		LinearLayout buttons = new LinearLayout(this);
+		buttons.setGravity(Gravity.END);
+		TextView cancel = button("Batal", false);
+		TextView save = button("Simpan", true);
+		LinearLayout.LayoutParams margin = new LinearLayout.LayoutParams(-2, -2);
+		margin.setMarginStart(dp(8));
+		buttons.addView(cancel);
+		buttons.addView(save, margin);
+		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(-1, -2);
+		bl.topMargin = dp(16);
+		box.addView(buttons, bl);
+		final Dialog dialog = createDialog(box);
+		cancel.setOnClickListener(v -> dialog.dismiss());
+		save.setOnClickListener(v -> {
+			String value = name.getText().toString().trim();
+			if (!value.isEmpty()) session.title = value;
+			saveSessions();
+			refreshHistory();
+			dialog.dismiss();
+		});
+		showDialog(dialog);
+	}
+
+	// Halaman pengaturan penuh, bukan dialog kecil.
+	private void showSettingsScreen() {
+		showSettingsDialog();
+		// Form pengaturan ditampilkan penuh agar terasa seperti screen.
+		if (activeDialog != null && activeDialog.getWindow() != null) {
+			activeDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+			activeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(cBg));
+		}
+	}
+
 	private void showProfileDialog() {
 		LinearLayout box = new LinearLayout(this);
 		box.setOrientation(LinearLayout.VERTICAL);
@@ -1176,8 +1160,7 @@ public class MainActivity extends Activity {
 			String name = nameEt.getText().toString().trim();
 			if (name.isEmpty()) name = "Pengguna";
 			prefs.edit().putString("user_name", name).apply();
-			applyUserName();
-			refreshUserFooter();
+				refreshUserFooter();
 			dialog.dismiss();
 		});
 		showDialog(dialog);
@@ -1230,6 +1213,7 @@ public class MainActivity extends Activity {
 	}
 	
 	private void showDialog(Dialog d) {
+		activeDialog = d;
 		d.show();
 		Window w = d.getWindow();
 		if (w != null) {
@@ -1241,7 +1225,7 @@ public class MainActivity extends Activity {
 	// =====================================================================
 	//  CHAT
 	// =====================================================================
-	/** "mona arti makan" -> "arti makan"; berlaku di mode Online maupun Offline. */
+	/** "mona arti makan" -> "arti makan"; */
 	private String stripMona(String s) {
 		if (s.length() > 5 && s.toLowerCase(Locale.ROOT).startsWith("mona ")) return s.substring(5).trim();
 		return s;
@@ -1252,10 +1236,9 @@ public class MainActivity extends Activity {
 		if (TextUtils.isEmpty(text)) return;
 		if (busy) { Toast.makeText(this, "Tunggu balasan selesai dulu", Toast.LENGTH_SHORT).show(); return; }
 		
-		final boolean offline = modeChanger.isOffline();
 		final Provider p = getProvider();
 		final String key = getKey(p);
-		if (!offline && key.isEmpty() && !p.keyOptional) {
+		if (key.isEmpty() && !p.keyOptional) {
 			Toast.makeText(this, "API key belum diatur", Toast.LENGTH_SHORT).show();
 			showSettingsDialog();
 			return;
@@ -1289,16 +1272,11 @@ public class MainActivity extends Activity {
 			CommandIntent.Result cmd = null;
 			boolean err = false;
 			try {
-				if (offline) {
-					cmd = localCommand(text);
-					reply = cmd != null ? "Baik, saya jalankan." : orEmpty(modeChanger.reply(text));
-				} else {
-					reply = sendChat(p, base, key, model, snapshot);
-					cmd = aiCommand(reply);
-					if (cmd != null) {
-						reply = MONA_CMD.matcher(reply).replaceAll("").trim();
-						if (reply.isEmpty()) reply = "Baik, saya jalankan.";
-					}
+				reply = sendChat(p, base, key, model, snapshot);
+				cmd = aiCommand(reply);
+				if (cmd != null) {
+					reply = MONA_CMD.matcher(reply).replaceAll("").trim();
+					if (reply.isEmpty()) reply = "Baik, saya jalankan.";
 				}
 			} catch (Exception e) {
 				reply = "⚠️ " + e.getMessage();
@@ -1316,8 +1294,7 @@ public class MainActivity extends Activity {
 	
 	// =====================================================================
 	//  PERINTAH FILE LEWAT CHAT
-	//  Offline: kalimat biasa diterjemahkan CommandIntent.
-	//  Online : AI menulis blok ```mona-cmd {...}```; aplikasi yang menjalankannya lewat MonaShell.
+	//  AI menulis blok ```mona-cmd {...}```; aplikasi yang menjalankannya lewat MonaShell.
 	//  Path dibatasi ke penyimpanan internal + folder aplikasi, dan tidak ada perintah hapus.
 	// =====================================================================
 	private static final Pattern MONA_CMD = Pattern.compile("```mona-cmd\\s*(\\{.*?\\})\\s*```", Pattern.DOTALL);
@@ -1332,13 +1309,6 @@ public class MainActivity extends Activity {
 		+ "action yang boleh: cd, ls, cat, mkdir, touch, pwd, storage (tanpa path; untuk meminta izin akses penyimpanan). "
 		+ "Untuk naik satu folder pakai path \"..\". "
 		+ "Kamu tidak bisa menghapus file atau menjalankan perintah lain. Untuk pertanyaan biasa, jawab seperti biasa.";
-	}
-
-	/** Offline: kalimat pengguna -> perintah, hanya jika jelas perintah atau targetnya benar-benar ada. */
-	private CommandIntent.Result localCommand(String text) {
-		CommandIntent.Result r = CommandIntent.parse(text);
-		if (r == null) return null;
-		return (r.explicit || shell.targetExists(r)) ? r : null;
 	}
 
 	/** Online: baca blok mona-cmd dari balasan AI; null jika tidak ada atau action tidak dikenal. */
@@ -1704,11 +1674,44 @@ public class MainActivity extends Activity {
 	private void renderCurrent() {
 		chatContainer.removeAllViews();
 		typingRow = null;
-		if (current == null || current.messages.isEmpty()) { addAiMessage(WELCOME); return; }
+		if (current == null || current.messages.isEmpty()) { addWelcome(); return; }
 		for (ChatMessage m : current.messages) {
 			if (m.isUser) addUserMessage(m.content); else addAiMessage(m.content);
 		}
 		if (busy && current == pendingSession) typingRow = addTypingMessage();
+	}
+	
+	/** Sambutan awal ala Claude: bintang oranye + "Selamat malam, <nama>" (huruf serif). */
+	private void addWelcome() {
+		LinearLayout box = new LinearLayout(this);
+		box.setOrientation(LinearLayout.VERTICAL);
+		box.setGravity(Gravity.CENTER);
+		box.setPadding(dp(16), dp(48), dp(16), dp(96));
+		
+		ImageView star = new ImageView(this);
+		star.setImageResource(ICON_MONA);
+		star.setColorFilter(cAccent, PorterDuff.Mode.SRC_IN);
+		box.addView(star, new LinearLayout.LayoutParams(dp(56), dp(56)));
+		
+		int h = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY);
+		String sapa = h < 4 ? "Selamat malam" : h < 11 ? "Selamat pagi" : h < 15 ? "Selamat siang"
+		: h < 18 ? "Selamat sore" : "Selamat malam";
+		String n = prefs.getString("user_name", "Pengguna");
+		if (n != null && !n.trim().isEmpty() && !"Pengguna".equals(n)) sapa += ", " + n.trim();
+		
+		TextView tv = new TextView(this);
+		tv.setText(sapa);
+		tv.setTextColor(cText);
+		tv.setTextSize(30);
+		tv.setTypeface(Typeface.SERIF);
+		tv.setGravity(Gravity.CENTER);
+		LinearLayout.LayoutParams tp = new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		tp.topMargin = dp(20);
+		box.addView(tv, tp);
+		
+		chatContainer.addView(box, new LinearLayout.LayoutParams(
+		ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
 	}
 	
 	private View addUserMessage(String text) {

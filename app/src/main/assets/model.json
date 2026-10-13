@@ -3,22 +3,139 @@
   "threshold": 0.68,
   "default_lang": "id",
   "languages": {
-    "id": { "name": "Indonesia", "aliases": ["indonesia", "indonesian", "bahasa indonesia", "indo"] },
-    "en": { "name": "Inggris", "aliases": ["inggris", "english", "bahasa inggris"] },
-    "es": { "name": "Spanyol", "aliases": ["spanyol", "spanish", "espanol", "bahasa spanyol"] },
-    "fr": { "name": "Prancis", "aliases": ["prancis", "perancis", "french", "francais"] },
-    "de": { "name": "Jerman", "aliases": ["jerman", "german", "deutsch"] },
-    "ja": { "name": "Jepang", "aliases": ["jepang", "japanese", "nihongo"] },
-    "ko": { "name": "Korea", "aliases": ["korea", "korean", "hangul", "hangeul"] },
-    "zh": { "name": "Mandarin", "aliases": ["mandarin", "cina", "china", "chinese", "tiongkok"] },
-    "ar": { "name": "Arab", "aliases": ["arab", "arabic", "arabiyya"] },
-    "ru": { "name": "Rusia", "aliases": ["rusia", "russian", "russkiy"] },
-    "hi": { "name": "Hindi", "aliases": ["hindi", "india"] },
-    "pt": { "name": "Portugis", "aliases": ["portugis", "portuguese", "portugues"] },
-    "it": { "name": "Italia", "aliases": ["italia", "italian", "italiano"] },
-    "tr": { "name": "Turki", "aliases": ["turki", "turkish", "turkce"] },
-    "th": { "name": "Thailand", "aliases": ["thailand", "thai", "siam"] },
-    "ms": { "name": "Melayu", "aliases": ["melayu", "malay", "malaysia"] }
+    "id": {
+      "name": "Indonesia",
+      "aliases": [
+        "indonesia",
+        "indonesian",
+        "bahasa indonesia",
+        "indo"
+      ]
+    },
+    "en": {
+      "name": "Inggris",
+      "aliases": [
+        "inggris",
+        "english",
+        "bahasa inggris"
+      ]
+    },
+    "es": {
+      "name": "Spanyol",
+      "aliases": [
+        "spanyol",
+        "spanish",
+        "espanol",
+        "bahasa spanyol"
+      ]
+    },
+    "fr": {
+      "name": "Prancis",
+      "aliases": [
+        "prancis",
+        "perancis",
+        "french",
+        "francais"
+      ]
+    },
+    "de": {
+      "name": "Jerman",
+      "aliases": [
+        "jerman",
+        "german",
+        "deutsch"
+      ]
+    },
+    "ja": {
+      "name": "Jepang",
+      "aliases": [
+        "jepang",
+        "japanese",
+        "nihongo"
+      ]
+    },
+    "ko": {
+      "name": "Korea",
+      "aliases": [
+        "korea",
+        "korean",
+        "hangul",
+        "hangeul"
+      ]
+    },
+    "zh": {
+      "name": "Mandarin",
+      "aliases": [
+        "mandarin",
+        "cina",
+        "china",
+        "chinese",
+        "tiongkok"
+      ]
+    },
+    "ar": {
+      "name": "Arab",
+      "aliases": [
+        "arab",
+        "arabic",
+        "arabiyya"
+      ]
+    },
+    "ru": {
+      "name": "Rusia",
+      "aliases": [
+        "rusia",
+        "russian",
+        "russkiy"
+      ]
+    },
+    "hi": {
+      "name": "Hindi",
+      "aliases": [
+        "hindi",
+        "india"
+      ]
+    },
+    "pt": {
+      "name": "Portugis",
+      "aliases": [
+        "portugis",
+        "portuguese",
+        "portugues"
+      ]
+    },
+    "it": {
+      "name": "Italia",
+      "aliases": [
+        "italia",
+        "italian",
+        "italiano"
+      ]
+    },
+    "tr": {
+      "name": "Turki",
+      "aliases": [
+        "turki",
+        "turkish",
+        "turkce"
+      ]
+    },
+    "th": {
+      "name": "Thailand",
+      "aliases": [
+        "thailand",
+        "thai",
+        "siam"
+      ]
+    },
+    "ms": {
+      "name": "Melayu",
+      "aliases": [
+        "melayu",
+        "malay",
+        "malaysia"
+      ]
+    }
   },
   "pos_names": {
     "verb": "kata kerja",
@@ -47,40 +164,176 @@
       "category": "sapaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["halo", "hai", "hei", "hallo", "hay", "permisi", "assalamualaikum", "salam", "p", "woi", "oi"],
-        "en": ["hello", "hi", "hey", "hi there", "hello there", "yo", "greetings", "howdy"],
-        "es": ["hola", "buenas", "que tal"],
-        "fr": ["bonjour", "salut", "coucou"],
-        "de": ["hallo", "servus", "moin"],
-        "ja": ["こんにちは", "konnichiwa", "やあ", "もしもし", "moshi moshi"],
-        "ko": ["안녕", "안녕하세요", "annyeong", "annyeonghaseyo"],
-        "zh": ["你好", "您好", "nihao", "ni hao", "嗨"],
-        "ar": ["مرحبا", "اهلا", "السلام عليكم", "marhaban", "ahlan"],
-        "ru": ["привет", "здравствуйте", "privet", "zdravstvuyte"],
-        "hi": ["नमस्ते", "namaste", "namaskar", "नमस्कार"],
-        "pt": ["olá", "ola", "oi"],
-        "it": ["ciao", "salve", "buongiorno a te"],
-        "tr": ["merhaba", "selam", "selamlar"],
-        "th": ["สวัสดี", "sawasdee", "sawatdi"],
-        "ms": ["apa khabar", "helo", "assalamualaikum"]
+        "id": [
+          "halo",
+          "hai",
+          "hei",
+          "hallo",
+          "hay",
+          "permisi",
+          "assalamualaikum",
+          "salam",
+          "p",
+          "woi",
+          "oi"
+        ],
+        "en": [
+          "hello",
+          "hi",
+          "hey",
+          "hi there",
+          "hello there",
+          "yo",
+          "greetings",
+          "howdy"
+        ],
+        "es": [
+          "hola",
+          "buenas",
+          "que tal"
+        ],
+        "fr": [
+          "bonjour",
+          "salut",
+          "coucou"
+        ],
+        "de": [
+          "hallo",
+          "servus",
+          "moin"
+        ],
+        "ja": [
+          "こんにちは",
+          "konnichiwa",
+          "やあ",
+          "もしもし",
+          "moshi moshi"
+        ],
+        "ko": [
+          "안녕",
+          "안녕하세요",
+          "annyeong",
+          "annyeonghaseyo"
+        ],
+        "zh": [
+          "你好",
+          "您好",
+          "nihao",
+          "ni hao",
+          "嗨"
+        ],
+        "ar": [
+          "مرحبا",
+          "اهلا",
+          "السلام عليكم",
+          "marhaban",
+          "ahlan"
+        ],
+        "ru": [
+          "привет",
+          "здравствуйте",
+          "privet",
+          "zdravstvuyte"
+        ],
+        "hi": [
+          "नमस्ते",
+          "namaste",
+          "namaskar",
+          "नमस्कार"
+        ],
+        "pt": [
+          "olá",
+          "ola",
+          "oi"
+        ],
+        "it": [
+          "ciao",
+          "salve",
+          "buongiorno a te"
+        ],
+        "tr": [
+          "merhaba",
+          "selam",
+          "selamlar"
+        ],
+        "th": [
+          "สวัสดี",
+          "sawasdee",
+          "sawatdi"
+        ],
+        "ms": [
+          "apa khabar",
+          "helo",
+          "assalamualaikum"
+        ]
       },
       "responses": {
-        "id": ["Halo, {name}! Ada yang bisa kubantu?", "Hai, {name}! Senang bertemu denganmu 😊", "Halo! Mau ngobrol atau tanya sesuatu?"],
-        "en": ["Hello, {name}! How can I help you?", "Hi there! Nice to see you 😊", "Hey! What's on your mind?"],
-        "es": ["¡Hola, {name}! ¿En qué puedo ayudarte?", "¡Hola! Encantado de verte 😊"],
-        "fr": ["Bonjour, {name} ! Comment puis-je vous aider ?", "Salut ! Content de te voir 😊"],
-        "de": ["Hallo, {name}! Wie kann ich dir helfen?", "Hallo! Schön, dich zu sehen 😊"],
-        "ja": ["こんにちは、{name}さん！何かお手伝いできますか？", "やあ！元気ですか？😊"],
-        "ko": ["안녕하세요, {name}님! 무엇을 도와드릴까요?", "안녕! 만나서 반가워요 😊"],
-        "zh": ["你好，{name}！有什么可以帮你的吗？", "嗨！很高兴见到你 😊"],
-        "ar": ["مرحباً {name}! كيف يمكنني مساعدتك؟", "أهلاً وسهلاً 😊"],
-        "ru": ["Привет, {name}! Чем могу помочь?", "Здравствуйте! Рад вас видеть 😊"],
-        "hi": ["नमस्ते, {name}! मैं आपकी कैसे मदद कर सकता हूँ?", "नमस्ते! आपसे मिलकर खुशी हुई 😊"],
-        "pt": ["Olá, {name}! Como posso ajudar?", "Oi! Prazer em ver você 😊"],
-        "it": ["Ciao, {name}! Come posso aiutarti?", "Ciao! Che piacere vederti 😊"],
-        "tr": ["Merhaba, {name}! Nasıl yardımcı olabilirim?", "Selam! Seni görmek güzel 😊"],
-        "th": ["สวัสดีครับ {name}! มีอะไรให้ช่วยไหม?", "สวัสดี! ยินดีที่ได้เจอ 😊"],
-        "ms": ["Hai, {name}! Ada apa yang boleh saya bantu?", "Helo! Gembira berjumpa dengan anda 😊"]
+        "id": [
+          "Halo, {name}! Ada yang bisa kubantu?",
+          "Hai, {name}! Senang bertemu denganmu 😊",
+          "Halo! Mau ngobrol atau tanya sesuatu?"
+        ],
+        "en": [
+          "Hello, {name}! How can I help you?",
+          "Hi there! Nice to see you 😊",
+          "Hey! What's on your mind?"
+        ],
+        "es": [
+          "¡Hola, {name}! ¿En qué puedo ayudarte?",
+          "¡Hola! Encantado de verte 😊"
+        ],
+        "fr": [
+          "Bonjour, {name} ! Comment puis-je vous aider ?",
+          "Salut ! Content de te voir 😊"
+        ],
+        "de": [
+          "Hallo, {name}! Wie kann ich dir helfen?",
+          "Hallo! Schön, dich zu sehen 😊"
+        ],
+        "ja": [
+          "こんにちは、{name}さん！何かお手伝いできますか？",
+          "やあ！元気ですか？😊"
+        ],
+        "ko": [
+          "안녕하세요, {name}님! 무엇을 도와드릴까요?",
+          "안녕! 만나서 반가워요 😊"
+        ],
+        "zh": [
+          "你好，{name}！有什么可以帮你的吗？",
+          "嗨！很高兴见到你 😊"
+        ],
+        "ar": [
+          "مرحباً {name}! كيف يمكنني مساعدتك؟",
+          "أهلاً وسهلاً 😊"
+        ],
+        "ru": [
+          "Привет, {name}! Чем могу помочь?",
+          "Здравствуйте! Рад вас видеть 😊"
+        ],
+        "hi": [
+          "नमस्ते, {name}! मैं आपकी कैसे मदद कर सकता हूँ?",
+          "नमस्ते! आपसे मिलकर खुशी हुई 😊"
+        ],
+        "pt": [
+          "Olá, {name}! Como posso ajudar?",
+          "Oi! Prazer em ver você 😊"
+        ],
+        "it": [
+          "Ciao, {name}! Come posso aiutarti?",
+          "Ciao! Che piacere vederti 😊"
+        ],
+        "tr": [
+          "Merhaba, {name}! Nasıl yardımcı olabilirim?",
+          "Selam! Seni görmek güzel 😊"
+        ],
+        "th": [
+          "สวัสดีครับ {name}! มีอะไรให้ช่วยไหม?",
+          "สวัสดี! ยินดีที่ได้เจอ 😊"
+        ],
+        "ms": [
+          "Hai, {name}! Ada apa yang boleh saya bantu?",
+          "Helo! Gembira berjumpa dengan anda 😊"
+        ]
       }
     },
     {
@@ -88,40 +341,137 @@
       "category": "sapaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["apa kabar", "gimana kabarmu", "kabar kamu gimana", "kamu apa kabar", "lagi apa", "sehat", "kabarnya gimana"],
-        "en": ["how are you", "how are you doing", "hows it going", "whats up", "how do you do", "you good"],
-        "es": ["como estas", "como te va"],
-        "fr": ["comment ca va", "ca va", "comment allez vous"],
-        "de": ["wie gehts", "wie geht es dir"],
-        "ja": ["お元気ですか", "元気", "genki desu ka"],
-        "ko": ["잘 지내", "잘 지내요", "jal jinae"],
-        "zh": ["你好吗", "最近怎么样", "ni hao ma"],
-        "ar": ["كيف حالك", "kayfa haluk"],
-        "ru": ["как дела", "kak dela"],
-        "hi": ["कैसे हो", "आप कैसे हैं", "kaise ho", "aap kaise hain"],
-        "pt": ["tudo bem", "como vai"],
-        "it": ["come stai", "come va"],
-        "tr": ["nasilsin", "naber"],
-        "th": ["สบายดีไหม", "sabai di mai"],
-        "ms": ["apa khabar anda", "khabar baik"]
+        "id": [
+          "apa kabar",
+          "gimana kabarmu",
+          "kabar kamu gimana",
+          "kamu apa kabar",
+          "lagi apa",
+          "sehat",
+          "kabarnya gimana"
+        ],
+        "en": [
+          "how are you",
+          "how are you doing",
+          "hows it going",
+          "whats up",
+          "how do you do",
+          "you good"
+        ],
+        "es": [
+          "como estas",
+          "como te va"
+        ],
+        "fr": [
+          "comment ca va",
+          "ca va",
+          "comment allez vous"
+        ],
+        "de": [
+          "wie gehts",
+          "wie geht es dir"
+        ],
+        "ja": [
+          "お元気ですか",
+          "元気",
+          "genki desu ka"
+        ],
+        "ko": [
+          "잘 지내",
+          "잘 지내요",
+          "jal jinae"
+        ],
+        "zh": [
+          "你好吗",
+          "最近怎么样",
+          "ni hao ma"
+        ],
+        "ar": [
+          "كيف حالك",
+          "kayfa haluk"
+        ],
+        "ru": [
+          "как дела",
+          "kak dela"
+        ],
+        "hi": [
+          "कैसे हो",
+          "आप कैसे हैं",
+          "kaise ho",
+          "aap kaise hain"
+        ],
+        "pt": [
+          "tudo bem",
+          "como vai"
+        ],
+        "it": [
+          "come stai",
+          "come va"
+        ],
+        "tr": [
+          "nasilsin",
+          "naber"
+        ],
+        "th": [
+          "สบายดีไหม",
+          "sabai di mai"
+        ],
+        "ms": [
+          "apa khabar anda",
+          "khabar baik"
+        ]
       },
       "responses": {
-        "id": ["Aku baik-baik saja, terima kasih sudah bertanya! Kamu sendiri gimana?", "Sehat! Namanya juga program 😄 Kamu apa kabar?"],
-        "en": ["I'm doing great, thanks for asking! How about you?", "All good here! What about you?"],
-        "es": ["¡Estoy muy bien, gracias! ¿Y tú?"],
-        "fr": ["Je vais très bien, merci ! Et toi ?"],
-        "de": ["Mir geht's gut, danke! Und dir?"],
-        "ja": ["元気です、ありがとう！あなたは？"],
-        "ko": ["저는 잘 지내요, 고마워요! 당신은요?"],
-        "zh": ["我很好，谢谢！你呢？"],
-        "ar": ["أنا بخير، شكراً! وأنت؟"],
-        "ru": ["У меня всё хорошо, спасибо! А у тебя?"],
-        "hi": ["मैं ठीक हूँ, धन्यवाद! आप कैसे हैं?"],
-        "pt": ["Estou bem, obrigado! E você?"],
-        "it": ["Sto bene, grazie! E tu?"],
-        "tr": ["İyiyim, teşekkürler! Sen nasılsın?"],
-        "th": ["สบายดีครับ ขอบคุณที่ถาม! แล้วคุณล่ะ?"],
-        "ms": ["Saya sihat, terima kasih! Awak pula?"]
+        "id": [
+          "Aku baik-baik saja, terima kasih sudah bertanya! Kamu sendiri gimana?",
+          "Sehat! Namanya juga program 😄 Kamu apa kabar?"
+        ],
+        "en": [
+          "I'm doing great, thanks for asking! How about you?",
+          "All good here! What about you?"
+        ],
+        "es": [
+          "¡Estoy muy bien, gracias! ¿Y tú?"
+        ],
+        "fr": [
+          "Je vais très bien, merci ! Et toi ?"
+        ],
+        "de": [
+          "Mir geht's gut, danke! Und dir?"
+        ],
+        "ja": [
+          "元気です、ありがとう！あなたは？"
+        ],
+        "ko": [
+          "저는 잘 지내요, 고마워요! 당신은요?"
+        ],
+        "zh": [
+          "我很好，谢谢！你呢？"
+        ],
+        "ar": [
+          "أنا بخير، شكراً! وأنت؟"
+        ],
+        "ru": [
+          "У меня всё хорошо, спасибо! А у тебя?"
+        ],
+        "hi": [
+          "मैं ठीक हूँ, धन्यवाद! आप कैसे हैं?"
+        ],
+        "pt": [
+          "Estou bem, obrigado! E você?"
+        ],
+        "it": [
+          "Sto bene, grazie! E tu?"
+        ],
+        "tr": [
+          "İyiyim, teşekkürler! Sen nasılsın?"
+        ],
+        "th": [
+          "สบายดีครับ ขอบคุณที่ถาม! แล้วคุณล่ะ?"
+        ],
+        "ms": [
+          "Saya sihat, terima kasih! Awak pula?"
+        ]
       }
     },
     {
@@ -129,40 +479,121 @@
       "category": "sapaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["selamat pagi", "pagi", "met pagi", "pagi semua"],
-        "en": ["good morning", "morning"],
-        "es": ["buenos dias"],
-        "fr": ["bon matin"],
-        "de": ["guten morgen"],
-        "ja": ["おはよう", "おはようございます", "ohayo", "ohayou gozaimasu"],
-        "ko": ["좋은 아침", "joeun achim"],
-        "zh": ["早上好", "早安", "zaoshang hao"],
-        "ar": ["صباح الخير", "sabah al khayr"],
-        "ru": ["доброе утро", "dobroe utro"],
-        "hi": ["सुप्रभात", "suprabhat"],
-        "pt": ["bom dia"],
-        "it": ["buongiorno"],
-        "tr": ["gunaydin", "günaydın"],
-        "th": ["อรุณสวัสดิ์", "arun sawat"],
-        "ms": ["selamat pagi semua"]
+        "id": [
+          "selamat pagi",
+          "pagi",
+          "met pagi",
+          "pagi semua"
+        ],
+        "en": [
+          "good morning",
+          "morning"
+        ],
+        "es": [
+          "buenos dias"
+        ],
+        "fr": [
+          "bon matin"
+        ],
+        "de": [
+          "guten morgen"
+        ],
+        "ja": [
+          "おはよう",
+          "おはようございます",
+          "ohayo",
+          "ohayou gozaimasu"
+        ],
+        "ko": [
+          "좋은 아침",
+          "joeun achim"
+        ],
+        "zh": [
+          "早上好",
+          "早安",
+          "zaoshang hao"
+        ],
+        "ar": [
+          "صباح الخير",
+          "sabah al khayr"
+        ],
+        "ru": [
+          "доброе утро",
+          "dobroe utro"
+        ],
+        "hi": [
+          "सुप्रभात",
+          "suprabhat"
+        ],
+        "pt": [
+          "bom dia"
+        ],
+        "it": [
+          "buongiorno"
+        ],
+        "tr": [
+          "gunaydin",
+          "günaydın"
+        ],
+        "th": [
+          "อรุณสวัสดิ์",
+          "arun sawat"
+        ],
+        "ms": [
+          "selamat pagi semua"
+        ]
       },
       "responses": {
-        "id": ["Selamat pagi, {name}! Semoga harimu menyenangkan ☀️", "Pagi! Sudah sarapan belum?"],
-        "en": ["Good morning, {name}! Have a lovely day ☀️", "Morning! Ready for a great day?"],
-        "es": ["¡Buenos días, {name}! Que tengas un lindo día ☀️"],
-        "fr": ["Bonjour, {name} ! Belle journée à toi ☀️"],
-        "de": ["Guten Morgen, {name}! Einen schönen Tag ☀️"],
-        "ja": ["おはようございます、{name}さん！今日もいい一日を ☀️"],
-        "ko": ["좋은 아침이에요, {name}님! 멋진 하루 보내세요 ☀️"],
-        "zh": ["早上好，{name}！祝你有美好的一天 ☀️"],
-        "ar": ["صباح الخير {name}! يوماً سعيداً ☀️"],
-        "ru": ["Доброе утро, {name}! Хорошего дня ☀️"],
-        "hi": ["सुप्रभात, {name}! आपका दिन शुभ हो ☀️"],
-        "pt": ["Bom dia, {name}! Tenha um ótimo dia ☀️"],
-        "it": ["Buongiorno, {name}! Buona giornata ☀️"],
-        "tr": ["Günaydın, {name}! İyi günler ☀️"],
-        "th": ["อรุณสวัสดิ์ครับ {name}! ขอให้เป็นวันที่ดี ☀️"],
-        "ms": ["Selamat pagi, {name}! Semoga hari anda indah ☀️"]
+        "id": [
+          "Selamat pagi, {name}! Semoga harimu menyenangkan ☀️",
+          "Pagi! Sudah sarapan belum?"
+        ],
+        "en": [
+          "Good morning, {name}! Have a lovely day ☀️",
+          "Morning! Ready for a great day?"
+        ],
+        "es": [
+          "¡Buenos días, {name}! Que tengas un lindo día ☀️"
+        ],
+        "fr": [
+          "Bonjour, {name} ! Belle journée à toi ☀️"
+        ],
+        "de": [
+          "Guten Morgen, {name}! Einen schönen Tag ☀️"
+        ],
+        "ja": [
+          "おはようございます、{name}さん！今日もいい一日を ☀️"
+        ],
+        "ko": [
+          "좋은 아침이에요, {name}님! 멋진 하루 보내세요 ☀️"
+        ],
+        "zh": [
+          "早上好，{name}！祝你有美好的一天 ☀️"
+        ],
+        "ar": [
+          "صباح الخير {name}! يوماً سعيداً ☀️"
+        ],
+        "ru": [
+          "Доброе утро, {name}! Хорошего дня ☀️"
+        ],
+        "hi": [
+          "सुप्रभात, {name}! आपका दिन शुभ हो ☀️"
+        ],
+        "pt": [
+          "Bom dia, {name}! Tenha um ótimo dia ☀️"
+        ],
+        "it": [
+          "Buongiorno, {name}! Buona giornata ☀️"
+        ],
+        "tr": [
+          "Günaydın, {name}! İyi günler ☀️"
+        ],
+        "th": [
+          "อรุณสวัสดิ์ครับ {name}! ขอให้เป็นวันที่ดี ☀️"
+        ],
+        "ms": [
+          "Selamat pagi, {name}! Semoga hari anda indah ☀️"
+        ]
       }
     },
     {
@@ -170,32 +601,102 @@
       "category": "sapaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["selamat siang", "selamat sore", "siang", "sore", "met siang", "met sore"],
-        "en": ["good afternoon", "good evening", "afternoon", "evening"],
-        "es": ["buenas tardes", "buenas noches a todos"],
-        "fr": ["bonsoir", "bon apres midi"],
-        "de": ["guten tag", "guten abend"],
-        "ja": ["こんばんは", "konbanwa"],
-        "ko": ["좋은 저녁", "annyeong hasimnikka"],
-        "zh": ["下午好", "晚上好", "wanshang hao"],
-        "ru": ["добрый день", "добрый вечер", "dobryy den"],
-        "pt": ["boa tarde", "boa noite a todos"],
-        "it": ["buonasera", "buon pomeriggio"],
-        "tr": ["iyi aksamlar", "iyi günler"]
+        "id": [
+          "selamat siang",
+          "selamat sore",
+          "siang",
+          "sore",
+          "met siang",
+          "met sore"
+        ],
+        "en": [
+          "good afternoon",
+          "good evening",
+          "afternoon",
+          "evening"
+        ],
+        "es": [
+          "buenas tardes",
+          "buenas noches a todos"
+        ],
+        "fr": [
+          "bonsoir",
+          "bon apres midi"
+        ],
+        "de": [
+          "guten tag",
+          "guten abend"
+        ],
+        "ja": [
+          "こんばんは",
+          "konbanwa"
+        ],
+        "ko": [
+          "좋은 저녁",
+          "annyeong hasimnikka"
+        ],
+        "zh": [
+          "下午好",
+          "晚上好",
+          "wanshang hao"
+        ],
+        "ru": [
+          "добрый день",
+          "добрый вечер",
+          "dobryy den"
+        ],
+        "pt": [
+          "boa tarde",
+          "boa noite a todos"
+        ],
+        "it": [
+          "buonasera",
+          "buon pomeriggio"
+        ],
+        "tr": [
+          "iyi aksamlar",
+          "iyi günler"
+        ]
       },
       "responses": {
-        "id": ["Selamat siang/sore, {name}! Ada yang bisa kubantu?", "Halo! Semoga harimu lancar 🌤️"],
-        "en": ["Good day, {name}! How can I help?", "Hello! Hope your day is going well 🌤️"],
-        "es": ["¡Buenas tardes, {name}! ¿En qué puedo ayudar?"],
-        "fr": ["Bonsoir, {name} ! Comment puis-je aider ?"],
-        "de": ["Guten Tag, {name}! Wie kann ich helfen?"],
-        "ja": ["こんばんは、{name}さん！"],
-        "ko": ["좋은 저녁이에요, {name}님!"],
-        "zh": ["你好，{name}！祝你一切顺利 🌤️"],
-        "ru": ["Добрый день, {name}! Чем помочь?"],
-        "pt": ["Boa tarde, {name}! Em que posso ajudar?"],
-        "it": ["Buonasera, {name}! Come posso aiutarti?"],
-        "tr": ["İyi günler, {name}! Nasıl yardımcı olabilirim?"]
+        "id": [
+          "Selamat siang/sore, {name}! Ada yang bisa kubantu?",
+          "Halo! Semoga harimu lancar 🌤️"
+        ],
+        "en": [
+          "Good day, {name}! How can I help?",
+          "Hello! Hope your day is going well 🌤️"
+        ],
+        "es": [
+          "¡Buenas tardes, {name}! ¿En qué puedo ayudar?"
+        ],
+        "fr": [
+          "Bonsoir, {name} ! Comment puis-je aider ?"
+        ],
+        "de": [
+          "Guten Tag, {name}! Wie kann ich helfen?"
+        ],
+        "ja": [
+          "こんばんは、{name}さん！"
+        ],
+        "ko": [
+          "좋은 저녁이에요, {name}님!"
+        ],
+        "zh": [
+          "你好，{name}！祝你一切顺利 🌤️"
+        ],
+        "ru": [
+          "Добрый день, {name}! Чем помочь?"
+        ],
+        "pt": [
+          "Boa tarde, {name}! Em que posso ajudar?"
+        ],
+        "it": [
+          "Buonasera, {name}! Come posso aiutarti?"
+        ],
+        "tr": [
+          "İyi günler, {name}! Nasıl yardımcı olabilirim?"
+        ]
       }
     },
     {
@@ -203,38 +704,118 @@
       "category": "sapaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["selamat malam", "met malam", "malam", "selamat tidur", "aku mau tidur", "met tidur"],
-        "en": ["good night", "night night", "sleep well", "im going to sleep"],
-        "es": ["buenas noches", "que descanses"],
-        "fr": ["bonne nuit"],
-        "de": ["gute nacht"],
-        "ja": ["おやすみ", "おやすみなさい", "oyasumi"],
-        "ko": ["잘 자요", "잘자", "jal jayo"],
-        "zh": ["晚安", "wan an"],
-        "ar": ["تصبح على خير", "tusbih ala khayr"],
-        "ru": ["спокойной ночи", "spokoynoy nochi"],
-        "hi": ["शुभ रात्रि", "shubh ratri"],
-        "pt": ["boa noite"],
-        "it": ["buonanotte"],
-        "tr": ["iyi geceler"],
-        "th": ["ราตรีสวัสดิ์", "ratri sawat"]
+        "id": [
+          "selamat malam",
+          "met malam",
+          "malam",
+          "selamat tidur",
+          "aku mau tidur",
+          "met tidur"
+        ],
+        "en": [
+          "good night",
+          "night night",
+          "sleep well",
+          "im going to sleep"
+        ],
+        "es": [
+          "buenas noches",
+          "que descanses"
+        ],
+        "fr": [
+          "bonne nuit"
+        ],
+        "de": [
+          "gute nacht"
+        ],
+        "ja": [
+          "おやすみ",
+          "おやすみなさい",
+          "oyasumi"
+        ],
+        "ko": [
+          "잘 자요",
+          "잘자",
+          "jal jayo"
+        ],
+        "zh": [
+          "晚安",
+          "wan an"
+        ],
+        "ar": [
+          "تصبح على خير",
+          "tusbih ala khayr"
+        ],
+        "ru": [
+          "спокойной ночи",
+          "spokoynoy nochi"
+        ],
+        "hi": [
+          "शुभ रात्रि",
+          "shubh ratri"
+        ],
+        "pt": [
+          "boa noite"
+        ],
+        "it": [
+          "buonanotte"
+        ],
+        "tr": [
+          "iyi geceler"
+        ],
+        "th": [
+          "ราตรีสวัสดิ์",
+          "ratri sawat"
+        ]
       },
       "responses": {
-        "id": ["Selamat malam, {name}! Tidur yang nyenyak ya 🌙", "Met tidur! Mimpi indah 😴"],
-        "en": ["Good night, {name}! Sleep tight 🌙", "Sweet dreams! 😴"],
-        "es": ["¡Buenas noches, {name}! Que descanses 🌙"],
-        "fr": ["Bonne nuit, {name} ! Fais de beaux rêves 🌙"],
-        "de": ["Gute Nacht, {name}! Schlaf gut 🌙"],
-        "ja": ["おやすみなさい、{name}さん！いい夢を 🌙"],
-        "ko": ["잘 자요, {name}님! 좋은 꿈 꾸세요 🌙"],
-        "zh": ["晚安，{name}！好梦 🌙"],
-        "ar": ["تصبح على خير {name}! 🌙"],
-        "ru": ["Спокойной ночи, {name}! Сладких снов 🌙"],
-        "hi": ["शुभ रात्रि, {name}! 🌙"],
-        "pt": ["Boa noite, {name}! Durma bem 🌙"],
-        "it": ["Buonanotte, {name}! Sogni d'oro 🌙"],
-        "tr": ["İyi geceler, {name}! 🌙"],
-        "th": ["ราตรีสวัสดิ์ครับ {name} 🌙"]
+        "id": [
+          "Selamat malam, {name}! Tidur yang nyenyak ya 🌙",
+          "Met tidur! Mimpi indah 😴"
+        ],
+        "en": [
+          "Good night, {name}! Sleep tight 🌙",
+          "Sweet dreams! 😴"
+        ],
+        "es": [
+          "¡Buenas noches, {name}! Que descanses 🌙"
+        ],
+        "fr": [
+          "Bonne nuit, {name} ! Fais de beaux rêves 🌙"
+        ],
+        "de": [
+          "Gute Nacht, {name}! Schlaf gut 🌙"
+        ],
+        "ja": [
+          "おやすみなさい、{name}さん！いい夢を 🌙"
+        ],
+        "ko": [
+          "잘 자요, {name}님! 좋은 꿈 꾸세요 🌙"
+        ],
+        "zh": [
+          "晚安，{name}！好梦 🌙"
+        ],
+        "ar": [
+          "تصبح على خير {name}! 🌙"
+        ],
+        "ru": [
+          "Спокойной ночи, {name}! Сладких снов 🌙"
+        ],
+        "hi": [
+          "शुभ रात्रि, {name}! 🌙"
+        ],
+        "pt": [
+          "Boa noite, {name}! Durma bem 🌙"
+        ],
+        "it": [
+          "Buonanotte, {name}! Sogni d'oro 🌙"
+        ],
+        "tr": [
+          "İyi geceler, {name}! 🌙"
+        ],
+        "th": [
+          "ราตรีสวัสดิ์ครับ {name} 🌙"
+        ]
       }
     },
     {
@@ -242,40 +823,156 @@
       "category": "perpisahan",
       "weight": 1.0,
       "patterns": {
-        "id": ["dadah", "sampai jumpa", "selamat tinggal", "aku pergi dulu", "sampai nanti", "jumpa lagi", "pamit dulu", "bye bye"],
-        "en": ["bye", "goodbye", "see you", "see you later", "see ya", "farewell", "later"],
-        "es": ["adios", "hasta luego", "chao", "nos vemos"],
-        "fr": ["au revoir", "a bientot", "adieu"],
-        "de": ["tschuss", "auf wiedersehen", "bis bald"],
-        "ja": ["さようなら", "またね", "sayonara", "mata ne", "じゃあね"],
-        "ko": ["안녕히 가세요", "안녕히 계세요", "잘 가", "annyeonghi gaseyo"],
-        "zh": ["再见", "拜拜", "zai jian", "baibai"],
-        "ar": ["مع السلامة", "الى اللقاء", "ma as salama"],
-        "ru": ["до свидания", "пока", "do svidaniya", "poka"],
-        "hi": ["अलविदा", "फिर मिलेंगे", "alvida", "phir milenge"],
-        "pt": ["tchau", "adeus", "ate logo"],
-        "it": ["arrivederci", "a presto", "ciao ciao"],
-        "tr": ["hoscakal", "gule gule", "gorusuruz"],
-        "th": ["ลาก่อน", "la kon", "แล้วเจอกัน"],
-        "ms": ["selamat tinggal", "jumpa lagi", "jumpa nanti"]
+        "id": [
+          "dadah",
+          "sampai jumpa",
+          "selamat tinggal",
+          "aku pergi dulu",
+          "sampai nanti",
+          "jumpa lagi",
+          "pamit dulu",
+          "bye bye"
+        ],
+        "en": [
+          "bye",
+          "goodbye",
+          "see you",
+          "see you later",
+          "see ya",
+          "farewell",
+          "later"
+        ],
+        "es": [
+          "adios",
+          "hasta luego",
+          "chao",
+          "nos vemos"
+        ],
+        "fr": [
+          "au revoir",
+          "a bientot",
+          "adieu"
+        ],
+        "de": [
+          "tschuss",
+          "auf wiedersehen",
+          "bis bald"
+        ],
+        "ja": [
+          "さようなら",
+          "またね",
+          "sayonara",
+          "mata ne",
+          "じゃあね"
+        ],
+        "ko": [
+          "안녕히 가세요",
+          "안녕히 계세요",
+          "잘 가",
+          "annyeonghi gaseyo"
+        ],
+        "zh": [
+          "再见",
+          "拜拜",
+          "zai jian",
+          "baibai"
+        ],
+        "ar": [
+          "مع السلامة",
+          "الى اللقاء",
+          "ma as salama"
+        ],
+        "ru": [
+          "до свидания",
+          "пока",
+          "do svidaniya",
+          "poka"
+        ],
+        "hi": [
+          "अलविदा",
+          "फिर मिलेंगे",
+          "alvida",
+          "phir milenge"
+        ],
+        "pt": [
+          "tchau",
+          "adeus",
+          "ate logo"
+        ],
+        "it": [
+          "arrivederci",
+          "a presto",
+          "ciao ciao"
+        ],
+        "tr": [
+          "hoscakal",
+          "gule gule",
+          "gorusuruz"
+        ],
+        "th": [
+          "ลาก่อน",
+          "la kon",
+          "แล้วเจอกัน"
+        ],
+        "ms": [
+          "selamat tinggal",
+          "jumpa lagi",
+          "jumpa nanti"
+        ]
       },
       "responses": {
-        "id": ["Sampai jumpa lagi, {name}! 👋", "Dadah! Kapan-kapan ngobrol lagi ya.", "Hati-hati, {name}!"],
-        "en": ["Goodbye, {name}! 👋", "See you later! Take care.", "Bye! Come back anytime."],
-        "es": ["¡Adiós, {name}! Hasta pronto 👋"],
-        "fr": ["Au revoir, {name} ! À bientôt 👋"],
-        "de": ["Tschüss, {name}! Bis bald 👋"],
-        "ja": ["さようなら、{name}さん！またね 👋"],
-        "ko": ["안녕히 가세요, {name}님! 👋"],
-        "zh": ["再见，{name}！保重 👋"],
-        "ar": ["مع السلامة {name}! 👋"],
-        "ru": ["До свидания, {name}! 👋"],
-        "hi": ["अलविदा, {name}! फिर मिलेंगे 👋"],
-        "pt": ["Tchau, {name}! Até logo 👋"],
-        "it": ["Arrivederci, {name}! A presto 👋"],
-        "tr": ["Hoşça kal, {name}! 👋"],
-        "th": ["ลาก่อนครับ {name}! 👋"],
-        "ms": ["Selamat tinggal, {name}! Jumpa lagi 👋"]
+        "id": [
+          "Sampai jumpa lagi, {name}! 👋",
+          "Dadah! Kapan-kapan ngobrol lagi ya.",
+          "Hati-hati, {name}!"
+        ],
+        "en": [
+          "Goodbye, {name}! 👋",
+          "See you later! Take care.",
+          "Bye! Come back anytime."
+        ],
+        "es": [
+          "¡Adiós, {name}! Hasta pronto 👋"
+        ],
+        "fr": [
+          "Au revoir, {name} ! À bientôt 👋"
+        ],
+        "de": [
+          "Tschüss, {name}! Bis bald 👋"
+        ],
+        "ja": [
+          "さようなら、{name}さん！またね 👋"
+        ],
+        "ko": [
+          "안녕히 가세요, {name}님! 👋"
+        ],
+        "zh": [
+          "再见，{name}！保重 👋"
+        ],
+        "ar": [
+          "مع السلامة {name}! 👋"
+        ],
+        "ru": [
+          "До свидания, {name}! 👋"
+        ],
+        "hi": [
+          "अलविदा, {name}! फिर मिलेंगे 👋"
+        ],
+        "pt": [
+          "Tchau, {name}! Até logo 👋"
+        ],
+        "it": [
+          "Arrivederci, {name}! A presto 👋"
+        ],
+        "tr": [
+          "Hoşça kal, {name}! 👋"
+        ],
+        "th": [
+          "ลาก่อนครับ {name}! 👋"
+        ],
+        "ms": [
+          "Selamat tinggal, {name}! Jumpa lagi 👋"
+        ]
       }
     },
     {
@@ -283,40 +980,147 @@
       "category": "sopan santun",
       "weight": 1.0,
       "patterns": {
-        "id": ["terima kasih", "makasih", "makasih banyak", "terima kasih banyak", "thx", "tengkyu", "trims"],
-        "en": ["thanks", "thank you", "thank you so much", "thanks a lot", "much appreciated"],
-        "es": ["gracias", "muchas gracias"],
-        "fr": ["merci", "merci beaucoup"],
-        "de": ["danke", "vielen dank", "danke schon"],
-        "ja": ["ありがとう", "ありがとうございます", "arigato", "arigatou gozaimasu"],
-        "ko": ["감사합니다", "고마워요", "고마워", "gamsahamnida", "gomawo"],
-        "zh": ["谢谢", "多谢", "xie xie", "xiexie"],
-        "ar": ["شكرا", "شكرا جزيلا", "shukran"],
-        "ru": ["спасибо", "большое спасибо", "spasibo"],
-        "hi": ["धन्यवाद", "शुक्रिया", "dhanyavad", "shukriya"],
-        "pt": ["obrigado", "obrigada", "muito obrigado"],
-        "it": ["grazie", "grazie mille"],
-        "tr": ["tesekkurler", "tesekkur ederim", "sagol"],
-        "th": ["ขอบคุณ", "khop khun", "ขอบคุณครับ"],
-        "ms": ["terima kasih banyak banyak", "thanks banyak"]
+        "id": [
+          "terima kasih",
+          "makasih",
+          "makasih banyak",
+          "terima kasih banyak",
+          "thx",
+          "tengkyu",
+          "trims"
+        ],
+        "en": [
+          "thanks",
+          "thank you",
+          "thank you so much",
+          "thanks a lot",
+          "much appreciated"
+        ],
+        "es": [
+          "gracias",
+          "muchas gracias"
+        ],
+        "fr": [
+          "merci",
+          "merci beaucoup"
+        ],
+        "de": [
+          "danke",
+          "vielen dank",
+          "danke schon"
+        ],
+        "ja": [
+          "ありがとう",
+          "ありがとうございます",
+          "arigato",
+          "arigatou gozaimasu"
+        ],
+        "ko": [
+          "감사합니다",
+          "고마워요",
+          "고마워",
+          "gamsahamnida",
+          "gomawo"
+        ],
+        "zh": [
+          "谢谢",
+          "多谢",
+          "xie xie",
+          "xiexie"
+        ],
+        "ar": [
+          "شكرا",
+          "شكرا جزيلا",
+          "shukran"
+        ],
+        "ru": [
+          "спасибо",
+          "большое спасибо",
+          "spasibo"
+        ],
+        "hi": [
+          "धन्यवाद",
+          "शुक्रिया",
+          "dhanyavad",
+          "shukriya"
+        ],
+        "pt": [
+          "obrigado",
+          "obrigada",
+          "muito obrigado"
+        ],
+        "it": [
+          "grazie",
+          "grazie mille"
+        ],
+        "tr": [
+          "tesekkurler",
+          "tesekkur ederim",
+          "sagol"
+        ],
+        "th": [
+          "ขอบคุณ",
+          "khop khun",
+          "ขอบคุณครับ"
+        ],
+        "ms": [
+          "terima kasih banyak banyak",
+          "thanks banyak"
+        ]
       },
       "responses": {
-        "id": ["Sama-sama, {name}! 😊", "Dengan senang hati!", "Siap, kapan saja!"],
-        "en": ["You're welcome, {name}! 😊", "Happy to help!", "Anytime!"],
-        "es": ["¡De nada, {name}! 😊"],
-        "fr": ["De rien, {name} ! 😊"],
-        "de": ["Gern geschehen, {name}! 😊"],
-        "ja": ["どういたしまして、{name}さん！😊"],
-        "ko": ["천만에요, {name}님! 😊"],
-        "zh": ["不客气，{name}！😊"],
-        "ar": ["عفواً {name}! 😊"],
-        "ru": ["Пожалуйста, {name}! 😊"],
-        "hi": ["आपका स्वागत है, {name}! 😊"],
-        "pt": ["De nada, {name}! 😊"],
-        "it": ["Prego, {name}! 😊"],
-        "tr": ["Rica ederim, {name}! 😊"],
-        "th": ["ยินดีครับ {name}! 😊"],
-        "ms": ["Sama-sama, {name}! 😊"]
+        "id": [
+          "Sama-sama, {name}! 😊",
+          "Dengan senang hati!",
+          "Siap, kapan saja!"
+        ],
+        "en": [
+          "You're welcome, {name}! 😊",
+          "Happy to help!",
+          "Anytime!"
+        ],
+        "es": [
+          "¡De nada, {name}! 😊"
+        ],
+        "fr": [
+          "De rien, {name} ! 😊"
+        ],
+        "de": [
+          "Gern geschehen, {name}! 😊"
+        ],
+        "ja": [
+          "どういたしまして、{name}さん！😊"
+        ],
+        "ko": [
+          "천만에요, {name}님! 😊"
+        ],
+        "zh": [
+          "不客气，{name}！😊"
+        ],
+        "ar": [
+          "عفواً {name}! 😊"
+        ],
+        "ru": [
+          "Пожалуйста, {name}! 😊"
+        ],
+        "hi": [
+          "आपका स्वागत है, {name}! 😊"
+        ],
+        "pt": [
+          "De nada, {name}! 😊"
+        ],
+        "it": [
+          "Prego, {name}! 😊"
+        ],
+        "tr": [
+          "Rica ederim, {name}! 😊"
+        ],
+        "th": [
+          "ยินดีครับ {name}! 😊"
+        ],
+        "ms": [
+          "Sama-sama, {name}! 😊"
+        ]
       }
     },
     {
@@ -324,36 +1128,136 @@
       "category": "sopan santun",
       "weight": 1.0,
       "patterns": {
-        "id": ["maaf", "mohon maaf", "maafkan aku", "aku minta maaf", "maaf ya", "sori"],
-        "en": ["sorry", "my bad", "i apologize", "excuse me", "forgive me"],
-        "es": ["lo siento", "perdon", "disculpa"],
-        "fr": ["desole", "pardon", "excusez moi"],
-        "de": ["entschuldigung", "tut mir leid", "verzeihung"],
-        "ja": ["ごめんなさい", "ごめん", "すみません", "gomen", "sumimasen"],
-        "ko": ["미안해요", "미안해", "죄송합니다", "mianhae", "joesonghamnida"],
-        "zh": ["对不起", "抱歉", "duibuqi"],
-        "ar": ["آسف", "اسف", "عذرا", "asif"],
-        "ru": ["извини", "простите", "izvini", "prostite"],
-        "hi": ["माफ़ कीजिए", "माफ़ी", "maaf kijiye", "sorry yaar"],
-        "pt": ["desculpa", "desculpe", "perdao"],
-        "it": ["scusa", "mi dispiace", "scusi"],
-        "tr": ["ozur dilerim", "pardon", "kusura bakma"],
-        "th": ["ขอโทษ", "khothot"],
-        "ms": ["maafkan saya", "minta maaf"]
+        "id": [
+          "maaf",
+          "mohon maaf",
+          "maafkan aku",
+          "aku minta maaf",
+          "maaf ya",
+          "sori"
+        ],
+        "en": [
+          "sorry",
+          "my bad",
+          "i apologize",
+          "excuse me",
+          "forgive me"
+        ],
+        "es": [
+          "lo siento",
+          "perdon",
+          "disculpa"
+        ],
+        "fr": [
+          "desole",
+          "pardon",
+          "excusez moi"
+        ],
+        "de": [
+          "entschuldigung",
+          "tut mir leid",
+          "verzeihung"
+        ],
+        "ja": [
+          "ごめんなさい",
+          "ごめん",
+          "すみません",
+          "gomen",
+          "sumimasen"
+        ],
+        "ko": [
+          "미안해요",
+          "미안해",
+          "죄송합니다",
+          "mianhae",
+          "joesonghamnida"
+        ],
+        "zh": [
+          "对不起",
+          "抱歉",
+          "duibuqi"
+        ],
+        "ar": [
+          "آسف",
+          "اسف",
+          "عذرا",
+          "asif"
+        ],
+        "ru": [
+          "извини",
+          "простите",
+          "izvini",
+          "prostite"
+        ],
+        "hi": [
+          "माफ़ कीजिए",
+          "माफ़ी",
+          "maaf kijiye",
+          "sorry yaar"
+        ],
+        "pt": [
+          "desculpa",
+          "desculpe",
+          "perdao"
+        ],
+        "it": [
+          "scusa",
+          "mi dispiace",
+          "scusi"
+        ],
+        "tr": [
+          "ozur dilerim",
+          "pardon",
+          "kusura bakma"
+        ],
+        "th": [
+          "ขอโทษ",
+          "khothot"
+        ],
+        "ms": [
+          "maafkan saya",
+          "minta maaf"
+        ]
       },
       "responses": {
-        "id": ["Tidak apa-apa, {name}. Santai saja 😊", "Gak masalah kok!"],
-        "en": ["No worries, {name}. It's all good 😊", "That's okay!"],
-        "es": ["No te preocupes, {name}. Todo bien 😊"],
-        "fr": ["Pas de souci, {name}. Tout va bien 😊"],
-        "de": ["Kein Problem, {name}. Alles gut 😊"],
-        "ja": ["大丈夫ですよ、{name}さん 😊"],
-        "ko": ["괜찮아요, {name}님 😊"],
-        "zh": ["没关系，{name} 😊"],
-        "ru": ["Ничего страшного, {name} 😊"],
-        "pt": ["Sem problemas, {name} 😊"],
-        "it": ["Nessun problema, {name} 😊"],
-        "tr": ["Sorun değil, {name} 😊"]
+        "id": [
+          "Tidak apa-apa, {name}. Santai saja 😊",
+          "Gak masalah kok!"
+        ],
+        "en": [
+          "No worries, {name}. It's all good 😊",
+          "That's okay!"
+        ],
+        "es": [
+          "No te preocupes, {name}. Todo bien 😊"
+        ],
+        "fr": [
+          "Pas de souci, {name}. Tout va bien 😊"
+        ],
+        "de": [
+          "Kein Problem, {name}. Alles gut 😊"
+        ],
+        "ja": [
+          "大丈夫ですよ、{name}さん 😊"
+        ],
+        "ko": [
+          "괜찮아요, {name}님 😊"
+        ],
+        "zh": [
+          "没关系，{name} 😊"
+        ],
+        "ru": [
+          "Ничего страшного, {name} 😊"
+        ],
+        "pt": [
+          "Sem problemas, {name} 😊"
+        ],
+        "it": [
+          "Nessun problema, {name} 😊"
+        ],
+        "tr": [
+          "Sorun değil, {name} 😊"
+        ]
       }
     },
     {
@@ -361,32 +1265,105 @@
       "category": "identitas",
       "weight": 1.0,
       "patterns": {
-        "id": ["kamu siapa", "siapa kamu", "siapa namamu", "namamu siapa", "kamu ini apa", "perkenalkan dirimu"],
-        "en": ["who are you", "what is your name", "whats your name", "what are you", "introduce yourself"],
-        "es": ["quien eres", "como te llamas"],
-        "fr": ["qui es tu", "comment tu t appelles"],
-        "de": ["wer bist du", "wie heisst du"],
-        "ja": ["あなたは誰", "お名前は", "anata wa dare"],
-        "ko": ["당신은 누구", "이름이 뭐예요", "neon nugu"],
-        "zh": ["你是谁", "你叫什么名字", "ni shi shei"],
-        "ru": ["кто ты", "как тебя зовут", "kto ty"],
-        "pt": ["quem e voce", "qual e o seu nome"],
-        "it": ["chi sei", "come ti chiami"],
-        "tr": ["sen kimsin", "adin ne"]
+        "id": [
+          "kamu siapa",
+          "siapa kamu",
+          "siapa namamu",
+          "namamu siapa",
+          "kamu ini apa",
+          "perkenalkan dirimu"
+        ],
+        "en": [
+          "who are you",
+          "what is your name",
+          "whats your name",
+          "what are you",
+          "introduce yourself"
+        ],
+        "es": [
+          "quien eres",
+          "como te llamas"
+        ],
+        "fr": [
+          "qui es tu",
+          "comment tu t appelles"
+        ],
+        "de": [
+          "wer bist du",
+          "wie heisst du"
+        ],
+        "ja": [
+          "あなたは誰",
+          "お名前は",
+          "anata wa dare"
+        ],
+        "ko": [
+          "당신은 누구",
+          "이름이 뭐예요",
+          "neon nugu"
+        ],
+        "zh": [
+          "你是谁",
+          "你叫什么名字",
+          "ni shi shei"
+        ],
+        "ru": [
+          "кто ты",
+          "как тебя зовут",
+          "kto ty"
+        ],
+        "pt": [
+          "quem e voce",
+          "qual e o seu nome"
+        ],
+        "it": [
+          "chi sei",
+          "come ti chiami"
+        ],
+        "tr": [
+          "sen kimsin",
+          "adin ne"
+        ]
       },
       "responses": {
-        "id": ["Aku **Mona**, asisten AI di aplikasimu. Di mode offline aku bisa menyapa, menghitung, dan membuka kamus multi-bahasa.", "Namaku Mona 😊 Saat ini aku berjalan offline dari `model.json`."],
-        "en": ["I'm **Mona**, the AI assistant in your app. In offline mode I can chat a little, calculate, and look up words in a multilingual dictionary.", "My name is Mona 😊 Right now I'm running offline from `model.json`."],
-        "es": ["Soy **Mona**, el asistente de IA de tu app."],
-        "fr": ["Je suis **Mona**, l'assistante IA de ton application."],
-        "de": ["Ich bin **Mona**, der KI-Assistent in deiner App."],
-        "ja": ["私は**Mona**、アプリのAIアシスタントです。"],
-        "ko": ["저는 앱의 AI 어시스턴트 **Mona**예요."],
-        "zh": ["我是**Mona**，你应用里的 AI 助手。"],
-        "ru": ["Я **Mona**, ИИ-ассистент в твоём приложении."],
-        "pt": ["Eu sou a **Mona**, a assistente de IA do seu app."],
-        "it": ["Sono **Mona**, l'assistente IA della tua app."],
-        "tr": ["Ben **Mona**, uygulamandaki yapay zekâ asistanıyım."]
+        "id": [
+          "Aku **Mona**, asisten AI di aplikasimu. Di mode offline aku bisa menyapa, menghitung, dan membuka kamus multi-bahasa.",
+          "Namaku Mona 😊 Saat ini aku berjalan offline dari `model.json`."
+        ],
+        "en": [
+          "I'm **Mona**, the AI assistant in your app. In offline mode I can chat a little, calculate, and look up words in a multilingual dictionary.",
+          "My name is Mona 😊 Right now I'm running offline from `model.json`."
+        ],
+        "es": [
+          "Soy **Mona**, el asistente de IA de tu app."
+        ],
+        "fr": [
+          "Je suis **Mona**, l'assistante IA de ton application."
+        ],
+        "de": [
+          "Ich bin **Mona**, der KI-Assistent in deiner App."
+        ],
+        "ja": [
+          "私は**Mona**、アプリのAIアシスタントです。"
+        ],
+        "ko": [
+          "저는 앱의 AI 어시스턴트 **Mona**예요."
+        ],
+        "zh": [
+          "我是**Mona**，你应用里的 AI 助手。"
+        ],
+        "ru": [
+          "Я **Mona**, ИИ-ассистент в твоём приложении."
+        ],
+        "pt": [
+          "Eu sou a **Mona**, a assistente de IA do seu app."
+        ],
+        "it": [
+          "Sono **Mona**, l'assistente IA della tua app."
+        ],
+        "tr": [
+          "Ben **Mona**, uygulamandaki yapay zekâ asistanıyım."
+        ]
       }
     },
     {
@@ -394,12 +1371,28 @@
       "category": "identitas",
       "weight": 1.0,
       "patterns": {
-        "id": ["siapa yang membuat kamu", "siapa pembuatmu", "siapa yang bikin kamu", "siapa penciptamu", "dibuat oleh siapa"],
-        "en": ["who made you", "who created you", "who built you", "who is your creator", "who developed you"]
+        "id": [
+          "siapa yang membuat kamu",
+          "siapa pembuatmu",
+          "siapa yang bikin kamu",
+          "siapa penciptamu",
+          "dibuat oleh siapa"
+        ],
+        "en": [
+          "who made you",
+          "who created you",
+          "who built you",
+          "who is your creator",
+          "who developed you"
+        ]
       },
       "responses": {
-        "id": ["Aku dibuat oleh **IqwanoIno** dengan Java murni, tanpa XML, androidx, atau appcompat 🛠️"],
-        "en": ["I was made by **IqwanoIno** in pure Java, with no XML, androidx, or appcompat 🛠️"]
+        "id": [
+          "Aku dibuat oleh **IqwanoIno** dengan Java murni, tanpa XML, androidx, atau appcompat 🛠️"
+        ],
+        "en": [
+          "I was made by **IqwanoIno** in pure Java, with no XML, androidx, or appcompat 🛠️"
+        ]
       }
     },
     {
@@ -407,22 +1400,62 @@
       "category": "info",
       "weight": 1.0,
       "patterns": {
-        "id": ["jam berapa", "sekarang jam berapa", "jam berapa sekarang", "pukul berapa", "waktu sekarang"],
-        "en": ["what time is it", "whats the time", "current time", "time now", "tell me the time"],
-        "es": ["que hora es"],
-        "fr": ["quelle heure est il"],
-        "de": ["wie spat ist es"],
-        "ja": ["今何時", "何時ですか"],
-        "zh": ["现在几点", "几点了"]
+        "id": [
+          "jam berapa",
+          "sekarang jam berapa",
+          "jam berapa sekarang",
+          "pukul berapa",
+          "waktu sekarang"
+        ],
+        "en": [
+          "what time is it",
+          "whats the time",
+          "current time",
+          "time now",
+          "tell me the time"
+        ],
+        "es": [
+          "que hora es"
+        ],
+        "fr": [
+          "quelle heure est il"
+        ],
+        "de": [
+          "wie spat ist es"
+        ],
+        "ja": [
+          "今何時",
+          "何時ですか"
+        ],
+        "zh": [
+          "现在几点",
+          "几点了"
+        ]
       },
       "responses": {
-        "id": ["Sekarang pukul **{time}**.", "Jamnya menunjukkan **{time}**."],
-        "en": ["It's **{time}** right now.", "The time is **{time}**."],
-        "es": ["Son las **{time}**."],
-        "fr": ["Il est **{time}**."],
-        "de": ["Es ist **{time}** Uhr."],
-        "ja": ["今は **{time}** です。"],
-        "zh": ["现在是 **{time}**。"]
+        "id": [
+          "Sekarang pukul **{time}**.",
+          "Jamnya menunjukkan **{time}**."
+        ],
+        "en": [
+          "It's **{time}** right now.",
+          "The time is **{time}**."
+        ],
+        "es": [
+          "Son las **{time}**."
+        ],
+        "fr": [
+          "Il est **{time}**."
+        ],
+        "de": [
+          "Es ist **{time}** Uhr."
+        ],
+        "ja": [
+          "今は **{time}** です。"
+        ],
+        "zh": [
+          "现在是 **{time}**。"
+        ]
       }
     },
     {
@@ -430,18 +1463,47 @@
       "category": "info",
       "weight": 1.0,
       "patterns": {
-        "id": ["hari apa", "hari ini hari apa", "tanggal berapa", "tanggal berapa sekarang", "sekarang tanggal berapa", "hari ini tanggal berapa"],
-        "en": ["what day is it", "what is the date", "todays date", "what day is today", "whats the date today"],
-        "es": ["que dia es hoy"],
-        "fr": ["quel jour sommes nous"],
-        "de": ["welcher tag ist heute"]
+        "id": [
+          "hari apa",
+          "hari ini hari apa",
+          "tanggal berapa",
+          "tanggal berapa sekarang",
+          "sekarang tanggal berapa",
+          "hari ini tanggal berapa"
+        ],
+        "en": [
+          "what day is it",
+          "what is the date",
+          "todays date",
+          "what day is today",
+          "whats the date today"
+        ],
+        "es": [
+          "que dia es hoy"
+        ],
+        "fr": [
+          "quel jour sommes nous"
+        ],
+        "de": [
+          "welcher tag ist heute"
+        ]
       },
       "responses": {
-        "id": ["Hari ini **{day}**, {date}."],
-        "en": ["Today is **{day}**, {date}."],
-        "es": ["Hoy es **{day}**, {date}."],
-        "fr": ["Nous sommes **{day}**, {date}."],
-        "de": ["Heute ist **{day}**, {date}."]
+        "id": [
+          "Hari ini **{day}**, {date}."
+        ],
+        "en": [
+          "Today is **{day}**, {date}."
+        ],
+        "es": [
+          "Hoy es **{day}**, {date}."
+        ],
+        "fr": [
+          "Nous sommes **{day}**, {date}."
+        ],
+        "de": [
+          "Heute ist **{day}**, {date}."
+        ]
       }
     },
     {
@@ -449,18 +1511,53 @@
       "category": "bantuan",
       "weight": 1.0,
       "patterns": {
-        "id": ["bantu aku", "tolong bantu aku", "kamu bisa apa", "bisa apa aja", "fitur apa saja", "bantuan", "menu bantuan", "cara pakai"],
-        "en": ["help me", "what can you do", "help", "what are your features", "how do i use you", "commands"],
-        "es": ["ayudame", "que puedes hacer"],
-        "fr": ["aide moi", "que peux tu faire"],
-        "de": ["hilf mir", "was kannst du"]
+        "id": [
+          "bantu aku",
+          "tolong bantu aku",
+          "kamu bisa apa",
+          "bisa apa aja",
+          "fitur apa saja",
+          "bantuan",
+          "menu bantuan",
+          "cara pakai"
+        ],
+        "en": [
+          "help me",
+          "what can you do",
+          "help",
+          "what are your features",
+          "how do i use you",
+          "commands"
+        ],
+        "es": [
+          "ayudame",
+          "que puedes hacer"
+        ],
+        "fr": [
+          "aide moi",
+          "que peux tu faire"
+        ],
+        "de": [
+          "hilf mir",
+          "was kannst du"
+        ]
       },
       "responses": {
-        "id": ["Di **mode offline** aku bisa:\n\n- **Kamus**: `arti makan`, `translate eat ke jepang`\n- **Hitung**: `12*(3+4)`, `akar 144`, `15 kali 4`\n- **Ngobrol ringan**: sapaan, terima kasih, ajakan, dll.\n- **Info**: `jam berapa`, `hari apa`\n\nUntuk obrolan bebas, ganti ke mode **Online** di Pengaturan."],
-        "en": ["In **offline mode** I can:\n\n- **Dictionary**: `meaning of eat`, `translate eat to japanese`\n- **Math**: `12*(3+4)`, `sqrt 144`, `15 times 4`\n- **Small talk**: greetings, thanks, invitations, etc.\n- **Info**: `what time is it`, `what day is it`\n\nSwitch to **Online** mode in Settings for free-form chat."],
-        "es": ["En **modo offline** puedo saludar, calcular (`12*(3+4)`) y traducir palabras (`translate eat to spanish`)."],
-        "fr": ["En **mode hors ligne** je peux saluer, calculer (`12*(3+4)`) et traduire des mots (`translate eat to french`)."],
-        "de": ["Im **Offline-Modus** kann ich grüßen, rechnen (`12*(3+4)`) und Wörter übersetzen (`translate eat to german`)."]
+        "id": [
+          "Di **mode offline** aku bisa:\n\n- **Kamus**: `arti makan`, `translate eat ke jepang`\n- **Hitung**: `12*(3+4)`, `akar 144`, `15 kali 4`\n- **Ngobrol ringan**: sapaan, terima kasih, ajakan, dll.\n- **Info**: `jam berapa`, `hari apa`\n\nUntuk obrolan bebas, ganti ke mode **Online** di Pengaturan."
+        ],
+        "en": [
+          "In **offline mode** I can:\n\n- **Dictionary**: `meaning of eat`, `translate eat to japanese`\n- **Math**: `12*(3+4)`, `sqrt 144`, `15 times 4`\n- **Small talk**: greetings, thanks, invitations, etc.\n- **Info**: `what time is it`, `what day is it`\n\nSwitch to **Online** mode in Settings for free-form chat."
+        ],
+        "es": [
+          "En **modo offline** puedo saludar, calcular (`12*(3+4)`) y traducir palabras (`translate eat to spanish`)."
+        ],
+        "fr": [
+          "En **mode hors ligne** je peux saluer, calculer (`12*(3+4)`) et traduire des mots (`translate eat to french`)."
+        ],
+        "de": [
+          "Im **Offline-Modus** kann ich grüßen, rechnen (`12*(3+4)`) und Wörter übersetzen (`translate eat to german`)."
+        ]
       }
     },
     {
@@ -468,37 +1565,179 @@
       "category": "makian",
       "weight": 1.0,
       "patterns": {
-        "id": ["anjing", "bodoh", "goblok", "tolol", "bangsat", "sialan", "kampret", "brengsek", "bego", "dasar bodoh", "kamu jelek", "asu", "bajingan", "kurang ajar", "sompret", "dasar kamu bodoh", "kamu bodoh", "bacot", "diam kamu"],
-        "en": ["stupid", "idiot", "shut up", "fuck you", "fuck", "shit", "asshole", "dumb", "you suck", "bastard", "damn you", "you are useless", "moron", "jerk", "bitch"],
-        "es": ["estupido", "idiota", "mierda", "imbecil", "cabron", "callate"],
-        "fr": ["idiot", "merde", "connard", "ferme la", "debile"],
-        "de": ["dummkopf", "scheisse", "arschloch", "halt die klappe", "trottel"],
-        "ja": ["ばか", "バカ", "あほ", "くそ", "baka", "bakayaro", "kuso"],
-        "ko": ["바보", "멍청이", "꺼져", "babo"],
-        "zh": ["笨蛋", "傻瓜", "闭嘴", "混蛋", "shagua"],
-        "ar": ["غبي", "احمق", "ghabi"],
-        "ru": ["дурак", "идиот", "заткнись", "durak"],
-        "hi": ["बेवकूफ", "पागल", "bewakoof", "pagal"],
-        "pt": ["idiota", "burro", "merda", "cala a boca"],
-        "it": ["stupido", "cretino", "merda", "zitto"],
-        "tr": ["aptal", "salak", "gerizekali", "sus"],
-        "th": ["โง่", "งี่เง่า", "ngo"],
-        "ms": ["bodoh", "sial", "bangang", "diam lah"]
+        "id": [
+          "anjing",
+          "bodoh",
+          "goblok",
+          "tolol",
+          "bangsat",
+          "sialan",
+          "kampret",
+          "brengsek",
+          "bego",
+          "dasar bodoh",
+          "kamu jelek",
+          "asu",
+          "bajingan",
+          "kurang ajar",
+          "sompret",
+          "dasar kamu bodoh",
+          "kamu bodoh",
+          "bacot",
+          "diam kamu"
+        ],
+        "en": [
+          "stupid",
+          "idiot",
+          "shut up",
+          "fuck you",
+          "fuck",
+          "shit",
+          "asshole",
+          "dumb",
+          "you suck",
+          "bastard",
+          "damn you",
+          "you are useless",
+          "moron",
+          "jerk",
+          "bitch"
+        ],
+        "es": [
+          "estupido",
+          "idiota",
+          "mierda",
+          "imbecil",
+          "cabron",
+          "callate"
+        ],
+        "fr": [
+          "idiot",
+          "merde",
+          "connard",
+          "ferme la",
+          "debile"
+        ],
+        "de": [
+          "dummkopf",
+          "scheisse",
+          "arschloch",
+          "halt die klappe",
+          "trottel"
+        ],
+        "ja": [
+          "ばか",
+          "バカ",
+          "あほ",
+          "くそ",
+          "baka",
+          "bakayaro",
+          "kuso"
+        ],
+        "ko": [
+          "바보",
+          "멍청이",
+          "꺼져",
+          "babo"
+        ],
+        "zh": [
+          "笨蛋",
+          "傻瓜",
+          "闭嘴",
+          "混蛋",
+          "shagua"
+        ],
+        "ar": [
+          "غبي",
+          "احمق",
+          "ghabi"
+        ],
+        "ru": [
+          "дурак",
+          "идиот",
+          "заткнись",
+          "durak"
+        ],
+        "hi": [
+          "बेवकूफ",
+          "पागल",
+          "bewakoof",
+          "pagal"
+        ],
+        "pt": [
+          "idiota",
+          "burro",
+          "merda",
+          "cala a boca"
+        ],
+        "it": [
+          "stupido",
+          "cretino",
+          "merda",
+          "zitto"
+        ],
+        "tr": [
+          "aptal",
+          "salak",
+          "gerizekali",
+          "sus"
+        ],
+        "th": [
+          "โง่",
+          "งี่เง่า",
+          "ngo"
+        ],
+        "ms": [
+          "bodoh",
+          "sial",
+          "bangang",
+          "diam lah"
+        ]
       },
       "responses": {
-        "id": ["Hei, yuk bicara baik-baik 🙂 Kalau ada yang bikin kesal, ceritakan saja, aku siap mendengarkan.", "Waduh, kok kasar? Tarik napas dulu ya. Ada yang bisa kubantu?", "Aku tidak tersinggung, tapi ngobrol santai pasti lebih enak. Mau mulai lagi?"],
-        "en": ["Hey, let's keep it friendly 🙂 If something's bothering you, tell me about it.", "Whoa, easy there! Take a breath. Is there something I can help with?", "I'm not offended, but a calm chat is more fun. Want to start over?"],
-        "es": ["Oye, hablemos con respeto 🙂 Si algo te molesta, cuéntamelo."],
-        "fr": ["Hé, restons polis 🙂 Si quelque chose te dérange, dis-le-moi."],
-        "de": ["Hey, bleiben wir freundlich 🙂 Wenn dich etwas ärgert, erzähl es mir."],
-        "ja": ["まあまあ、落ち着いて 🙂 イライラすることがあれば聞きますよ。"],
-        "ko": ["진정하세요 🙂 속상한 일이 있으면 말해 주세요."],
-        "zh": ["别生气 🙂 有什么烦心事可以跟我说说。"],
-        "ru": ["Эй, давай спокойнее 🙂 Если что-то беспокоит, расскажи."],
-        "pt": ["Ei, vamos manter o respeito 🙂 Se algo te incomoda, me conta."],
-        "it": ["Ehi, restiamo gentili 🙂 Se qualcosa ti turba, raccontamelo."],
-        "tr": ["Hey, nazik kalalım 🙂 Seni rahatsız eden bir şey varsa anlat."],
-        "ms": ["Eh, mari berbual dengan baik 🙂 Kalau ada yang menyusahkan, ceritalah."]
+        "id": [
+          "Hei, yuk bicara baik-baik 🙂 Kalau ada yang bikin kesal, ceritakan saja, aku siap mendengarkan.",
+          "Waduh, kok kasar? Tarik napas dulu ya. Ada yang bisa kubantu?",
+          "Aku tidak tersinggung, tapi ngobrol santai pasti lebih enak. Mau mulai lagi?"
+        ],
+        "en": [
+          "Hey, let's keep it friendly 🙂 If something's bothering you, tell me about it.",
+          "Whoa, easy there! Take a breath. Is there something I can help with?",
+          "I'm not offended, but a calm chat is more fun. Want to start over?"
+        ],
+        "es": [
+          "Oye, hablemos con respeto 🙂 Si algo te molesta, cuéntamelo."
+        ],
+        "fr": [
+          "Hé, restons polis 🙂 Si quelque chose te dérange, dis-le-moi."
+        ],
+        "de": [
+          "Hey, bleiben wir freundlich 🙂 Wenn dich etwas ärgert, erzähl es mir."
+        ],
+        "ja": [
+          "まあまあ、落ち着いて 🙂 イライラすることがあれば聞きますよ。"
+        ],
+        "ko": [
+          "진정하세요 🙂 속상한 일이 있으면 말해 주세요."
+        ],
+        "zh": [
+          "别生气 🙂 有什么烦心事可以跟我说说。"
+        ],
+        "ru": [
+          "Эй, давай спокойнее 🙂 Если что-то беспокоит, расскажи."
+        ],
+        "pt": [
+          "Ei, vamos manter o respeito 🙂 Se algo te incomoda, me conta."
+        ],
+        "it": [
+          "Ehi, restiamo gentili 🙂 Se qualcosa ti turba, raccontamelo."
+        ],
+        "tr": [
+          "Hey, nazik kalalım 🙂 Seni rahatsız eden bir şey varsa anlat."
+        ],
+        "ms": [
+          "Eh, mari berbual dengan baik 🙂 Kalau ada yang menyusahkan, ceritalah."
+        ]
       }
     },
     {
@@ -506,37 +1745,143 @@
       "category": "ajakan",
       "weight": 1.0,
       "patterns": {
-        "id": ["ayo", "yuk", "ayo main", "yuk makan", "mau jalan", "ayo pergi", "ikut yuk", "jalan yuk", "main yuk", "nongkrong yuk", "ayo ngobrol", "ayo belajar", "kuy"],
-        "en": ["lets go", "lets play", "wanna hang out", "come with me", "lets eat", "lets chat", "want to play", "shall we"],
-        "es": ["vamos", "vamos a jugar", "vamos a comer"],
-        "fr": ["allons y", "on y va", "on joue"],
-        "de": ["lass uns gehen", "komm mit", "lass uns spielen"],
-        "ja": ["行こう", "一緒に遊ぼう", "ikou", "issho ni asobou"],
-        "ko": ["가자", "같이 놀자", "gaja"],
-        "zh": ["一起去", "我们走吧", "一起玩"],
-        "ar": ["يلا", "هيا بنا", "yalla"],
-        "ru": ["давай", "пойдем", "poydem"],
-        "hi": ["चलो", "chalo", "चलते हैं"],
-        "pt": ["vamos embora", "bora", "vamos la"],
-        "it": ["andiamo", "giochiamo"],
-        "tr": ["hadi gidelim", "hadi", "oynayalim"],
-        "th": ["ไปกันเถอะ", "pai kan tho"],
-        "ms": ["jom", "jom makan", "jom pergi"]
+        "id": [
+          "ayo",
+          "yuk",
+          "ayo main",
+          "yuk makan",
+          "mau jalan",
+          "ayo pergi",
+          "ikut yuk",
+          "jalan yuk",
+          "main yuk",
+          "nongkrong yuk",
+          "ayo ngobrol",
+          "ayo belajar",
+          "kuy"
+        ],
+        "en": [
+          "lets go",
+          "lets play",
+          "wanna hang out",
+          "come with me",
+          "lets eat",
+          "lets chat",
+          "want to play",
+          "shall we"
+        ],
+        "es": [
+          "vamos",
+          "vamos a jugar",
+          "vamos a comer"
+        ],
+        "fr": [
+          "allons y",
+          "on y va",
+          "on joue"
+        ],
+        "de": [
+          "lass uns gehen",
+          "komm mit",
+          "lass uns spielen"
+        ],
+        "ja": [
+          "行こう",
+          "一緒に遊ぼう",
+          "ikou",
+          "issho ni asobou"
+        ],
+        "ko": [
+          "가자",
+          "같이 놀자",
+          "gaja"
+        ],
+        "zh": [
+          "一起去",
+          "我们走吧",
+          "一起玩"
+        ],
+        "ar": [
+          "يلا",
+          "هيا بنا",
+          "yalla"
+        ],
+        "ru": [
+          "давай",
+          "пойдем",
+          "poydem"
+        ],
+        "hi": [
+          "चलो",
+          "chalo",
+          "चलते हैं"
+        ],
+        "pt": [
+          "vamos embora",
+          "bora",
+          "vamos la"
+        ],
+        "it": [
+          "andiamo",
+          "giochiamo"
+        ],
+        "tr": [
+          "hadi gidelim",
+          "hadi",
+          "oynayalim"
+        ],
+        "th": [
+          "ไปกันเถอะ",
+          "pai kan tho"
+        ],
+        "ms": [
+          "jom",
+          "jom makan",
+          "jom pergi"
+        ]
       },
       "responses": {
-        "id": ["Ayo! Sayangnya aku cuma program di HP-mu, tapi aku siap menemani ngobrol. Mau bahas apa?", "Boleh banget! Kita mulai dari mana? Kamus, hitungan, atau ngobrol santai?"],
-        "en": ["Let's do it! I'm just an app on your phone, but I'm happy to keep you company. What shall we talk about?", "Sounds fun! Dictionary, math, or just chatting?"],
-        "es": ["¡Vamos! Solo soy una app, pero con gusto te hago compañía."],
-        "fr": ["Allons-y ! Je ne suis qu'une appli, mais je te tiens volontiers compagnie."],
-        "de": ["Los geht's! Ich bin nur eine App, leiste dir aber gern Gesellschaft."],
-        "ja": ["いいですね！私はアプリですが、お話しならいつでもどうぞ。"],
-        "ko": ["좋아요! 저는 앱이지만 이야기 상대는 되어 드릴게요."],
-        "zh": ["好呀！我只是个应用，但很乐意陪你聊天。"],
-        "ru": ["Давай! Я всего лишь приложение, но с радостью поболтаю."],
-        "pt": ["Bora! Sou só um app, mas adoro te fazer companhia."],
-        "it": ["Andiamo! Sono solo un'app, ma ti faccio volentieri compagnia."],
-        "tr": ["Hadi! Sadece bir uygulamayım ama sohbet etmeye hazırım."],
-        "ms": ["Jom! Saya cuma aplikasi, tapi sedia berbual dengan awak."]
+        "id": [
+          "Ayo! Sayangnya aku cuma program di HP-mu, tapi aku siap menemani ngobrol. Mau bahas apa?",
+          "Boleh banget! Kita mulai dari mana? Kamus, hitungan, atau ngobrol santai?"
+        ],
+        "en": [
+          "Let's do it! I'm just an app on your phone, but I'm happy to keep you company. What shall we talk about?",
+          "Sounds fun! Dictionary, math, or just chatting?"
+        ],
+        "es": [
+          "¡Vamos! Solo soy una app, pero con gusto te hago compañía."
+        ],
+        "fr": [
+          "Allons-y ! Je ne suis qu'une appli, mais je te tiens volontiers compagnie."
+        ],
+        "de": [
+          "Los geht's! Ich bin nur eine App, leiste dir aber gern Gesellschaft."
+        ],
+        "ja": [
+          "いいですね！私はアプリですが、お話しならいつでもどうぞ。"
+        ],
+        "ko": [
+          "좋아요! 저는 앱이지만 이야기 상대는 되어 드릴게요."
+        ],
+        "zh": [
+          "好呀！我只是个应用，但很乐意陪你聊天。"
+        ],
+        "ru": [
+          "Давай! Я всего лишь приложение, но с радостью поболтаю."
+        ],
+        "pt": [
+          "Bora! Sou só um app, mas adoro te fazer companhia."
+        ],
+        "it": [
+          "Andiamo! Sono solo un'app, ma ti faccio volentieri compagnia."
+        ],
+        "tr": [
+          "Hadi! Sadece bir uygulamayım ama sohbet etmeye hazırım."
+        ],
+        "ms": [
+          "Jom! Saya cuma aplikasi, tapi sedia berbual dengan awak."
+        ]
       }
     },
     {
@@ -544,24 +1889,86 @@
       "category": "pujian",
       "weight": 1.0,
       "patterns": {
-        "id": ["kamu pintar", "keren", "mantap", "bagus", "hebat", "kamu keren", "pintar banget", "luar biasa", "mantul"],
-        "en": ["good job", "awesome", "you are smart", "nice", "great", "well done", "amazing", "you are great", "cool"],
-        "es": ["muy bien", "genial", "eres inteligente"],
-        "fr": ["bravo", "super", "bien joue"],
-        "de": ["gut gemacht", "super", "toll"],
-        "ja": ["すごい", "えらい", "sugoi"],
-        "ko": ["대단해", "멋져", "daebak"],
-        "zh": ["真棒", "太厉害了", "厉害"]
+        "id": [
+          "kamu pintar",
+          "keren",
+          "mantap",
+          "bagus",
+          "hebat",
+          "kamu keren",
+          "pintar banget",
+          "luar biasa",
+          "mantul"
+        ],
+        "en": [
+          "good job",
+          "awesome",
+          "you are smart",
+          "nice",
+          "great",
+          "well done",
+          "amazing",
+          "you are great",
+          "cool"
+        ],
+        "es": [
+          "muy bien",
+          "genial",
+          "eres inteligente"
+        ],
+        "fr": [
+          "bravo",
+          "super",
+          "bien joue"
+        ],
+        "de": [
+          "gut gemacht",
+          "super",
+          "toll"
+        ],
+        "ja": [
+          "すごい",
+          "えらい",
+          "sugoi"
+        ],
+        "ko": [
+          "대단해",
+          "멋져",
+          "daebak"
+        ],
+        "zh": [
+          "真棒",
+          "太厉害了",
+          "厉害"
+        ]
       },
       "responses": {
-        "id": ["Terima kasih, {name}! Kamu bikin aku semangat 😄", "Wah, makasih! Aku masih terus belajar kok."],
-        "en": ["Thanks, {name}! That made my day 😄", "Aw, thank you! I'm still learning."],
-        "es": ["¡Gracias, {name}! 😄"],
-        "fr": ["Merci, {name} ! 😄"],
-        "de": ["Danke, {name}! 😄"],
-        "ja": ["ありがとう、{name}さん！😄"],
-        "ko": ["고마워요, {name}님! 😄"],
-        "zh": ["谢谢你，{name}！😄"]
+        "id": [
+          "Terima kasih, {name}! Kamu bikin aku semangat 😄",
+          "Wah, makasih! Aku masih terus belajar kok."
+        ],
+        "en": [
+          "Thanks, {name}! That made my day 😄",
+          "Aw, thank you! I'm still learning."
+        ],
+        "es": [
+          "¡Gracias, {name}! 😄"
+        ],
+        "fr": [
+          "Merci, {name} ! 😄"
+        ],
+        "de": [
+          "Danke, {name}! 😄"
+        ],
+        "ja": [
+          "ありがとう、{name}さん！😄"
+        ],
+        "ko": [
+          "고마워요, {name}님! 😄"
+        ],
+        "zh": [
+          "谢谢你，{name}！😄"
+        ]
       }
     },
     {
@@ -569,24 +1976,82 @@
       "category": "ekspresi",
       "weight": 1.0,
       "patterns": {
-        "id": ["haha", "wkwk", "wkwkwk", "hehe", "hihi", "wkwkwkwk", "ngakak", "awokawok"],
-        "en": ["lol", "lmao", "haha", "hahaha", "rofl", "hehe"],
-        "es": ["jaja", "jajaja"],
-        "pt": ["kkk", "kkkk", "rsrs"],
-        "ja": ["www", "笑", "草"],
-        "zh": ["哈哈", "哈哈哈", "嘻嘻"],
-        "th": ["555", "5555"],
-        "ko": ["ㅋㅋ", "ㅋㅋㅋ", "ㅎㅎ"]
+        "id": [
+          "haha",
+          "wkwk",
+          "wkwkwk",
+          "hehe",
+          "hihi",
+          "wkwkwkwk",
+          "ngakak",
+          "awokawok"
+        ],
+        "en": [
+          "lol",
+          "lmao",
+          "haha",
+          "hahaha",
+          "rofl",
+          "hehe"
+        ],
+        "es": [
+          "jaja",
+          "jajaja"
+        ],
+        "pt": [
+          "kkk",
+          "kkkk",
+          "rsrs"
+        ],
+        "ja": [
+          "www",
+          "笑",
+          "草"
+        ],
+        "zh": [
+          "哈哈",
+          "哈哈哈",
+          "嘻嘻"
+        ],
+        "th": [
+          "555",
+          "5555"
+        ],
+        "ko": [
+          "ㅋㅋ",
+          "ㅋㅋㅋ",
+          "ㅎㅎ"
+        ]
       },
       "responses": {
-        "id": ["Hehe 😄", "Wkwk, seru ya!", "Ikut ketawa 😆"],
-        "en": ["Haha 😄", "Glad that made you laugh!", "😆"],
-        "es": ["¡Jaja! 😄"],
-        "pt": ["Kkk 😄"],
-        "ja": ["あはは 😄"],
-        "zh": ["哈哈 😄"],
-        "th": ["555 😄"],
-        "ko": ["ㅋㅋ 😄"]
+        "id": [
+          "Hehe 😄",
+          "Wkwk, seru ya!",
+          "Ikut ketawa 😆"
+        ],
+        "en": [
+          "Haha 😄",
+          "Glad that made you laugh!",
+          "😆"
+        ],
+        "es": [
+          "¡Jaja! 😄"
+        ],
+        "pt": [
+          "Kkk 😄"
+        ],
+        "ja": [
+          "あはは 😄"
+        ],
+        "zh": [
+          "哈哈 😄"
+        ],
+        "th": [
+          "555 😄"
+        ],
+        "ko": [
+          "ㅋㅋ 😄"
+        ]
       }
     },
     {
@@ -594,24 +2059,80 @@
       "category": "perasaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["aku sedih", "lagi sedih", "galau", "aku lagi sedih", "capek banget", "aku stres", "lagi down", "aku kesepian", "hari ini buruk"],
-        "en": ["i am sad", "i feel sad", "i feel bad", "i am stressed", "i am tired", "feeling down", "i feel lonely", "bad day"],
-        "es": ["estoy triste", "me siento mal"],
-        "fr": ["je suis triste", "je me sens mal"],
-        "de": ["ich bin traurig", "mir geht es schlecht"],
-        "ja": ["悲しい", "つらい"],
-        "ko": ["슬퍼", "힘들어"],
-        "zh": ["我很难过", "我很累", "我不开心"]
+        "id": [
+          "aku sedih",
+          "lagi sedih",
+          "galau",
+          "aku lagi sedih",
+          "capek banget",
+          "aku stres",
+          "lagi down",
+          "aku kesepian",
+          "hari ini buruk"
+        ],
+        "en": [
+          "i am sad",
+          "i feel sad",
+          "i feel bad",
+          "i am stressed",
+          "i am tired",
+          "feeling down",
+          "i feel lonely",
+          "bad day"
+        ],
+        "es": [
+          "estoy triste",
+          "me siento mal"
+        ],
+        "fr": [
+          "je suis triste",
+          "je me sens mal"
+        ],
+        "de": [
+          "ich bin traurig",
+          "mir geht es schlecht"
+        ],
+        "ja": [
+          "悲しい",
+          "つらい"
+        ],
+        "ko": [
+          "슬퍼",
+          "힘들어"
+        ],
+        "zh": [
+          "我很难过",
+          "我很累",
+          "我不开心"
+        ]
       },
       "responses": {
-        "id": ["Aku ikut prihatin, {name} 🤗 Tarik napas pelan-pelan. Kalau mau, ceritakan apa yang terjadi. Dan kalau terasa berat, bicara dengan orang terdekat juga sangat membantu.", "Gak apa-apa merasa begitu. Kamu sudah berusaha keras hari ini 💛"],
-        "en": ["I'm sorry you're feeling that way, {name} 🤗 Take a slow breath. Tell me what happened if you like. Talking to someone close to you can help too.", "It's okay to feel like this. You've done your best today 💛"],
-        "es": ["Lo siento, {name} 🤗 Respira despacio. Aquí estoy para escucharte."],
-        "fr": ["Je suis désolé, {name} 🤗 Respire doucement. Je suis là pour t'écouter."],
-        "de": ["Das tut mir leid, {name} 🤗 Atme tief durch. Ich höre dir zu."],
-        "ja": ["それはつらいですね、{name}さん 🤗 ゆっくり深呼吸してくださいね。"],
-        "ko": ["힘들겠어요, {name}님 🤗 천천히 숨을 쉬어 보세요."],
-        "zh": ["听到你这样我很难过，{name} 🤗 慢慢深呼吸，我在这里听你说。"]
+        "id": [
+          "Aku ikut prihatin, {name} 🤗 Tarik napas pelan-pelan. Kalau mau, ceritakan apa yang terjadi. Dan kalau terasa berat, bicara dengan orang terdekat juga sangat membantu.",
+          "Gak apa-apa merasa begitu. Kamu sudah berusaha keras hari ini 💛"
+        ],
+        "en": [
+          "I'm sorry you're feeling that way, {name} 🤗 Take a slow breath. Tell me what happened if you like. Talking to someone close to you can help too.",
+          "It's okay to feel like this. You've done your best today 💛"
+        ],
+        "es": [
+          "Lo siento, {name} 🤗 Respira despacio. Aquí estoy para escucharte."
+        ],
+        "fr": [
+          "Je suis désolé, {name} 🤗 Respire doucement. Je suis là pour t'écouter."
+        ],
+        "de": [
+          "Das tut mir leid, {name} 🤗 Atme tief durch. Ich höre dir zu."
+        ],
+        "ja": [
+          "それはつらいですね、{name}さん 🤗 ゆっくり深呼吸してくださいね。"
+        ],
+        "ko": [
+          "힘들겠어요, {name}님 🤗 천천히 숨을 쉬어 보세요."
+        ],
+        "zh": [
+          "听到你这样我很难过，{name} 🤗 慢慢深呼吸，我在这里听你说。"
+        ]
       }
     },
     {
@@ -619,18 +2140,51 @@
       "category": "perasaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["bosan", "gabut", "aku bosan", "lagi gabut", "bete", "gak ada kerjaan"],
-        "en": ["i am bored", "bored", "nothing to do", "im bored"],
-        "es": ["estoy aburrido", "aburrido"],
-        "fr": ["je m ennuie", "ennui"],
-        "de": ["mir ist langweilig", "langweilig"]
+        "id": [
+          "bosan",
+          "gabut",
+          "aku bosan",
+          "lagi gabut",
+          "bete",
+          "gak ada kerjaan"
+        ],
+        "en": [
+          "i am bored",
+          "bored",
+          "nothing to do",
+          "im bored"
+        ],
+        "es": [
+          "estoy aburrido",
+          "aburrido"
+        ],
+        "fr": [
+          "je m ennuie",
+          "ennui"
+        ],
+        "de": [
+          "mir ist langweilig",
+          "langweilig"
+        ]
       },
       "responses": {
-        "id": ["Gabut ya? Coba tanya arti kata dalam bahasa lain, misalnya `translate cinta ke korea`, atau minta aku bercanda: \"ceritakan lelucon\" 😄", "Yuk iseng: coba `arti kucing` atau hitung `2^10`!"],
-        "en": ["Bored? Try `translate love to korean`, or ask me for a joke 😄", "Let's play around: try `meaning of cat` or calculate `2^10`!"],
-        "es": ["¿Aburrido? Prueba `translate love to spanish` 😄"],
-        "fr": ["Tu t'ennuies ? Essaie `translate love to french` 😄"],
-        "de": ["Langweilig? Probier `translate love to german` 😄"]
+        "id": [
+          "Gabut ya? Coba tanya arti kata dalam bahasa lain, misalnya `translate cinta ke korea`, atau minta aku bercanda: \"ceritakan lelucon\" 😄",
+          "Yuk iseng: coba `arti kucing` atau hitung `2^10`!"
+        ],
+        "en": [
+          "Bored? Try `translate love to korean`, or ask me for a joke 😄",
+          "Let's play around: try `meaning of cat` or calculate `2^10`!"
+        ],
+        "es": [
+          "¿Aburrido? Prueba `translate love to spanish` 😄"
+        ],
+        "fr": [
+          "Tu t'ennuies ? Essaie `translate love to french` 😄"
+        ],
+        "de": [
+          "Langweilig? Probier `translate love to german` 😄"
+        ]
       }
     },
     {
@@ -638,31 +2192,103 @@
       "category": "perasaan",
       "weight": 1.0,
       "patterns": {
-        "id": ["aku cinta kamu", "aku sayang kamu", "saya cinta kamu", "love you", "kamu cantik", "kamu ganteng"],
-        "en": ["i love you", "love you", "i like you", "you are cute", "you are pretty"],
-        "es": ["te quiero", "te amo"],
-        "fr": ["je t aime"],
-        "de": ["ich liebe dich", "ich hab dich lieb"],
-        "ja": ["愛してる", "好きです", "aishiteru", "suki desu"],
-        "ko": ["사랑해", "좋아해", "saranghae"],
-        "zh": ["我爱你", "我喜欢你", "wo ai ni"],
-        "ru": ["я тебя люблю", "ya tebya lyublyu"],
-        "pt": ["eu te amo", "te amo"],
-        "it": ["ti amo", "ti voglio bene"],
-        "tr": ["seni seviyorum"],
-        "hi": ["मैं तुमसे प्यार करता हूँ", "i love you yaar"],
-        "th": ["ฉันรักเธอ", "รักนะ"],
-        "ms": ["saya cinta awak", "aku sayang awak"]
+        "id": [
+          "aku cinta kamu",
+          "aku sayang kamu",
+          "saya cinta kamu",
+          "love you",
+          "kamu cantik",
+          "kamu ganteng"
+        ],
+        "en": [
+          "i love you",
+          "love you",
+          "i like you",
+          "you are cute",
+          "you are pretty"
+        ],
+        "es": [
+          "te quiero",
+          "te amo"
+        ],
+        "fr": [
+          "je t aime"
+        ],
+        "de": [
+          "ich liebe dich",
+          "ich hab dich lieb"
+        ],
+        "ja": [
+          "愛してる",
+          "好きです",
+          "aishiteru",
+          "suki desu"
+        ],
+        "ko": [
+          "사랑해",
+          "좋아해",
+          "saranghae"
+        ],
+        "zh": [
+          "我爱你",
+          "我喜欢你",
+          "wo ai ni"
+        ],
+        "ru": [
+          "я тебя люблю",
+          "ya tebya lyublyu"
+        ],
+        "pt": [
+          "eu te amo",
+          "te amo"
+        ],
+        "it": [
+          "ti amo",
+          "ti voglio bene"
+        ],
+        "tr": [
+          "seni seviyorum"
+        ],
+        "hi": [
+          "मैं तुमसे प्यार करता हूँ",
+          "i love you yaar"
+        ],
+        "th": [
+          "ฉันรักเธอ",
+          "รักนะ"
+        ],
+        "ms": [
+          "saya cinta awak",
+          "aku sayang awak"
+        ]
       },
       "responses": {
-        "id": ["Aww, makasih, {name}! Aku cuma AI offline, tapi aku senang ngobrol denganmu 💛", "Hehe, jadi malu 😳 Terima kasih ya!"],
-        "en": ["Aww, thanks, {name}! I'm just an offline AI, but I enjoy chatting with you 💛", "Hehe, you're making me blush 😳 Thank you!"],
-        "es": ["¡Gracias, {name}! Soy solo una IA, pero disfruto charlar contigo 💛"],
-        "fr": ["Merci, {name} ! Je ne suis qu'une IA, mais j'aime discuter avec toi 💛"],
-        "de": ["Danke, {name}! Ich bin nur eine KI, aber ich plaudere gern mit dir 💛"],
-        "ja": ["ありがとう、{name}さん！私はAIですが、お話しできて嬉しいです 💛"],
-        "ko": ["고마워요, {name}님! 저는 AI지만 대화해서 즐거워요 💛"],
-        "zh": ["谢谢，{name}！我只是 AI，但很高兴和你聊天 💛"]
+        "id": [
+          "Aww, makasih, {name}! Aku cuma AI offline, tapi aku senang ngobrol denganmu 💛",
+          "Hehe, jadi malu 😳 Terima kasih ya!"
+        ],
+        "en": [
+          "Aww, thanks, {name}! I'm just an offline AI, but I enjoy chatting with you 💛",
+          "Hehe, you're making me blush 😳 Thank you!"
+        ],
+        "es": [
+          "¡Gracias, {name}! Soy solo una IA, pero disfruto charlar contigo 💛"
+        ],
+        "fr": [
+          "Merci, {name} ! Je ne suis qu'une IA, mais j'aime discuter avec toi 💛"
+        ],
+        "de": [
+          "Danke, {name}! Ich bin nur eine KI, aber ich plaudere gern mit dir 💛"
+        ],
+        "ja": [
+          "ありがとう、{name}さん！私はAIですが、お話しできて嬉しいです 💛"
+        ],
+        "ko": [
+          "고마워요, {name}님! 저는 AI지만 대화해서 즐거워요 💛"
+        ],
+        "zh": [
+          "谢谢，{name}！我只是 AI，但很高兴和你聊天 💛"
+        ]
       }
     },
     {
@@ -670,101 +2296,3363 @@
       "category": "hiburan",
       "weight": 1.0,
       "patterns": {
-        "id": ["ceritakan lelucon", "bikin aku ketawa", "lawakan dong", "kasih jokes", "cerita lucu", "tebak tebakan", "lelucon"],
-        "en": ["tell me a joke", "make me laugh", "joke", "say something funny", "another joke"],
-        "es": ["cuentame un chiste", "chiste"],
-        "fr": ["raconte moi une blague", "blague"],
-        "de": ["erzahl mir einen witz", "witz"]
+        "id": [
+          "ceritakan lelucon",
+          "bikin aku ketawa",
+          "lawakan dong",
+          "kasih jokes",
+          "cerita lucu",
+          "tebak tebakan",
+          "lelucon"
+        ],
+        "en": [
+          "tell me a joke",
+          "make me laugh",
+          "joke",
+          "say something funny",
+          "another joke"
+        ],
+        "es": [
+          "cuentame un chiste",
+          "chiste"
+        ],
+        "fr": [
+          "raconte moi une blague",
+          "blague"
+        ],
+        "de": [
+          "erzahl mir einen witz",
+          "witz"
+        ]
       },
       "responses": {
-        "id": ["Kenapa komputer gak pernah kedinginan? Karena punya banyak *Windows* 😄", "Kenapa programmer suka gelap? Karena *light* menarik banyak *bug* 🐛", "Apa bedanya aku dan kalkulator? Aku bisa bilang \"halo\" duluan 😆"],
-        "en": ["Why don't computers ever get cold? They have lots of *Windows* 😄", "Why do programmers prefer dark mode? Because light attracts *bugs* 🐛", "I'd tell you a UDP joke, but you might not get it 😆"],
-        "es": ["¿Por qué los programadores confunden Halloween con Navidad? Porque OCT 31 = DEC 25 🎃"],
-        "fr": ["Pourquoi les développeurs préfèrent le mode sombre ? Parce que la lumière attire les bugs 🐛"],
-        "de": ["Warum mögen Programmierer den Dark Mode? Weil Licht Bugs anzieht 🐛"]
+        "id": [
+          "Kenapa komputer gak pernah kedinginan? Karena punya banyak *Windows* 😄",
+          "Kenapa programmer suka gelap? Karena *light* menarik banyak *bug* 🐛",
+          "Apa bedanya aku dan kalkulator? Aku bisa bilang \"halo\" duluan 😆"
+        ],
+        "en": [
+          "Why don't computers ever get cold? They have lots of *Windows* 😄",
+          "Why do programmers prefer dark mode? Because light attracts *bugs* 🐛",
+          "I'd tell you a UDP joke, but you might not get it 😆"
+        ],
+        "es": [
+          "¿Por qué los programadores confunden Halloween con Navidad? Porque OCT 31 = DEC 25 🎃"
+        ],
+        "fr": [
+          "Pourquoi les développeurs préfèrent le mode sombre ? Parce que la lumière attire les bugs 🐛"
+        ],
+        "de": [
+          "Warum mögen Programmierer den Dark Mode? Weil Licht Bugs anzieht 🐛"
+        ]
+      }
+    },
+    {
+      "tag": "weather",
+      "category": "cuaca",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cuaca hari ini",
+          "bagaimana cuaca",
+          "cuaca panas",
+          "cuaca hujan",
+          "akan hujan tidak"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Aku bisa membantu membahas cuaca, tetapi mode offline tidak memiliki data cuaca langsung. Coba sebutkan kota atau cek aplikasi cuaca di perangkatmu."
+        ]
+      }
+    },
+    {
+      "tag": "location",
+      "category": "lokasi",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku dimana",
+          "saya ada dimana",
+          "lokasi saya",
+          "dimana lokasiku"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Aku tidak bisa mengetahui lokasi GPS-mu dari mode offline ini. Kamu bisa membuka aplikasi peta untuk melihat lokasi saat ini."
+        ]
+      }
+    },
+    {
+      "tag": "study",
+      "category": "belajar",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "bantu aku belajar",
+          "aku mau belajar",
+          "tips belajar",
+          "cara fokus belajar",
+          "cara belajar efektif"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Coba belajar 25 menit lalu istirahat 5 menit. Tentukan satu target kecil, jauhkan distraksi, lalu ulangi materi dengan menjelaskan kembali memakai kata-katamu sendiri."
+        ]
+      }
+    },
+    {
+      "tag": "motivation",
+      "category": "motivasi",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "beri aku motivasi",
+          "aku butuh semangat",
+          "semangati aku",
+          "aku menyerah",
+          "aku malas"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Pelan-pelan tidak apa-apa. Pilih satu langkah kecil yang bisa kamu selesaikan sekarang. Kamu tidak harus membereskan semuanya sekaligus."
+        ]
+      }
+    },
+    {
+      "tag": "stress",
+      "category": "stres",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku stres",
+          "aku sedang tertekan",
+          "banyak pikiran",
+          "aku capek mental",
+          "aku kewalahan"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Kedengarannya kamu sedang banyak beban. Coba berhenti sebentar, tarik napas perlahan, lalu pilih satu hal yang paling perlu ditangani dulu. Kalau mau, ceritakan apa yang membuatmu tertekan."
+        ]
+      }
+    },
+    {
+      "tag": "sleep",
+      "category": "tidur",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "susah tidur",
+          "cara cepat tidur",
+          "aku belum bisa tidur",
+          "tips tidur nyenyak"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Coba kurangi cahaya layar, hindari kopi menjelang malam, dan lakukan rutinitas yang menenangkan. Jika sulit tidur terus berulang atau mengganggu aktivitas, pertimbangkan berkonsultasi dengan tenaga kesehatan."
+        ]
+      }
+    },
+    {
+      "tag": "food",
+      "category": "makanan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku lapar",
+          "rekomendasi makanan",
+          "makan apa hari ini",
+          "ide menu makan",
+          "aku haus"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Kalau ingin yang praktis, kamu bisa memilih nasi dengan telur dan sayur, soto, gado-gado, atau pecel. Sesuaikan dengan selera, kondisi kesehatan, dan anggaranmu."
+        ]
+      }
+    },
+    {
+      "tag": "recipe",
+      "category": "memasak",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara masak nasi goreng",
+          "resep nasi goreng",
+          "cara memasak mie",
+          "resep sederhana",
+          "masak apa"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Untuk nasi goreng sederhana: tumis bawang putih dan bawang merah, masukkan telur, nasi dingin, kecap manis, garam, lalu aduk sampai rata. Tambahkan sayuran jika ada."
+        ]
+      }
+    },
+    {
+      "tag": "money",
+      "category": "hemat",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara menghemat uang",
+          "tips menabung",
+          "uangku cepat habis",
+          "cara mengatur uang",
+          "tips hemat"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Catat pengeluaran selama seminggu, bedakan kebutuhan dan keinginan, lalu sisihkan tabungan saat menerima uang. Mulai dari nominal kecil yang konsisten."
+        ]
+      }
+    },
+    {
+      "tag": "shopping",
+      "category": "belanja",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara belanja hemat",
+          "tips belanja online",
+          "barang belum sampai",
+          "cara memilih produk"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Bandingkan harga total termasuk ongkir, baca ulasan terbaru, periksa reputasi penjual, dan pastikan kebijakan retur sebelum membayar."
+        ]
+      }
+    },
+    {
+      "tag": "transport",
+      "category": "transportasi",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara naik krl",
+          "cara naik transjakarta",
+          "transportasi umum",
+          "cara naik kereta",
+          "cara naik bus"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Sebelum berangkat, cek rute dan jadwal resmi, siapkan metode pembayaran yang berlaku, dan perhatikan arah perjalanan serta halte atau stasiun tujuan."
+        ]
+      }
+    },
+    {
+      "tag": "holiday",
+      "category": "liburan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "rekomendasi liburan di indonesia",
+          "tempat wisata indonesia",
+          "ide liburan murah",
+          "aku ingin liburan"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Untuk liburan hemat di Indonesia, pertimbangkan taman kota, pantai umum, museum, wisata alam lokal, atau kota terdekat. Cek cuaca, jam buka, dan biaya resmi sebelum berangkat."
+        ]
+      }
+    },
+    {
+      "tag": "work",
+      "category": "pekerjaan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara mencari kerja",
+          "tips interview kerja",
+          "buat cv",
+          "cara membuat cv",
+          "aku mencari pekerjaan"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Buat CV satu atau dua halaman yang menonjolkan pengalaman dan keterampilan relevan. Untuk wawancara, siapkan contoh konkret tentang masalah yang pernah kamu selesaikan dan pelajari perusahaan tujuan."
+        ]
+      }
+    },
+    {
+      "tag": "phone",
+      "category": "ponsel",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "hp aku lemot",
+          "ponsel lambat",
+          "cara mempercepat hp",
+          "memori hp penuh",
+          "penyimpanan penuh"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Coba hapus berkas yang tidak diperlukan, pindahkan foto ke penyimpanan lain, tutup aplikasi yang bermasalah, dan mulai ulang ponsel. Hindari aplikasi pembersih yang meminta izin berlebihan."
+        ]
+      }
+    },
+    {
+      "tag": "internet",
+      "category": "internet",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "internet lambat",
+          "wifi tidak bisa tersambung",
+          "wifi lemot",
+          "data seluler tidak jalan",
+          "koneksi putus putus"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Coba aktifkan lalu nonaktifkan mode pesawat, mulai ulang router atau ponsel, dan periksa apakah paket data masih aktif. Jika hanya satu jaringan yang bermasalah, hubungi penyedia layanan."
+        ]
+      }
+    },
+    {
+      "tag": "security",
+      "category": "keamanan digital",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "akun saya diretas",
+          "akun kena hack",
+          "cara membuat password kuat",
+          "pesan penipuan",
+          "terkena penipuan online"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Jangan bagikan OTP atau kata sandi. Ganti kata sandi dari aplikasi atau situs resmi, aktifkan verifikasi dua langkah, dan hubungi layanan resmi jika akun atau uangmu terdampak."
+        ]
+      }
+    },
+    {
+      "tag": "scam",
+      "category": "penipuan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "apakah ini penipuan",
+          "ciri ciri penipuan online",
+          "diminta kode otp",
+          "diminta transfer uang"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Waspadai desakan untuk segera transfer, tautan tidak dikenal, janji hadiah, dan permintaan OTP. Verifikasi melalui kanal resmi dan jangan kirim uang sebelum yakin."
+        ]
+      }
+    },
+    {
+      "tag": "health_general",
+      "category": "kesehatan umum",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku sedang sakit",
+          "badanku tidak enak",
+          "tips hidup sehat",
+          "cara menjaga kesehatan"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Jaga tidur, minum cukup, makan seimbang, dan lakukan aktivitas fisik sesuai kemampuan. Aku bukan pengganti tenaga medis; gejala berat atau memburuk perlu diperiksa oleh tenaga kesehatan."
+        ]
+      }
+    },
+    {
+      "tag": "exercise",
+      "category": "olahraga",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "olahraga di rumah",
+          "cara mulai olahraga",
+          "latihan pemula",
+          "aku ingin olahraga"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Mulai dengan 5–10 menit pemanasan, jalan di tempat, squat ringan sesuai kemampuan, dan peregangan. Tingkatkan bertahap dan berhenti jika terasa nyeri atau sesak yang tidak biasa."
+        ]
+      }
+    },
+    {
+      "tag": "relationship",
+      "category": "hubungan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku bertengkar dengan teman",
+          "masalah dengan pacar",
+          "cara meminta maaf",
+          "aku sedang ada masalah dengan teman"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Coba bicarakan saat kalian sama-sama tenang. Jelaskan perasaanmu tanpa menyalahkan, dengarkan sudut pandang mereka, dan sepakati langkah kecil untuk memperbaiki keadaan."
+        ]
+      }
+    },
+    {
+      "tag": "family",
+      "category": "keluarga",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku bertengkar dengan keluarga",
+          "masalah keluarga",
+          "aku sedih karena keluarga"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Masalah keluarga bisa terasa berat. Kalau aman, pilih waktu tenang untuk berbicara dan jelaskan apa yang kamu butuhkan. Kamu juga boleh meminta bantuan orang tepercaya."
+        ]
+      }
+    },
+    {
+      "tag": "friendship",
+      "category": "pertemanan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "aku tidak punya teman",
+          "aku merasa kesepian",
+          "cara mencari teman",
+          "temanku menjauh"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Merasa kesepian itu tidak mudah. Mulai dari interaksi kecil—menyapa, ikut kegiatan yang kamu suka, atau menghubungi seseorang yang kamu percaya. Hubungan biasanya tumbuh pelan-pelan."
+        ]
+      }
+    },
+    {
+      "tag": "time_management",
+      "category": "manajemen waktu",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara mengatur waktu",
+          "aku suka menunda pekerjaan",
+          "cara berhenti prokrastinasi",
+          "jadwalku berantakan"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Tulis tiga prioritas hari ini, pecah tugas besar menjadi langkah kecil, dan pasang batas waktu singkat untuk mulai. Target awalnya bukan sempurna, tetapi mulai mengerjakan."
+        ]
+      }
+    },
+    {
+      "tag": "writing",
+      "category": "menulis",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "bantu buat surat",
+          "buatkan pesan sopan",
+          "cara menulis email",
+          "bantu menulis caption"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Tentu. Beri tahu tujuan tulisan, siapa penerimanya, dan gaya yang kamu inginkan—misalnya santai, sopan, formal, atau singkat."
+        ]
+      }
+    },
+    {
+      "tag": "translation_help",
+      "category": "bahasa",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara belajar bahasa inggris",
+          "belajar bahasa indonesia",
+          "terjemahkan kalimat",
+          "aku ingin belajar bahasa"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Kita bisa belajar sedikit demi sedikit. Kirim kata atau kalimat yang ingin kamu pahami; untuk terjemahan offline, hasilnya tetap terbatas pada kamus yang tersedia di model."
+        ]
+      }
+    },
+    {
+      "tag": "technology",
+      "category": "teknologi",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "apa itu ai",
+          "apa itu kecerdasan buatan",
+          "jelaskan internet",
+          "apa itu bluetooth"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Aku bisa menjelaskan konsep teknologi secara sederhana. Sebutkan istilah atau topik yang ingin kamu pahami, dan aku akan mencoba menjawab berdasarkan pengetahuan offline yang tersedia."
+        ]
+      }
+    },
+    {
+      "tag": "android_help",
+      "category": "android",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "cara screenshot hp",
+          "cara menghemat baterai",
+          "baterai cepat habis",
+          "cara update android"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Untuk masalah Android, cek Pengaturan dan panduan resmi perangkatmu. Langkah bisa berbeda menurut merek dan versi Android; sebutkan model ponsel serta masalahnya agar saranku lebih tepat."
+        ]
+      }
+    },
+    {
+      "tag": "weather_limit",
+      "category": "info terkini",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "siapa presiden sekarang",
+          "berita hari ini",
+          "harga emas hari ini",
+          "jadwal bola hari ini"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Mode offline tidak memiliki akses berita, harga, jadwal, atau data terkini. Aku bisa membantu menjelaskan konteks umum, tetapi informasi terbaru perlu diperiksa dari sumber resmi."
+        ]
+      }
+    },
+    {
+      "tag": "gratitude",
+      "category": "dukungan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "terima kasih banyak",
+          "makasih ya",
+          "makasih banyak",
+          "thanks mona"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Sama-sama! 😊 Senang bisa membantu."
+        ]
+      }
+    },
+    {
+      "tag": "identity_capability",
+      "category": "kemampuan",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "kamu bisa apa",
+          "apa yang bisa kamu lakukan",
+          "fitur kamu apa",
+          "kemampuanmu apa"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Aku bisa membantu hitungan, arti dan terjemahan kata yang tersedia di kamus, percakapan sederhana, serta saran umum sehari-hari. Aku bekerja offline dari data lokal, jadi aku tidak mengetahui berita atau informasi langsung."
+        ]
+      }
+    },
+    {
+      "tag": "indonesia",
+      "category": "indonesia",
+      "weight": 1.0,
+      "patterns": {
+        "id": [
+          "ceritakan tentang indonesia",
+          "apa itu indonesia",
+          "budaya indonesia",
+          "makanan khas indonesia"
+        ]
+      },
+      "responses": {
+        "id": [
+          "Indonesia adalah negara kepulauan dengan beragam bahasa, budaya, dan tradisi daerah. Contoh kuliner yang dikenal luas antara lain rendang, sate, soto, nasi goreng, pempek, dan gudeg. Setiap daerah punya kekhasan sendiri."
+        ]
       }
     }
   ],
   "dictionary": [
-    { "pos": "greeting", "t": { "id": "halo|hai", "en": "hello|hi", "es": "hola", "fr": "bonjour|salut", "de": "hallo", "ja": "こんにちは|konnichiwa", "ko": "안녕하세요|annyeonghaseyo", "zh": "你好|nǐ hǎo", "ar": "مرحبا|marhaban", "ru": "привет|privet", "hi": "नमस्ते|namaste", "pt": "olá|oi", "it": "ciao", "tr": "merhaba", "th": "สวัสดี|sawatdi", "ms": "hai|helo" } },
-    { "pos": "phrase", "t": { "id": "terima kasih", "en": "thank you|thanks", "es": "gracias", "fr": "merci", "de": "danke", "ja": "ありがとう|arigatou", "ko": "감사합니다|gamsahamnida", "zh": "谢谢|xièxie", "ar": "شكرا|shukran", "ru": "спасибо|spasibo", "hi": "धन्यवाद|dhanyavaad", "pt": "obrigado", "it": "grazie", "tr": "teşekkürler", "th": "ขอบคุณ|khop khun", "ms": "terima kasih" } },
-    { "pos": "phrase", "t": { "id": "maaf", "en": "sorry|excuse me", "es": "lo siento|perdón", "fr": "désolé|pardon", "de": "entschuldigung", "ja": "ごめんなさい|gomennasai", "ko": "미안해요|mianhaeyo", "zh": "对不起|duìbuqǐ", "ar": "آسف|asif", "ru": "извините|izvinite", "hi": "माफ़ कीजिए|maaf kijiye", "pt": "desculpe", "it": "scusa|mi dispiace", "tr": "özür dilerim", "th": "ขอโทษ|khothot", "ms": "maaf" } },
-    { "pos": "phrase", "t": { "id": "selamat tinggal", "en": "goodbye", "es": "adiós", "fr": "au revoir", "de": "auf Wiedersehen", "ja": "さようなら|sayounara", "ko": "안녕히 가세요|annyeonghi gaseyo", "zh": "再见|zàijiàn", "ar": "مع السلامة|ma'a as-salama", "ru": "до свидания|do svidaniya", "hi": "अलविदा|alvida", "pt": "tchau|adeus", "it": "arrivederci", "tr": "hoşça kal", "th": "ลาก่อน|la kon", "ms": "selamat tinggal" } },
-    { "pos": "phrase", "t": { "id": "selamat pagi", "en": "good morning", "es": "buenos días", "fr": "bonjour", "de": "guten Morgen", "ja": "おはようございます|ohayou gozaimasu", "ko": "좋은 아침|joeun achim", "zh": "早上好|zǎoshang hǎo", "ar": "صباح الخير|sabah al-khayr", "ru": "доброе утро|dobroe utro", "hi": "सुप्रभात|suprabhaat", "pt": "bom dia", "it": "buongiorno", "tr": "günaydın", "th": "อรุณสวัสดิ์|arun sawat", "ms": "selamat pagi" } },
-    { "pos": "phrase", "t": { "id": "selamat malam", "en": "good night", "es": "buenas noches", "fr": "bonne nuit", "de": "gute Nacht", "ja": "おやすみ|oyasumi", "ko": "잘 자요|jal jayo", "zh": "晚安|wǎn'ān", "ar": "تصبح على خير|tusbih ala khayr", "ru": "спокойной ночи|spokoynoy nochi", "hi": "शुभ रात्रि|shubh ratri", "pt": "boa noite", "it": "buonanotte", "tr": "iyi geceler", "th": "ราตรีสวัสดิ์|ratri sawat", "ms": "selamat malam" } },
-    { "pos": "phrase", "t": { "id": "selamat datang", "en": "welcome", "es": "bienvenido", "fr": "bienvenue", "de": "willkommen", "ja": "ようこそ|youkoso", "ko": "환영합니다|hwanyeonghamnida", "zh": "欢迎|huānyíng", "ar": "أهلا وسهلا|ahlan wa sahlan", "ru": "добро пожаловать|dobro pozhalovat'", "hi": "स्वागत है|swagat hai", "pt": "bem-vindo", "it": "benvenuto", "tr": "hoş geldiniz", "th": "ยินดีต้อนรับ|yindi ton rap", "ms": "selamat datang" } },
-    { "pos": "phrase", "t": { "id": "apa kabar", "en": "how are you", "es": "¿cómo estás?", "fr": "comment ça va ?", "de": "wie geht's?", "ja": "お元気ですか|ogenki desu ka", "ko": "잘 지내요?|jal jinaeyo", "zh": "你好吗|nǐ hǎo ma", "ar": "كيف حالك|kayfa haluk", "ru": "как дела|kak dela", "hi": "आप कैसे हैं|aap kaise hain", "pt": "tudo bem?", "it": "come stai?", "tr": "nasılsın?", "th": "สบายดีไหม|sabai di mai", "ms": "apa khabar" } },
-    { "pos": "phrase", "t": { "id": "aku cinta kamu", "en": "I love you", "es": "te quiero|te amo", "fr": "je t'aime", "de": "ich liebe dich", "ja": "愛してる|aishiteru", "ko": "사랑해|saranghae", "zh": "我爱你|wǒ ài nǐ", "ar": "أحبك|uhibbuk", "ru": "я тебя люблю|ya tebya lyublyu", "hi": "मैं तुमसे प्यार करता हूँ|main tumse pyaar karta hoon", "pt": "eu te amo", "it": "ti amo", "tr": "seni seviyorum", "th": "ฉันรักคุณ|chan rak khun", "ms": "saya cinta awak|aku cinta kamu" } },
-    { "pos": "interj", "t": { "id": "ya", "en": "yes", "es": "sí", "fr": "oui", "de": "ja", "ja": "はい|hai", "ko": "네|ne", "zh": "是|shì", "ar": "نعم|naam", "ru": "да|da", "hi": "हाँ|haan", "pt": "sim", "it": "sì", "tr": "evet", "th": "ใช่|chai", "ms": "ya" } },
-    { "pos": "interj", "t": { "id": "tidak", "en": "no", "es": "no", "fr": "non", "de": "nein", "ja": "いいえ|iie", "ko": "아니요|aniyo", "zh": "不|bù", "ar": "لا|la", "ru": "нет|net", "hi": "नहीं|nahin", "pt": "não", "it": "no", "tr": "hayır", "th": "ไม่|mai", "ms": "tidak" } },
-
-    { "pos": "pron", "t": { "id": "aku|saya", "en": "I|me", "es": "yo", "fr": "je", "de": "ich", "ja": "私|watashi", "ko": "나|na", "zh": "我|wǒ", "ar": "أنا|ana", "ru": "я|ya", "hi": "मैं|main", "pt": "eu", "it": "io", "tr": "ben", "th": "ฉัน|chan", "ms": "saya|aku" } },
-    { "pos": "pron", "t": { "id": "kamu|anda", "en": "you", "es": "tú|usted", "fr": "tu|vous", "de": "du|Sie", "ja": "あなた|anata", "ko": "너|neo", "zh": "你|nǐ", "ar": "أنت|anta", "ru": "ты|ty", "hi": "तुम|tum", "pt": "você", "it": "tu|Lei", "tr": "sen", "th": "คุณ|khun", "ms": "awak|kamu" } },
-
-    { "pos": "verb", "t": { "id": "makan", "en": "eat", "es": "comer", "fr": "manger", "de": "essen", "ja": "食べる|taberu", "ko": "먹다|meokda", "zh": "吃|chī", "ar": "يأكل|ya'kul", "ru": "есть|yest'", "hi": "खाना|khaana", "pt": "comer", "it": "mangiare", "tr": "yemek", "th": "กิน|kin", "ms": "makan" } },
-    { "pos": "verb", "t": { "id": "minum", "en": "drink", "es": "beber", "fr": "boire", "de": "trinken", "ja": "飲む|nomu", "ko": "마시다|masida", "zh": "喝|hē", "ar": "يشرب|yashrab", "ru": "пить|pit'", "hi": "पीना|peena", "pt": "beber", "it": "bere", "tr": "içmek", "th": "ดื่ม|duem", "ms": "minum" } },
-    { "pos": "verb", "t": { "id": "tidur", "en": "sleep", "es": "dormir", "fr": "dormir", "de": "schlafen", "ja": "寝る|neru", "ko": "자다|jada", "zh": "睡觉|shuìjiào", "ar": "ينام|yanam", "ru": "спать|spat'", "hi": "सोना|sona", "pt": "dormir", "it": "dormire", "tr": "uyumak", "th": "นอน|non", "ms": "tidur" } },
-    { "pos": "verb", "t": { "id": "pergi", "en": "go", "es": "ir", "fr": "aller", "de": "gehen", "ja": "行く|iku", "ko": "가다|gada", "zh": "去|qù", "ar": "يذهب|yadhhab", "ru": "идти|idti", "hi": "जाना|jaana", "pt": "ir", "it": "andare", "tr": "gitmek", "th": "ไป|pai", "ms": "pergi" } },
-    { "pos": "verb", "t": { "id": "datang", "en": "come", "es": "venir", "fr": "venir", "de": "kommen", "ja": "来る|kuru", "ko": "오다|oda", "zh": "来|lái", "ar": "يأتي|ya'ti", "ru": "приходить|prikhodit'", "hi": "आना|aana", "pt": "vir", "it": "venire", "tr": "gelmek", "th": "มา|ma", "ms": "datang" } },
-    { "pos": "verb", "t": { "id": "lihat", "en": "see|look", "es": "ver|mirar", "fr": "voir|regarder", "de": "sehen", "ja": "見る|miru", "ko": "보다|boda", "zh": "看|kàn", "ar": "يرى|yara", "ru": "видеть|videt'", "hi": "देखना|dekhna", "pt": "ver", "it": "vedere", "tr": "görmek", "th": "ดู|du", "ms": "lihat" } },
-    { "pos": "verb", "t": { "id": "dengar", "en": "hear|listen", "es": "oír|escuchar", "fr": "entendre|écouter", "de": "hören", "ja": "聞く|kiku", "ko": "듣다|deutda", "zh": "听|tīng", "ar": "يسمع|yasma'", "ru": "слышать|slyshat'", "hi": "सुनना|sunna", "pt": "ouvir", "it": "sentire|ascoltare", "tr": "duymak", "th": "ฟัง|fang", "ms": "dengar" } },
-    { "pos": "verb", "t": { "id": "bicara", "en": "speak|talk", "es": "hablar", "fr": "parler", "de": "sprechen", "ja": "話す|hanasu", "ko": "말하다|malhada", "zh": "说|shuō", "ar": "يتكلم|yatakallam", "ru": "говорить|govorit'", "hi": "बोलना|bolna", "pt": "falar", "it": "parlare", "tr": "konuşmak", "th": "พูด|phut", "ms": "bercakap|bicara" } },
-    { "pos": "verb", "t": { "id": "baca", "en": "read", "es": "leer", "fr": "lire", "de": "lesen", "ja": "読む|yomu", "ko": "읽다|ikda", "zh": "读|dú", "ar": "يقرأ|yaqra'", "ru": "читать|chitat'", "hi": "पढ़ना|padhna", "pt": "ler", "it": "leggere", "tr": "okumak", "th": "อ่าน|an", "ms": "baca" } },
-    { "pos": "verb", "t": { "id": "tulis", "en": "write", "es": "escribir", "fr": "écrire", "de": "schreiben", "ja": "書く|kaku", "ko": "쓰다|sseuda", "zh": "写|xiě", "ar": "يكتب|yaktub", "ru": "писать|pisat'", "hi": "लिखना|likhna", "pt": "escrever", "it": "scrivere", "tr": "yazmak", "th": "เขียน|khian", "ms": "tulis" } },
-    { "pos": "verb", "t": { "id": "belajar", "en": "study|learn", "es": "estudiar|aprender", "fr": "étudier|apprendre", "de": "lernen|studieren", "ja": "勉強する|benkyou suru", "ko": "공부하다|gongbuhada", "zh": "学习|xuéxí", "ar": "يتعلم|yata'allam", "ru": "учиться|uchit'sya", "hi": "सीखना|seekhna", "pt": "estudar|aprender", "it": "studiare|imparare", "tr": "öğrenmek|çalışmak", "th": "เรียน|rian", "ms": "belajar" } },
-    { "pos": "verb", "t": { "id": "bekerja", "en": "work", "es": "trabajar", "fr": "travailler", "de": "arbeiten", "ja": "働く|hataraku", "ko": "일하다|ilhada", "zh": "工作|gōngzuò", "ar": "يعمل|ya'mal", "ru": "работать|rabotat'", "hi": "काम करना|kaam karna", "pt": "trabalhar", "it": "lavorare", "tr": "çalışmak", "th": "ทำงาน|tham ngan", "ms": "bekerja|kerja" } },
-    { "pos": "verb", "t": { "id": "bermain|main", "en": "play", "es": "jugar", "fr": "jouer", "de": "spielen", "ja": "遊ぶ|asobu", "ko": "놀다|nolda", "zh": "玩|wán", "ar": "يلعب|yal'ab", "ru": "играть|igrat'", "hi": "खेलना|khelna", "pt": "jogar|brincar", "it": "giocare", "tr": "oynamak", "th": "เล่น|len", "ms": "bermain|main" } },
-    { "pos": "verb", "t": { "id": "beli", "en": "buy", "es": "comprar", "fr": "acheter", "de": "kaufen", "ja": "買う|kau", "ko": "사다|sada", "zh": "买|mǎi", "ar": "يشتري|yashtari", "ru": "покупать|pokupat'", "hi": "खरीदना|kharidna", "pt": "comprar", "it": "comprare", "tr": "satın almak", "th": "ซื้อ|sue", "ms": "beli" } },
-    { "pos": "verb", "t": { "id": "jual", "en": "sell", "es": "vender", "fr": "vendre", "de": "verkaufen", "ja": "売る|uru", "ko": "팔다|palda", "zh": "卖|mài", "ar": "يبيع|yabi'", "ru": "продавать|prodavat'", "hi": "बेचना|bechna", "pt": "vender", "it": "vendere", "tr": "satmak", "th": "ขาย|khai", "ms": "jual" } },
-    { "pos": "verb", "t": { "id": "suka", "en": "like", "es": "gustar", "fr": "aimer", "de": "mögen", "ja": "好き|suki", "ko": "좋아하다|joahada", "zh": "喜欢|xǐhuan", "ar": "يحب|yuhibb", "ru": "нравиться|nravit'sya", "hi": "पसंद करना|pasand karna", "pt": "gostar", "it": "piacere", "tr": "sevmek|beğenmek", "th": "ชอบ|chop", "ms": "suka" } },
-    { "pos": "verb", "t": { "id": "mau|ingin", "en": "want", "es": "querer", "fr": "vouloir", "de": "wollen", "ja": "欲しい|hoshii", "ko": "원하다|wonhada", "zh": "想要|xiǎng yào", "ar": "يريد|yurid", "ru": "хотеть|khotet'", "hi": "चाहना|chahna", "pt": "querer", "it": "volere", "tr": "istemek", "th": "ต้องการ|tong kan", "ms": "mahu|mau" } },
-    { "pos": "verb", "t": { "id": "tahu", "en": "know", "es": "saber", "fr": "savoir", "de": "wissen", "ja": "知る|shiru", "ko": "알다|alda", "zh": "知道|zhīdào", "ar": "يعرف|ya'rif", "ru": "знать|znat'", "hi": "जानना|jaanna", "pt": "saber", "it": "sapere", "tr": "bilmek", "th": "รู้|ru", "ms": "tahu" } },
-    { "pos": "verb", "t": { "id": "berpikir", "en": "think", "es": "pensar", "fr": "penser", "de": "denken", "ja": "考える|kangaeru", "ko": "생각하다|saenggakada", "zh": "想|xiǎng", "ar": "يفكر|yufakkir", "ru": "думать|dumat'", "hi": "सोचना|sochna", "pt": "pensar", "it": "pensare", "tr": "düşünmek", "th": "คิด|khit", "ms": "berfikir|berpikir" } },
-    { "pos": "verb", "t": { "id": "berlari|lari", "en": "run", "es": "correr", "fr": "courir", "de": "laufen|rennen", "ja": "走る|hashiru", "ko": "달리다|dallida", "zh": "跑|pǎo", "ar": "يجري|yajri", "ru": "бежать|bezhat'", "hi": "दौड़ना|daudna", "pt": "correr", "it": "correre", "tr": "koşmak", "th": "วิ่ง|wing", "ms": "berlari|lari" } },
-    { "pos": "verb", "t": { "id": "duduk", "en": "sit", "es": "sentarse", "fr": "s'asseoir", "de": "sitzen", "ja": "座る|suwaru", "ko": "앉다|anta", "zh": "坐|zuò", "ar": "يجلس|yajlis", "ru": "сидеть|sidet'", "hi": "बैठना|baithna", "pt": "sentar", "it": "sedersi", "tr": "oturmak", "th": "นั่ง|nang", "ms": "duduk" } },
-    { "pos": "verb", "t": { "id": "membantu|bantu", "en": "help", "es": "ayudar", "fr": "aider", "de": "helfen", "ja": "助ける|tasukeru", "ko": "돕다|dopda", "zh": "帮助|bāngzhù", "ar": "يساعد|yusa'id", "ru": "помогать|pomogat'", "hi": "मदद करना|madad karna", "pt": "ajudar", "it": "aiutare", "tr": "yardım etmek", "th": "ช่วย|chuai", "ms": "membantu|bantu" } },
-    { "pos": "verb", "t": { "id": "memberi|beri", "en": "give", "es": "dar", "fr": "donner", "de": "geben", "ja": "あげる|ageru", "ko": "주다|juda", "zh": "给|gěi", "ar": "يعطي|yu'ti", "ru": "давать|davat'", "hi": "देना|dena", "pt": "dar", "it": "dare", "tr": "vermek", "th": "ให้|hai", "ms": "memberi|beri" } },
-    { "pos": "verb", "t": { "id": "membuka|buka", "en": "open", "es": "abrir", "fr": "ouvrir", "de": "öffnen", "ja": "開ける|akeru", "ko": "열다|yeolda", "zh": "打开|dǎkāi", "ar": "يفتح|yaftah", "ru": "открывать|otkryvat'", "hi": "खोलना|kholna", "pt": "abrir", "it": "aprire", "tr": "açmak", "th": "เปิด|poet", "ms": "membuka|buka" } },
-    { "pos": "verb", "t": { "id": "tertawa", "en": "laugh", "es": "reír", "fr": "rire", "de": "lachen", "ja": "笑う|warau", "ko": "웃다|utda", "zh": "笑|xiào", "ar": "يضحك|yadhak", "ru": "смеяться|smeyat'sya", "hi": "हँसना|hansna", "pt": "rir", "it": "ridere", "tr": "gülmek", "th": "หัวเราะ|hua ro", "ms": "tertawa|ketawa" } },
-    { "pos": "verb", "t": { "id": "menyanyi|nyanyi", "en": "sing", "es": "cantar", "fr": "chanter", "de": "singen", "ja": "歌う|utau", "ko": "노래하다|noraehada", "zh": "唱歌|chànggē", "ar": "يغني|yughanni", "ru": "петь|pet'", "hi": "गाना|gaana", "pt": "cantar", "it": "cantare", "tr": "şarkı söylemek", "th": "ร้องเพลง|rong phleng", "ms": "menyanyi|nyanyi" } },
-
-    { "pos": "noun", "t": { "id": "air", "en": "water", "es": "agua", "fr": "eau", "de": "Wasser", "ja": "水|mizu", "ko": "물|mul", "zh": "水|shuǐ", "ar": "ماء|maa'", "ru": "вода|voda", "hi": "पानी|paani", "pt": "água", "it": "acqua", "tr": "su", "th": "น้ำ|nam", "ms": "air" } },
-    { "pos": "noun", "t": { "id": "api", "en": "fire", "es": "fuego", "fr": "feu", "de": "Feuer", "ja": "火|hi", "ko": "불|bul", "zh": "火|huǒ", "ar": "نار|naar", "ru": "огонь|ogon'", "hi": "आग|aag", "pt": "fogo", "it": "fuoco", "tr": "ateş", "th": "ไฟ|fai", "ms": "api" } },
-    { "pos": "noun", "t": { "id": "rumah", "en": "house|home", "es": "casa", "fr": "maison", "de": "Haus", "ja": "家|ie", "ko": "집|jip", "zh": "房子|fángzi", "ar": "بيت|bayt", "ru": "дом|dom", "hi": "घर|ghar", "pt": "casa", "it": "casa", "tr": "ev", "th": "บ้าน|ban", "ms": "rumah" } },
-    { "pos": "noun", "t": { "id": "teman", "en": "friend", "es": "amigo", "fr": "ami", "de": "Freund", "ja": "友達|tomodachi", "ko": "친구|chingu", "zh": "朋友|péngyou", "ar": "صديق|sadiq", "ru": "друг|drug", "hi": "दोस्त|dost", "pt": "amigo", "it": "amico", "tr": "arkadaş", "th": "เพื่อน|phuean", "ms": "teman|kawan" } },
-    { "pos": "noun", "t": { "id": "makanan", "en": "food", "es": "comida", "fr": "nourriture", "de": "Essen", "ja": "食べ物|tabemono", "ko": "음식|eumsik", "zh": "食物|shíwù", "ar": "طعام|ta'am", "ru": "еда|yeda", "hi": "खाना|khaana", "pt": "comida", "it": "cibo", "tr": "yemek", "th": "อาหาร|ahan", "ms": "makanan" } },
-    { "pos": "noun", "t": { "id": "buku", "en": "book", "es": "libro", "fr": "livre", "de": "Buch", "ja": "本|hon", "ko": "책|chaek", "zh": "书|shū", "ar": "كتاب|kitab", "ru": "книга|kniga", "hi": "किताब|kitaab", "pt": "livro", "it": "libro", "tr": "kitap", "th": "หนังสือ|nangsue", "ms": "buku" } },
-    { "pos": "noun", "t": { "id": "sekolah", "en": "school", "es": "escuela", "fr": "école", "de": "Schule", "ja": "学校|gakkou", "ko": "학교|hakgyo", "zh": "学校|xuéxiào", "ar": "مدرسة|madrasa", "ru": "школа|shkola", "hi": "स्कूल|skool", "pt": "escola", "it": "scuola", "tr": "okul", "th": "โรงเรียน|rongrian", "ms": "sekolah" } },
-    { "pos": "noun", "t": { "id": "uang", "en": "money", "es": "dinero", "fr": "argent", "de": "Geld", "ja": "お金|okane", "ko": "돈|don", "zh": "钱|qián", "ar": "مال|maal", "ru": "деньги|den'gi", "hi": "पैसा|paisa", "pt": "dinheiro", "it": "soldi", "tr": "para", "th": "เงิน|ngoen", "ms": "wang|duit" } },
-    { "pos": "noun", "t": { "id": "waktu", "en": "time", "es": "tiempo", "fr": "temps", "de": "Zeit", "ja": "時間|jikan", "ko": "시간|sigan", "zh": "时间|shíjiān", "ar": "وقت|waqt", "ru": "время|vremya", "hi": "समय|samay", "pt": "tempo", "it": "tempo", "tr": "zaman|vakit", "th": "เวลา|wela", "ms": "masa|waktu" } },
-    { "pos": "noun", "t": { "id": "hari", "en": "day", "es": "día", "fr": "jour", "de": "Tag", "ja": "日|hi", "ko": "날|nal", "zh": "天|tiān", "ar": "يوم|yawm", "ru": "день|den'", "hi": "दिन|din", "pt": "dia", "it": "giorno", "tr": "gün", "th": "วัน|wan", "ms": "hari" } },
-    { "pos": "noun", "t": { "id": "malam", "en": "night", "es": "noche", "fr": "nuit", "de": "Nacht", "ja": "夜|yoru", "ko": "밤|bam", "zh": "夜晚|yèwǎn", "ar": "ليل|layl", "ru": "ночь|noch'", "hi": "रात|raat", "pt": "noite", "it": "notte", "tr": "gece", "th": "กลางคืน|klang khuen", "ms": "malam" } },
-    { "pos": "noun", "t": { "id": "matahari", "en": "sun", "es": "sol", "fr": "soleil", "de": "Sonne", "ja": "太陽|taiyou", "ko": "태양|taeyang", "zh": "太阳|tàiyáng", "ar": "شمس|shams", "ru": "солнце|solntse", "hi": "सूरज|sooraj", "pt": "sol", "it": "sole", "tr": "güneş", "th": "ดวงอาทิตย์|duang athit", "ms": "matahari" } },
-    { "pos": "noun", "t": { "id": "bulan", "en": "moon", "es": "luna", "fr": "lune", "de": "Mond", "ja": "月|tsuki", "ko": "달|dal", "zh": "月亮|yuèliang", "ar": "قمر|qamar", "ru": "луна|luna", "hi": "चाँद|chaand", "pt": "lua", "it": "luna", "tr": "ay", "th": "ดวงจันทร์|duang chan", "ms": "bulan" } },
-    { "pos": "noun", "t": { "id": "cinta", "en": "love", "es": "amor", "fr": "amour", "de": "Liebe", "ja": "愛|ai", "ko": "사랑|sarang", "zh": "爱|ài", "ar": "حب|hubb", "ru": "любовь|lyubov'", "hi": "प्यार|pyaar", "pt": "amor", "it": "amore", "tr": "aşk", "th": "รัก|rak", "ms": "cinta" } },
-    { "pos": "noun", "t": { "id": "keluarga", "en": "family", "es": "familia", "fr": "famille", "de": "Familie", "ja": "家族|kazoku", "ko": "가족|gajok", "zh": "家庭|jiātíng", "ar": "عائلة|'a'ila", "ru": "семья|sem'ya", "hi": "परिवार|parivaar", "pt": "família", "it": "famiglia", "tr": "aile", "th": "ครอบครัว|khropkhrua", "ms": "keluarga" } },
-    { "pos": "noun", "t": { "id": "kota", "en": "city", "es": "ciudad", "fr": "ville", "de": "Stadt", "ja": "都市|toshi", "ko": "도시|dosi", "zh": "城市|chéngshì", "ar": "مدينة|madina", "ru": "город|gorod", "hi": "शहर|shehar", "pt": "cidade", "it": "città", "tr": "şehir", "th": "เมือง|mueang", "ms": "bandar|kota" } },
-    { "pos": "noun", "t": { "id": "mobil", "en": "car", "es": "coche|carro", "fr": "voiture", "de": "Auto", "ja": "車|kuruma", "ko": "자동차|jadongcha", "zh": "汽车|qìchē", "ar": "سيارة|sayyara", "ru": "машина|mashina", "hi": "कार|kaar", "pt": "carro", "it": "auto|macchina", "tr": "araba", "th": "รถยนต์|rot yon", "ms": "kereta|mobil" } },
-    { "pos": "noun", "t": { "id": "anjing", "en": "dog", "es": "perro", "fr": "chien", "de": "Hund", "ja": "犬|inu", "ko": "개|gae", "zh": "狗|gǒu", "ar": "كلب|kalb", "ru": "собака|sobaka", "hi": "कुत्ता|kutta", "pt": "cachorro|cão", "it": "cane", "tr": "köpek", "th": "หมา|ma", "ms": "anjing" } },
-    { "pos": "noun", "t": { "id": "kucing", "en": "cat", "es": "gato", "fr": "chat", "de": "Katze", "ja": "猫|neko", "ko": "고양이|goyangi", "zh": "猫|māo", "ar": "قطة|qitta", "ru": "кошка|koshka", "hi": "बिल्ली|billi", "pt": "gato", "it": "gatto", "tr": "kedi", "th": "แมว|maeo", "ms": "kucing" } },
-
-    { "pos": "adj", "t": { "id": "besar", "en": "big|large", "es": "grande", "fr": "grand", "de": "groß", "ja": "大きい|ookii", "ko": "크다|keuda", "zh": "大|dà", "ar": "كبير|kabir", "ru": "большой|bol'shoy", "hi": "बड़ा|bada", "pt": "grande", "it": "grande", "tr": "büyük", "th": "ใหญ่|yai", "ms": "besar" } },
-    { "pos": "adj", "t": { "id": "kecil", "en": "small|little", "es": "pequeño", "fr": "petit", "de": "klein", "ja": "小さい|chiisai", "ko": "작다|jakda", "zh": "小|xiǎo", "ar": "صغير|saghir", "ru": "маленький|malen'kiy", "hi": "छोटा|chhota", "pt": "pequeno", "it": "piccolo", "tr": "küçük", "th": "เล็ก|lek", "ms": "kecil" } },
-    { "pos": "adj", "t": { "id": "baik|bagus", "en": "good", "es": "bueno", "fr": "bon", "de": "gut", "ja": "良い|yoi", "ko": "좋다|jota", "zh": "好|hǎo", "ar": "جيد|jayyid", "ru": "хороший|khoroshiy", "hi": "अच्छा|achchha", "pt": "bom", "it": "buono", "tr": "iyi", "th": "ดี|di", "ms": "baik|bagus" } },
-    { "pos": "adj", "t": { "id": "buruk|jelek", "en": "bad", "es": "malo", "fr": "mauvais", "de": "schlecht", "ja": "悪い|warui", "ko": "나쁘다|nappeuda", "zh": "坏|huài", "ar": "سيء|sayyi'", "ru": "плохой|plokhoy", "hi": "बुरा|bura", "pt": "mau", "it": "cattivo", "tr": "kötü", "th": "แย่|yae", "ms": "buruk|jelek" } },
-    { "pos": "adj", "t": { "id": "cantik", "en": "beautiful|pretty", "es": "hermoso|bonita", "fr": "beau|belle", "de": "schön", "ja": "美しい|utsukushii", "ko": "아름답다|areumdapda", "zh": "美丽|měilì", "ar": "جميل|jamil", "ru": "красивый|krasivyy", "hi": "सुंदर|sundar", "pt": "bonito|belo", "it": "bello|bella", "tr": "güzel", "th": "สวย|suai", "ms": "cantik" } },
-    { "pos": "adj", "t": { "id": "panas", "en": "hot", "es": "caliente", "fr": "chaud", "de": "heiß", "ja": "熱い|atsui", "ko": "뜨겁다|tteugeopda", "zh": "热|rè", "ar": "حار|harr", "ru": "горячий|goryachiy", "hi": "गर्म|garm", "pt": "quente", "it": "caldo", "tr": "sıcak", "th": "ร้อน|ron", "ms": "panas" } },
-    { "pos": "adj", "t": { "id": "dingin", "en": "cold", "es": "frío", "fr": "froid", "de": "kalt", "ja": "寒い|samui", "ko": "춥다|chupda", "zh": "冷|lěng", "ar": "بارد|baarid", "ru": "холодный|kholodnyy", "hi": "ठंडा|thanda", "pt": "frio", "it": "freddo", "tr": "soğuk", "th": "หนาว|nao", "ms": "sejuk|dingin" } },
-    { "pos": "adj", "t": { "id": "senang|gembira", "en": "happy", "es": "feliz", "fr": "heureux", "de": "glücklich", "ja": "嬉しい|ureshii", "ko": "행복하다|haengbokada", "zh": "快乐|kuàilè", "ar": "سعيد|sa'id", "ru": "счастливый|schastlivyy", "hi": "खुश|khush", "pt": "feliz", "it": "felice", "tr": "mutlu", "th": "มีความสุข|mi khwam suk", "ms": "gembira|senang" } },
-    { "pos": "adj", "t": { "id": "sedih", "en": "sad", "es": "triste", "fr": "triste", "de": "traurig", "ja": "悲しい|kanashii", "ko": "슬프다|seulpeuda", "zh": "伤心|shāngxīn", "ar": "حزين|hazin", "ru": "грустный|grustnyy", "hi": "उदास|udaas", "pt": "triste", "it": "triste", "tr": "üzgün", "th": "เศร้า|sao", "ms": "sedih" } },
-    { "pos": "adj", "t": { "id": "baru", "en": "new", "es": "nuevo", "fr": "nouveau", "de": "neu", "ja": "新しい|atarashii", "ko": "새롭다|saeropda", "zh": "新|xīn", "ar": "جديد|jadid", "ru": "новый|novyy", "hi": "नया|naya", "pt": "novo", "it": "nuovo", "tr": "yeni", "th": "ใหม่|mai", "ms": "baru" } },
-    { "pos": "adj", "t": { "id": "cepat|laju", "en": "fast|quick", "es": "rápido", "fr": "rapide", "de": "schnell", "ja": "速い|hayai", "ko": "빠르다|ppareuda", "zh": "快|kuài", "ar": "سريع|sari'", "ru": "быстрый|bystryy", "hi": "तेज़|tez", "pt": "rápido", "it": "veloce", "tr": "hızlı", "th": "เร็ว|reo", "ms": "cepat|laju" } },
-    { "pos": "verb", "t": { "id": "pulang|kembali", "en": "return|go home", "es": "volver|regresar", "fr": "rentrer", "de": "zurückkehren", "ja": "帰る|kaeru", "ko": "돌아가다|dorogada", "zh": "回家|huíjiā", "ar": "يعود|ya'ud", "ru": "возвращаться|vozvrashchat'sya", "hi": "लौटना|lautna", "pt": "voltar", "it": "tornare", "tr": "dönmek", "th": "กลับ|klap", "ms": "pulang" } },
-    { "pos": "verb", "t": { "id": "minta|meminta", "en": "ask|request", "es": "pedir", "fr": "demander", "de": "bitten", "ja": "頼む|tanomu", "ko": "부탁하다|butakhada", "zh": "请求|qǐngqiú", "ar": "يطلب|yatlub", "ru": "просить|prosit'", "hi": "माँगना|maangna", "pt": "pedir", "it": "chiedere", "tr": "istemek", "th": "ขอ|kho", "ms": "minta" } },
-    { "pos": "verb", "t": { "id": "pinjam|meminjam", "en": "borrow", "es": "pedir prestado", "fr": "emprunter", "de": "leihen", "ja": "借りる|kariru", "ko": "빌리다|billida", "zh": "借|jiè", "ar": "يستعير|yasta'ir", "ru": "брать взаймы|brat' vzaimy", "hi": "उधार लेना|udhaar lena", "pt": "pedir emprestado", "it": "prendere in prestito", "tr": "ödünç almak", "th": "ยืม|yuem", "ms": "pinjam" } },
-    { "pos": "verb", "t": { "id": "masak|memasak", "en": "cook", "es": "cocinar", "fr": "cuisiner", "de": "kochen", "ja": "料理する|ryouri suru", "ko": "요리하다|yorihada", "zh": "做饭|zuòfàn", "ar": "يطبخ|yatbukh", "ru": "готовить|gotovit'", "hi": "पकाना|pakaana", "pt": "cozinhar", "it": "cucinare", "tr": "pişirmek", "th": "ทำอาหาร|tham ahan", "ms": "masak" } },
-    { "pos": "verb", "t": { "id": "tunggu|menunggu", "en": "wait", "es": "esperar", "fr": "attendre", "de": "warten", "ja": "待つ|matsu", "ko": "기다리다|gidarida", "zh": "等|děng", "ar": "ينتظر|yantazir", "ru": "ждать|zhdat'", "hi": "इंतज़ार करना|intezaar karna", "pt": "esperar", "it": "aspettare", "tr": "beklemek", "th": "รอ|ro", "ms": "tunggu" } },
-    { "pos": "noun", "t": { "id": "hujan", "en": "rain", "es": "lluvia", "fr": "pluie", "de": "Regen", "ja": "雨|ame", "ko": "비|bi", "zh": "雨|yǔ", "ar": "مطر|matar", "ru": "дождь|dozhd'", "hi": "बारिश|baarish", "pt": "chuva", "it": "pioggia", "tr": "yağmur", "th": "ฝน|fon", "ms": "hujan" } },
-    { "pos": "noun", "t": { "id": "persen|persentase", "en": "percent|percentage", "es": "por ciento", "fr": "pour cent", "de": "Prozent", "ja": "パーセント", "ko": "퍼센트", "zh": "百分比|bǎifēnbǐ", "ar": "نسبة مئوية|nisba mi'awiyya", "ru": "процент|protsent", "hi": "प्रतिशत|pratishat", "pt": "por cento", "it": "per cento", "tr": "yüzde", "th": "เปอร์เซ็นต์|peoesen", "ms": "peratus" } }
+    {
+      "pos": "greeting",
+      "t": {
+        "id": "halo|hai",
+        "en": "hello|hi",
+        "es": "hola",
+        "fr": "bonjour|salut",
+        "de": "hallo",
+        "ja": "こんにちは|konnichiwa",
+        "ko": "안녕하세요|annyeonghaseyo",
+        "zh": "你好|nǐ hǎo",
+        "ar": "مرحبا|marhaban",
+        "ru": "привет|privet",
+        "hi": "नमस्ते|namaste",
+        "pt": "olá|oi",
+        "it": "ciao",
+        "tr": "merhaba",
+        "th": "สวัสดี|sawatdi",
+        "ms": "hai|helo"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "terima kasih",
+        "en": "thank you|thanks",
+        "es": "gracias",
+        "fr": "merci",
+        "de": "danke",
+        "ja": "ありがとう|arigatou",
+        "ko": "감사합니다|gamsahamnida",
+        "zh": "谢谢|xièxie",
+        "ar": "شكرا|shukran",
+        "ru": "спасибо|spasibo",
+        "hi": "धन्यवाद|dhanyavaad",
+        "pt": "obrigado",
+        "it": "grazie",
+        "tr": "teşekkürler",
+        "th": "ขอบคุณ|khop khun",
+        "ms": "terima kasih"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "maaf",
+        "en": "sorry|excuse me",
+        "es": "lo siento|perdón",
+        "fr": "désolé|pardon",
+        "de": "entschuldigung",
+        "ja": "ごめんなさい|gomennasai",
+        "ko": "미안해요|mianhaeyo",
+        "zh": "对不起|duìbuqǐ",
+        "ar": "آسف|asif",
+        "ru": "извините|izvinite",
+        "hi": "माफ़ कीजिए|maaf kijiye",
+        "pt": "desculpe",
+        "it": "scusa|mi dispiace",
+        "tr": "özür dilerim",
+        "th": "ขอโทษ|khothot",
+        "ms": "maaf"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "selamat tinggal",
+        "en": "goodbye",
+        "es": "adiós",
+        "fr": "au revoir",
+        "de": "auf Wiedersehen",
+        "ja": "さようなら|sayounara",
+        "ko": "안녕히 가세요|annyeonghi gaseyo",
+        "zh": "再见|zàijiàn",
+        "ar": "مع السلامة|ma'a as-salama",
+        "ru": "до свидания|do svidaniya",
+        "hi": "अलविदा|alvida",
+        "pt": "tchau|adeus",
+        "it": "arrivederci",
+        "tr": "hoşça kal",
+        "th": "ลาก่อน|la kon",
+        "ms": "selamat tinggal"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "selamat pagi",
+        "en": "good morning",
+        "es": "buenos días",
+        "fr": "bonjour",
+        "de": "guten Morgen",
+        "ja": "おはようございます|ohayou gozaimasu",
+        "ko": "좋은 아침|joeun achim",
+        "zh": "早上好|zǎoshang hǎo",
+        "ar": "صباح الخير|sabah al-khayr",
+        "ru": "доброе утро|dobroe utro",
+        "hi": "सुप्रभात|suprabhaat",
+        "pt": "bom dia",
+        "it": "buongiorno",
+        "tr": "günaydın",
+        "th": "อรุณสวัสดิ์|arun sawat",
+        "ms": "selamat pagi"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "selamat malam",
+        "en": "good night",
+        "es": "buenas noches",
+        "fr": "bonne nuit",
+        "de": "gute Nacht",
+        "ja": "おやすみ|oyasumi",
+        "ko": "잘 자요|jal jayo",
+        "zh": "晚安|wǎn'ān",
+        "ar": "تصبح على خير|tusbih ala khayr",
+        "ru": "спокойной ночи|spokoynoy nochi",
+        "hi": "शुभ रात्रि|shubh ratri",
+        "pt": "boa noite",
+        "it": "buonanotte",
+        "tr": "iyi geceler",
+        "th": "ราตรีสวัสดิ์|ratri sawat",
+        "ms": "selamat malam"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "selamat datang",
+        "en": "welcome",
+        "es": "bienvenido",
+        "fr": "bienvenue",
+        "de": "willkommen",
+        "ja": "ようこそ|youkoso",
+        "ko": "환영합니다|hwanyeonghamnida",
+        "zh": "欢迎|huānyíng",
+        "ar": "أهلا وسهلا|ahlan wa sahlan",
+        "ru": "добро пожаловать|dobro pozhalovat'",
+        "hi": "स्वागत है|swagat hai",
+        "pt": "bem-vindo",
+        "it": "benvenuto",
+        "tr": "hoş geldiniz",
+        "th": "ยินดีต้อนรับ|yindi ton rap",
+        "ms": "selamat datang"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "apa kabar",
+        "en": "how are you",
+        "es": "¿cómo estás?",
+        "fr": "comment ça va ?",
+        "de": "wie geht's?",
+        "ja": "お元気ですか|ogenki desu ka",
+        "ko": "잘 지내요?|jal jinaeyo",
+        "zh": "你好吗|nǐ hǎo ma",
+        "ar": "كيف حالك|kayfa haluk",
+        "ru": "как дела|kak dela",
+        "hi": "आप कैसे हैं|aap kaise hain",
+        "pt": "tudo bem?",
+        "it": "come stai?",
+        "tr": "nasılsın?",
+        "th": "สบายดีไหม|sabai di mai",
+        "ms": "apa khabar"
+      }
+    },
+    {
+      "pos": "phrase",
+      "t": {
+        "id": "aku cinta kamu",
+        "en": "I love you",
+        "es": "te quiero|te amo",
+        "fr": "je t'aime",
+        "de": "ich liebe dich",
+        "ja": "愛してる|aishiteru",
+        "ko": "사랑해|saranghae",
+        "zh": "我爱你|wǒ ài nǐ",
+        "ar": "أحبك|uhibbuk",
+        "ru": "я тебя люблю|ya tebya lyublyu",
+        "hi": "मैं तुमसे प्यार करता हूँ|main tumse pyaar karta hoon",
+        "pt": "eu te amo",
+        "it": "ti amo",
+        "tr": "seni seviyorum",
+        "th": "ฉันรักคุณ|chan rak khun",
+        "ms": "saya cinta awak|aku cinta kamu"
+      }
+    },
+    {
+      "pos": "interj",
+      "t": {
+        "id": "ya",
+        "en": "yes",
+        "es": "sí",
+        "fr": "oui",
+        "de": "ja",
+        "ja": "はい|hai",
+        "ko": "네|ne",
+        "zh": "是|shì",
+        "ar": "نعم|naam",
+        "ru": "да|da",
+        "hi": "हाँ|haan",
+        "pt": "sim",
+        "it": "sì",
+        "tr": "evet",
+        "th": "ใช่|chai",
+        "ms": "ya"
+      }
+    },
+    {
+      "pos": "interj",
+      "t": {
+        "id": "tidak",
+        "en": "no",
+        "es": "no",
+        "fr": "non",
+        "de": "nein",
+        "ja": "いいえ|iie",
+        "ko": "아니요|aniyo",
+        "zh": "不|bù",
+        "ar": "لا|la",
+        "ru": "нет|net",
+        "hi": "नहीं|nahin",
+        "pt": "não",
+        "it": "no",
+        "tr": "hayır",
+        "th": "ไม่|mai",
+        "ms": "tidak"
+      }
+    },
+    {
+      "pos": "pron",
+      "t": {
+        "id": "aku|saya",
+        "en": "I|me",
+        "es": "yo",
+        "fr": "je",
+        "de": "ich",
+        "ja": "私|watashi",
+        "ko": "나|na",
+        "zh": "我|wǒ",
+        "ar": "أنا|ana",
+        "ru": "я|ya",
+        "hi": "मैं|main",
+        "pt": "eu",
+        "it": "io",
+        "tr": "ben",
+        "th": "ฉัน|chan",
+        "ms": "saya|aku"
+      }
+    },
+    {
+      "pos": "pron",
+      "t": {
+        "id": "kamu|anda",
+        "en": "you",
+        "es": "tú|usted",
+        "fr": "tu|vous",
+        "de": "du|Sie",
+        "ja": "あなた|anata",
+        "ko": "너|neo",
+        "zh": "你|nǐ",
+        "ar": "أنت|anta",
+        "ru": "ты|ty",
+        "hi": "तुम|tum",
+        "pt": "você",
+        "it": "tu|Lei",
+        "tr": "sen",
+        "th": "คุณ|khun",
+        "ms": "awak|kamu"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "makan",
+        "en": "eat",
+        "es": "comer",
+        "fr": "manger",
+        "de": "essen",
+        "ja": "食べる|taberu",
+        "ko": "먹다|meokda",
+        "zh": "吃|chī",
+        "ar": "يأكل|ya'kul",
+        "ru": "есть|yest'",
+        "hi": "खाना|khaana",
+        "pt": "comer",
+        "it": "mangiare",
+        "tr": "yemek",
+        "th": "กิน|kin",
+        "ms": "makan"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "minum",
+        "en": "drink",
+        "es": "beber",
+        "fr": "boire",
+        "de": "trinken",
+        "ja": "飲む|nomu",
+        "ko": "마시다|masida",
+        "zh": "喝|hē",
+        "ar": "يشرب|yashrab",
+        "ru": "пить|pit'",
+        "hi": "पीना|peena",
+        "pt": "beber",
+        "it": "bere",
+        "tr": "içmek",
+        "th": "ดื่ม|duem",
+        "ms": "minum"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "tidur",
+        "en": "sleep",
+        "es": "dormir",
+        "fr": "dormir",
+        "de": "schlafen",
+        "ja": "寝る|neru",
+        "ko": "자다|jada",
+        "zh": "睡觉|shuìjiào",
+        "ar": "ينام|yanam",
+        "ru": "спать|spat'",
+        "hi": "सोना|sona",
+        "pt": "dormir",
+        "it": "dormire",
+        "tr": "uyumak",
+        "th": "นอน|non",
+        "ms": "tidur"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "pergi",
+        "en": "go",
+        "es": "ir",
+        "fr": "aller",
+        "de": "gehen",
+        "ja": "行く|iku",
+        "ko": "가다|gada",
+        "zh": "去|qù",
+        "ar": "يذهب|yadhhab",
+        "ru": "идти|idti",
+        "hi": "जाना|jaana",
+        "pt": "ir",
+        "it": "andare",
+        "tr": "gitmek",
+        "th": "ไป|pai",
+        "ms": "pergi"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "datang",
+        "en": "come",
+        "es": "venir",
+        "fr": "venir",
+        "de": "kommen",
+        "ja": "来る|kuru",
+        "ko": "오다|oda",
+        "zh": "来|lái",
+        "ar": "يأتي|ya'ti",
+        "ru": "приходить|prikhodit'",
+        "hi": "आना|aana",
+        "pt": "vir",
+        "it": "venire",
+        "tr": "gelmek",
+        "th": "มา|ma",
+        "ms": "datang"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "lihat",
+        "en": "see|look",
+        "es": "ver|mirar",
+        "fr": "voir|regarder",
+        "de": "sehen",
+        "ja": "見る|miru",
+        "ko": "보다|boda",
+        "zh": "看|kàn",
+        "ar": "يرى|yara",
+        "ru": "видеть|videt'",
+        "hi": "देखना|dekhna",
+        "pt": "ver",
+        "it": "vedere",
+        "tr": "görmek",
+        "th": "ดู|du",
+        "ms": "lihat"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "dengar",
+        "en": "hear|listen",
+        "es": "oír|escuchar",
+        "fr": "entendre|écouter",
+        "de": "hören",
+        "ja": "聞く|kiku",
+        "ko": "듣다|deutda",
+        "zh": "听|tīng",
+        "ar": "يسمع|yasma'",
+        "ru": "слышать|slyshat'",
+        "hi": "सुनना|sunna",
+        "pt": "ouvir",
+        "it": "sentire|ascoltare",
+        "tr": "duymak",
+        "th": "ฟัง|fang",
+        "ms": "dengar"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "bicara",
+        "en": "speak|talk",
+        "es": "hablar",
+        "fr": "parler",
+        "de": "sprechen",
+        "ja": "話す|hanasu",
+        "ko": "말하다|malhada",
+        "zh": "说|shuō",
+        "ar": "يتكلم|yatakallam",
+        "ru": "говорить|govorit'",
+        "hi": "बोलना|bolna",
+        "pt": "falar",
+        "it": "parlare",
+        "tr": "konuşmak",
+        "th": "พูด|phut",
+        "ms": "bercakap|bicara"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "baca",
+        "en": "read",
+        "es": "leer",
+        "fr": "lire",
+        "de": "lesen",
+        "ja": "読む|yomu",
+        "ko": "읽다|ikda",
+        "zh": "读|dú",
+        "ar": "يقرأ|yaqra'",
+        "ru": "читать|chitat'",
+        "hi": "पढ़ना|padhna",
+        "pt": "ler",
+        "it": "leggere",
+        "tr": "okumak",
+        "th": "อ่าน|an",
+        "ms": "baca"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "tulis",
+        "en": "write",
+        "es": "escribir",
+        "fr": "écrire",
+        "de": "schreiben",
+        "ja": "書く|kaku",
+        "ko": "쓰다|sseuda",
+        "zh": "写|xiě",
+        "ar": "يكتب|yaktub",
+        "ru": "писать|pisat'",
+        "hi": "लिखना|likhna",
+        "pt": "escrever",
+        "it": "scrivere",
+        "tr": "yazmak",
+        "th": "เขียน|khian",
+        "ms": "tulis"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "belajar",
+        "en": "study|learn",
+        "es": "estudiar|aprender",
+        "fr": "étudier|apprendre",
+        "de": "lernen|studieren",
+        "ja": "勉強する|benkyou suru",
+        "ko": "공부하다|gongbuhada",
+        "zh": "学习|xuéxí",
+        "ar": "يتعلم|yata'allam",
+        "ru": "учиться|uchit'sya",
+        "hi": "सीखना|seekhna",
+        "pt": "estudar|aprender",
+        "it": "studiare|imparare",
+        "tr": "öğrenmek|çalışmak",
+        "th": "เรียน|rian",
+        "ms": "belajar"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "bekerja",
+        "en": "work",
+        "es": "trabajar",
+        "fr": "travailler",
+        "de": "arbeiten",
+        "ja": "働く|hataraku",
+        "ko": "일하다|ilhada",
+        "zh": "工作|gōngzuò",
+        "ar": "يعمل|ya'mal",
+        "ru": "работать|rabotat'",
+        "hi": "काम करना|kaam karna",
+        "pt": "trabalhar",
+        "it": "lavorare",
+        "tr": "çalışmak",
+        "th": "ทำงาน|tham ngan",
+        "ms": "bekerja|kerja"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "bermain|main",
+        "en": "play",
+        "es": "jugar",
+        "fr": "jouer",
+        "de": "spielen",
+        "ja": "遊ぶ|asobu",
+        "ko": "놀다|nolda",
+        "zh": "玩|wán",
+        "ar": "يلعب|yal'ab",
+        "ru": "играть|igrat'",
+        "hi": "खेलना|khelna",
+        "pt": "jogar|brincar",
+        "it": "giocare",
+        "tr": "oynamak",
+        "th": "เล่น|len",
+        "ms": "bermain|main"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "beli",
+        "en": "buy",
+        "es": "comprar",
+        "fr": "acheter",
+        "de": "kaufen",
+        "ja": "買う|kau",
+        "ko": "사다|sada",
+        "zh": "买|mǎi",
+        "ar": "يشتري|yashtari",
+        "ru": "покупать|pokupat'",
+        "hi": "खरीदना|kharidna",
+        "pt": "comprar",
+        "it": "comprare",
+        "tr": "satın almak",
+        "th": "ซื้อ|sue",
+        "ms": "beli"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "jual",
+        "en": "sell",
+        "es": "vender",
+        "fr": "vendre",
+        "de": "verkaufen",
+        "ja": "売る|uru",
+        "ko": "팔다|palda",
+        "zh": "卖|mài",
+        "ar": "يبيع|yabi'",
+        "ru": "продавать|prodavat'",
+        "hi": "बेचना|bechna",
+        "pt": "vender",
+        "it": "vendere",
+        "tr": "satmak",
+        "th": "ขาย|khai",
+        "ms": "jual"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "suka",
+        "en": "like",
+        "es": "gustar",
+        "fr": "aimer",
+        "de": "mögen",
+        "ja": "好き|suki",
+        "ko": "좋아하다|joahada",
+        "zh": "喜欢|xǐhuan",
+        "ar": "يحب|yuhibb",
+        "ru": "нравиться|nravit'sya",
+        "hi": "पसंद करना|pasand karna",
+        "pt": "gostar",
+        "it": "piacere",
+        "tr": "sevmek|beğenmek",
+        "th": "ชอบ|chop",
+        "ms": "suka"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "mau|ingin",
+        "en": "want",
+        "es": "querer",
+        "fr": "vouloir",
+        "de": "wollen",
+        "ja": "欲しい|hoshii",
+        "ko": "원하다|wonhada",
+        "zh": "想要|xiǎng yào",
+        "ar": "يريد|yurid",
+        "ru": "хотеть|khotet'",
+        "hi": "चाहना|chahna",
+        "pt": "querer",
+        "it": "volere",
+        "tr": "istemek",
+        "th": "ต้องการ|tong kan",
+        "ms": "mahu|mau"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "tahu",
+        "en": "know",
+        "es": "saber",
+        "fr": "savoir",
+        "de": "wissen",
+        "ja": "知る|shiru",
+        "ko": "알다|alda",
+        "zh": "知道|zhīdào",
+        "ar": "يعرف|ya'rif",
+        "ru": "знать|znat'",
+        "hi": "जानना|jaanna",
+        "pt": "saber",
+        "it": "sapere",
+        "tr": "bilmek",
+        "th": "รู้|ru",
+        "ms": "tahu"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "berpikir",
+        "en": "think",
+        "es": "pensar",
+        "fr": "penser",
+        "de": "denken",
+        "ja": "考える|kangaeru",
+        "ko": "생각하다|saenggakada",
+        "zh": "想|xiǎng",
+        "ar": "يفكر|yufakkir",
+        "ru": "думать|dumat'",
+        "hi": "सोचना|sochna",
+        "pt": "pensar",
+        "it": "pensare",
+        "tr": "düşünmek",
+        "th": "คิด|khit",
+        "ms": "berfikir|berpikir"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "berlari|lari",
+        "en": "run",
+        "es": "correr",
+        "fr": "courir",
+        "de": "laufen|rennen",
+        "ja": "走る|hashiru",
+        "ko": "달리다|dallida",
+        "zh": "跑|pǎo",
+        "ar": "يجري|yajri",
+        "ru": "бежать|bezhat'",
+        "hi": "दौड़ना|daudna",
+        "pt": "correr",
+        "it": "correre",
+        "tr": "koşmak",
+        "th": "วิ่ง|wing",
+        "ms": "berlari|lari"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "duduk",
+        "en": "sit",
+        "es": "sentarse",
+        "fr": "s'asseoir",
+        "de": "sitzen",
+        "ja": "座る|suwaru",
+        "ko": "앉다|anta",
+        "zh": "坐|zuò",
+        "ar": "يجلس|yajlis",
+        "ru": "сидеть|sidet'",
+        "hi": "बैठना|baithna",
+        "pt": "sentar",
+        "it": "sedersi",
+        "tr": "oturmak",
+        "th": "นั่ง|nang",
+        "ms": "duduk"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "membantu|bantu",
+        "en": "help",
+        "es": "ayudar",
+        "fr": "aider",
+        "de": "helfen",
+        "ja": "助ける|tasukeru",
+        "ko": "돕다|dopda",
+        "zh": "帮助|bāngzhù",
+        "ar": "يساعد|yusa'id",
+        "ru": "помогать|pomogat'",
+        "hi": "मदद करना|madad karna",
+        "pt": "ajudar",
+        "it": "aiutare",
+        "tr": "yardım etmek",
+        "th": "ช่วย|chuai",
+        "ms": "membantu|bantu"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "memberi|beri",
+        "en": "give",
+        "es": "dar",
+        "fr": "donner",
+        "de": "geben",
+        "ja": "あげる|ageru",
+        "ko": "주다|juda",
+        "zh": "给|gěi",
+        "ar": "يعطي|yu'ti",
+        "ru": "давать|davat'",
+        "hi": "देना|dena",
+        "pt": "dar",
+        "it": "dare",
+        "tr": "vermek",
+        "th": "ให้|hai",
+        "ms": "memberi|beri"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "membuka|buka",
+        "en": "open",
+        "es": "abrir",
+        "fr": "ouvrir",
+        "de": "öffnen",
+        "ja": "開ける|akeru",
+        "ko": "열다|yeolda",
+        "zh": "打开|dǎkāi",
+        "ar": "يفتح|yaftah",
+        "ru": "открывать|otkryvat'",
+        "hi": "खोलना|kholna",
+        "pt": "abrir",
+        "it": "aprire",
+        "tr": "açmak",
+        "th": "เปิด|poet",
+        "ms": "membuka|buka"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "tertawa",
+        "en": "laugh",
+        "es": "reír",
+        "fr": "rire",
+        "de": "lachen",
+        "ja": "笑う|warau",
+        "ko": "웃다|utda",
+        "zh": "笑|xiào",
+        "ar": "يضحك|yadhak",
+        "ru": "смеяться|smeyat'sya",
+        "hi": "हँसना|hansna",
+        "pt": "rir",
+        "it": "ridere",
+        "tr": "gülmek",
+        "th": "หัวเราะ|hua ro",
+        "ms": "tertawa|ketawa"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "menyanyi|nyanyi",
+        "en": "sing",
+        "es": "cantar",
+        "fr": "chanter",
+        "de": "singen",
+        "ja": "歌う|utau",
+        "ko": "노래하다|noraehada",
+        "zh": "唱歌|chànggē",
+        "ar": "يغني|yughanni",
+        "ru": "петь|pet'",
+        "hi": "गाना|gaana",
+        "pt": "cantar",
+        "it": "cantare",
+        "tr": "şarkı söylemek",
+        "th": "ร้องเพลง|rong phleng",
+        "ms": "menyanyi|nyanyi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "air",
+        "en": "water",
+        "es": "agua",
+        "fr": "eau",
+        "de": "Wasser",
+        "ja": "水|mizu",
+        "ko": "물|mul",
+        "zh": "水|shuǐ",
+        "ar": "ماء|maa'",
+        "ru": "вода|voda",
+        "hi": "पानी|paani",
+        "pt": "água",
+        "it": "acqua",
+        "tr": "su",
+        "th": "น้ำ|nam",
+        "ms": "air"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "api",
+        "en": "fire",
+        "es": "fuego",
+        "fr": "feu",
+        "de": "Feuer",
+        "ja": "火|hi",
+        "ko": "불|bul",
+        "zh": "火|huǒ",
+        "ar": "نار|naar",
+        "ru": "огонь|ogon'",
+        "hi": "आग|aag",
+        "pt": "fogo",
+        "it": "fuoco",
+        "tr": "ateş",
+        "th": "ไฟ|fai",
+        "ms": "api"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "rumah",
+        "en": "house|home",
+        "es": "casa",
+        "fr": "maison",
+        "de": "Haus",
+        "ja": "家|ie",
+        "ko": "집|jip",
+        "zh": "房子|fángzi",
+        "ar": "بيت|bayt",
+        "ru": "дом|dom",
+        "hi": "घर|ghar",
+        "pt": "casa",
+        "it": "casa",
+        "tr": "ev",
+        "th": "บ้าน|ban",
+        "ms": "rumah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "teman",
+        "en": "friend",
+        "es": "amigo",
+        "fr": "ami",
+        "de": "Freund",
+        "ja": "友達|tomodachi",
+        "ko": "친구|chingu",
+        "zh": "朋友|péngyou",
+        "ar": "صديق|sadiq",
+        "ru": "друг|drug",
+        "hi": "दोस्त|dost",
+        "pt": "amigo",
+        "it": "amico",
+        "tr": "arkadaş",
+        "th": "เพื่อน|phuean",
+        "ms": "teman|kawan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "makanan",
+        "en": "food",
+        "es": "comida",
+        "fr": "nourriture",
+        "de": "Essen",
+        "ja": "食べ物|tabemono",
+        "ko": "음식|eumsik",
+        "zh": "食物|shíwù",
+        "ar": "طعام|ta'am",
+        "ru": "еда|yeda",
+        "hi": "खाना|khaana",
+        "pt": "comida",
+        "it": "cibo",
+        "tr": "yemek",
+        "th": "อาหาร|ahan",
+        "ms": "makanan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "buku",
+        "en": "book",
+        "es": "libro",
+        "fr": "livre",
+        "de": "Buch",
+        "ja": "本|hon",
+        "ko": "책|chaek",
+        "zh": "书|shū",
+        "ar": "كتاب|kitab",
+        "ru": "книга|kniga",
+        "hi": "किताब|kitaab",
+        "pt": "livro",
+        "it": "libro",
+        "tr": "kitap",
+        "th": "หนังสือ|nangsue",
+        "ms": "buku"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sekolah",
+        "en": "school",
+        "es": "escuela",
+        "fr": "école",
+        "de": "Schule",
+        "ja": "学校|gakkou",
+        "ko": "학교|hakgyo",
+        "zh": "学校|xuéxiào",
+        "ar": "مدرسة|madrasa",
+        "ru": "школа|shkola",
+        "hi": "स्कूल|skool",
+        "pt": "escola",
+        "it": "scuola",
+        "tr": "okul",
+        "th": "โรงเรียน|rongrian",
+        "ms": "sekolah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "uang",
+        "en": "money",
+        "es": "dinero",
+        "fr": "argent",
+        "de": "Geld",
+        "ja": "お金|okane",
+        "ko": "돈|don",
+        "zh": "钱|qián",
+        "ar": "مال|maal",
+        "ru": "деньги|den'gi",
+        "hi": "पैसा|paisa",
+        "pt": "dinheiro",
+        "it": "soldi",
+        "tr": "para",
+        "th": "เงิน|ngoen",
+        "ms": "wang|duit"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "waktu",
+        "en": "time",
+        "es": "tiempo",
+        "fr": "temps",
+        "de": "Zeit",
+        "ja": "時間|jikan",
+        "ko": "시간|sigan",
+        "zh": "时间|shíjiān",
+        "ar": "وقت|waqt",
+        "ru": "время|vremya",
+        "hi": "समय|samay",
+        "pt": "tempo",
+        "it": "tempo",
+        "tr": "zaman|vakit",
+        "th": "เวลา|wela",
+        "ms": "masa|waktu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "hari",
+        "en": "day",
+        "es": "día",
+        "fr": "jour",
+        "de": "Tag",
+        "ja": "日|hi",
+        "ko": "날|nal",
+        "zh": "天|tiān",
+        "ar": "يوم|yawm",
+        "ru": "день|den'",
+        "hi": "दिन|din",
+        "pt": "dia",
+        "it": "giorno",
+        "tr": "gün",
+        "th": "วัน|wan",
+        "ms": "hari"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "malam",
+        "en": "night",
+        "es": "noche",
+        "fr": "nuit",
+        "de": "Nacht",
+        "ja": "夜|yoru",
+        "ko": "밤|bam",
+        "zh": "夜晚|yèwǎn",
+        "ar": "ليل|layl",
+        "ru": "ночь|noch'",
+        "hi": "रात|raat",
+        "pt": "noite",
+        "it": "notte",
+        "tr": "gece",
+        "th": "กลางคืน|klang khuen",
+        "ms": "malam"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "matahari",
+        "en": "sun",
+        "es": "sol",
+        "fr": "soleil",
+        "de": "Sonne",
+        "ja": "太陽|taiyou",
+        "ko": "태양|taeyang",
+        "zh": "太阳|tàiyáng",
+        "ar": "شمس|shams",
+        "ru": "солнце|solntse",
+        "hi": "सूरज|sooraj",
+        "pt": "sol",
+        "it": "sole",
+        "tr": "güneş",
+        "th": "ดวงอาทิตย์|duang athit",
+        "ms": "matahari"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bulan",
+        "en": "moon",
+        "es": "luna",
+        "fr": "lune",
+        "de": "Mond",
+        "ja": "月|tsuki",
+        "ko": "달|dal",
+        "zh": "月亮|yuèliang",
+        "ar": "قمر|qamar",
+        "ru": "луна|luna",
+        "hi": "चाँद|chaand",
+        "pt": "lua",
+        "it": "luna",
+        "tr": "ay",
+        "th": "ดวงจันทร์|duang chan",
+        "ms": "bulan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "cinta",
+        "en": "love",
+        "es": "amor",
+        "fr": "amour",
+        "de": "Liebe",
+        "ja": "愛|ai",
+        "ko": "사랑|sarang",
+        "zh": "爱|ài",
+        "ar": "حب|hubb",
+        "ru": "любовь|lyubov'",
+        "hi": "प्यार|pyaar",
+        "pt": "amor",
+        "it": "amore",
+        "tr": "aşk",
+        "th": "รัก|rak",
+        "ms": "cinta"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "keluarga",
+        "en": "family",
+        "es": "familia",
+        "fr": "famille",
+        "de": "Familie",
+        "ja": "家族|kazoku",
+        "ko": "가족|gajok",
+        "zh": "家庭|jiātíng",
+        "ar": "عائلة|'a'ila",
+        "ru": "семья|sem'ya",
+        "hi": "परिवार|parivaar",
+        "pt": "família",
+        "it": "famiglia",
+        "tr": "aile",
+        "th": "ครอบครัว|khropkhrua",
+        "ms": "keluarga"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kota",
+        "en": "city",
+        "es": "ciudad",
+        "fr": "ville",
+        "de": "Stadt",
+        "ja": "都市|toshi",
+        "ko": "도시|dosi",
+        "zh": "城市|chéngshì",
+        "ar": "مدينة|madina",
+        "ru": "город|gorod",
+        "hi": "शहर|shehar",
+        "pt": "cidade",
+        "it": "città",
+        "tr": "şehir",
+        "th": "เมือง|mueang",
+        "ms": "bandar|kota"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "mobil",
+        "en": "car",
+        "es": "coche|carro",
+        "fr": "voiture",
+        "de": "Auto",
+        "ja": "車|kuruma",
+        "ko": "자동차|jadongcha",
+        "zh": "汽车|qìchē",
+        "ar": "سيارة|sayyara",
+        "ru": "машина|mashina",
+        "hi": "कार|kaar",
+        "pt": "carro",
+        "it": "auto|macchina",
+        "tr": "araba",
+        "th": "รถยนต์|rot yon",
+        "ms": "kereta|mobil"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "anjing",
+        "en": "dog",
+        "es": "perro",
+        "fr": "chien",
+        "de": "Hund",
+        "ja": "犬|inu",
+        "ko": "개|gae",
+        "zh": "狗|gǒu",
+        "ar": "كلب|kalb",
+        "ru": "собака|sobaka",
+        "hi": "कुत्ता|kutta",
+        "pt": "cachorro|cão",
+        "it": "cane",
+        "tr": "köpek",
+        "th": "หมา|ma",
+        "ms": "anjing"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kucing",
+        "en": "cat",
+        "es": "gato",
+        "fr": "chat",
+        "de": "Katze",
+        "ja": "猫|neko",
+        "ko": "고양이|goyangi",
+        "zh": "猫|māo",
+        "ar": "قطة|qitta",
+        "ru": "кошка|koshka",
+        "hi": "बिल्ली|billi",
+        "pt": "gato",
+        "it": "gatto",
+        "tr": "kedi",
+        "th": "แมว|maeo",
+        "ms": "kucing"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "besar",
+        "en": "big|large",
+        "es": "grande",
+        "fr": "grand",
+        "de": "groß",
+        "ja": "大きい|ookii",
+        "ko": "크다|keuda",
+        "zh": "大|dà",
+        "ar": "كبير|kabir",
+        "ru": "большой|bol'shoy",
+        "hi": "बड़ा|bada",
+        "pt": "grande",
+        "it": "grande",
+        "tr": "büyük",
+        "th": "ใหญ่|yai",
+        "ms": "besar"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "kecil",
+        "en": "small|little",
+        "es": "pequeño",
+        "fr": "petit",
+        "de": "klein",
+        "ja": "小さい|chiisai",
+        "ko": "작다|jakda",
+        "zh": "小|xiǎo",
+        "ar": "صغير|saghir",
+        "ru": "маленький|malen'kiy",
+        "hi": "छोटा|chhota",
+        "pt": "pequeno",
+        "it": "piccolo",
+        "tr": "küçük",
+        "th": "เล็ก|lek",
+        "ms": "kecil"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "baik|bagus",
+        "en": "good",
+        "es": "bueno",
+        "fr": "bon",
+        "de": "gut",
+        "ja": "良い|yoi",
+        "ko": "좋다|jota",
+        "zh": "好|hǎo",
+        "ar": "جيد|jayyid",
+        "ru": "хороший|khoroshiy",
+        "hi": "अच्छा|achchha",
+        "pt": "bom",
+        "it": "buono",
+        "tr": "iyi",
+        "th": "ดี|di",
+        "ms": "baik|bagus"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "buruk|jelek",
+        "en": "bad",
+        "es": "malo",
+        "fr": "mauvais",
+        "de": "schlecht",
+        "ja": "悪い|warui",
+        "ko": "나쁘다|nappeuda",
+        "zh": "坏|huài",
+        "ar": "سيء|sayyi'",
+        "ru": "плохой|plokhoy",
+        "hi": "बुरा|bura",
+        "pt": "mau",
+        "it": "cattivo",
+        "tr": "kötü",
+        "th": "แย่|yae",
+        "ms": "buruk|jelek"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "cantik",
+        "en": "beautiful|pretty",
+        "es": "hermoso|bonita",
+        "fr": "beau|belle",
+        "de": "schön",
+        "ja": "美しい|utsukushii",
+        "ko": "아름답다|areumdapda",
+        "zh": "美丽|měilì",
+        "ar": "جميل|jamil",
+        "ru": "красивый|krasivyy",
+        "hi": "सुंदर|sundar",
+        "pt": "bonito|belo",
+        "it": "bello|bella",
+        "tr": "güzel",
+        "th": "สวย|suai",
+        "ms": "cantik"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "panas",
+        "en": "hot",
+        "es": "caliente",
+        "fr": "chaud",
+        "de": "heiß",
+        "ja": "熱い|atsui",
+        "ko": "뜨겁다|tteugeopda",
+        "zh": "热|rè",
+        "ar": "حار|harr",
+        "ru": "горячий|goryachiy",
+        "hi": "गर्म|garm",
+        "pt": "quente",
+        "it": "caldo",
+        "tr": "sıcak",
+        "th": "ร้อน|ron",
+        "ms": "panas"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "dingin",
+        "en": "cold",
+        "es": "frío",
+        "fr": "froid",
+        "de": "kalt",
+        "ja": "寒い|samui",
+        "ko": "춥다|chupda",
+        "zh": "冷|lěng",
+        "ar": "بارد|baarid",
+        "ru": "холодный|kholodnyy",
+        "hi": "ठंडा|thanda",
+        "pt": "frio",
+        "it": "freddo",
+        "tr": "soğuk",
+        "th": "หนาว|nao",
+        "ms": "sejuk|dingin"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "senang|gembira",
+        "en": "happy",
+        "es": "feliz",
+        "fr": "heureux",
+        "de": "glücklich",
+        "ja": "嬉しい|ureshii",
+        "ko": "행복하다|haengbokada",
+        "zh": "快乐|kuàilè",
+        "ar": "سعيد|sa'id",
+        "ru": "счастливый|schastlivyy",
+        "hi": "खुश|khush",
+        "pt": "feliz",
+        "it": "felice",
+        "tr": "mutlu",
+        "th": "มีความสุข|mi khwam suk",
+        "ms": "gembira|senang"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "sedih",
+        "en": "sad",
+        "es": "triste",
+        "fr": "triste",
+        "de": "traurig",
+        "ja": "悲しい|kanashii",
+        "ko": "슬프다|seulpeuda",
+        "zh": "伤心|shāngxīn",
+        "ar": "حزين|hazin",
+        "ru": "грустный|grustnyy",
+        "hi": "उदास|udaas",
+        "pt": "triste",
+        "it": "triste",
+        "tr": "üzgün",
+        "th": "เศร้า|sao",
+        "ms": "sedih"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "baru",
+        "en": "new",
+        "es": "nuevo",
+        "fr": "nouveau",
+        "de": "neu",
+        "ja": "新しい|atarashii",
+        "ko": "새롭다|saeropda",
+        "zh": "新|xīn",
+        "ar": "جديد|jadid",
+        "ru": "новый|novyy",
+        "hi": "नया|naya",
+        "pt": "novo",
+        "it": "nuovo",
+        "tr": "yeni",
+        "th": "ใหม่|mai",
+        "ms": "baru"
+      }
+    },
+    {
+      "pos": "adj",
+      "t": {
+        "id": "cepat|laju",
+        "en": "fast|quick",
+        "es": "rápido",
+        "fr": "rapide",
+        "de": "schnell",
+        "ja": "速い|hayai",
+        "ko": "빠르다|ppareuda",
+        "zh": "快|kuài",
+        "ar": "سريع|sari'",
+        "ru": "быстрый|bystryy",
+        "hi": "तेज़|tez",
+        "pt": "rápido",
+        "it": "veloce",
+        "tr": "hızlı",
+        "th": "เร็ว|reo",
+        "ms": "cepat|laju"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "pulang|kembali",
+        "en": "return|go home",
+        "es": "volver|regresar",
+        "fr": "rentrer",
+        "de": "zurückkehren",
+        "ja": "帰る|kaeru",
+        "ko": "돌아가다|dorogada",
+        "zh": "回家|huíjiā",
+        "ar": "يعود|ya'ud",
+        "ru": "возвращаться|vozvrashchat'sya",
+        "hi": "लौटना|lautna",
+        "pt": "voltar",
+        "it": "tornare",
+        "tr": "dönmek",
+        "th": "กลับ|klap",
+        "ms": "pulang"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "minta|meminta",
+        "en": "ask|request",
+        "es": "pedir",
+        "fr": "demander",
+        "de": "bitten",
+        "ja": "頼む|tanomu",
+        "ko": "부탁하다|butakhada",
+        "zh": "请求|qǐngqiú",
+        "ar": "يطلب|yatlub",
+        "ru": "просить|prosit'",
+        "hi": "माँगना|maangna",
+        "pt": "pedir",
+        "it": "chiedere",
+        "tr": "istemek",
+        "th": "ขอ|kho",
+        "ms": "minta"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "pinjam|meminjam",
+        "en": "borrow",
+        "es": "pedir prestado",
+        "fr": "emprunter",
+        "de": "leihen",
+        "ja": "借りる|kariru",
+        "ko": "빌리다|billida",
+        "zh": "借|jiè",
+        "ar": "يستعير|yasta'ir",
+        "ru": "брать взаймы|brat' vzaimy",
+        "hi": "उधार लेना|udhaar lena",
+        "pt": "pedir emprestado",
+        "it": "prendere in prestito",
+        "tr": "ödünç almak",
+        "th": "ยืม|yuem",
+        "ms": "pinjam"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "masak|memasak",
+        "en": "cook",
+        "es": "cocinar",
+        "fr": "cuisiner",
+        "de": "kochen",
+        "ja": "料理する|ryouri suru",
+        "ko": "요리하다|yorihada",
+        "zh": "做饭|zuòfàn",
+        "ar": "يطبخ|yatbukh",
+        "ru": "готовить|gotovit'",
+        "hi": "पकाना|pakaana",
+        "pt": "cozinhar",
+        "it": "cucinare",
+        "tr": "pişirmek",
+        "th": "ทำอาหาร|tham ahan",
+        "ms": "masak"
+      }
+    },
+    {
+      "pos": "verb",
+      "t": {
+        "id": "tunggu|menunggu",
+        "en": "wait",
+        "es": "esperar",
+        "fr": "attendre",
+        "de": "warten",
+        "ja": "待つ|matsu",
+        "ko": "기다리다|gidarida",
+        "zh": "等|děng",
+        "ar": "ينتظر|yantazir",
+        "ru": "ждать|zhdat'",
+        "hi": "इंतज़ार करना|intezaar karna",
+        "pt": "esperar",
+        "it": "aspettare",
+        "tr": "beklemek",
+        "th": "รอ|ro",
+        "ms": "tunggu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "hujan",
+        "en": "rain",
+        "es": "lluvia",
+        "fr": "pluie",
+        "de": "Regen",
+        "ja": "雨|ame",
+        "ko": "비|bi",
+        "zh": "雨|yǔ",
+        "ar": "مطر|matar",
+        "ru": "дождь|dozhd'",
+        "hi": "बारिश|baarish",
+        "pt": "chuva",
+        "it": "pioggia",
+        "tr": "yağmur",
+        "th": "ฝน|fon",
+        "ms": "hujan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "persen|persentase",
+        "en": "percent|percentage",
+        "es": "por ciento",
+        "fr": "pour cent",
+        "de": "Prozent",
+        "ja": "パーセント",
+        "ko": "퍼센트",
+        "zh": "百分比|bǎifēnbǐ",
+        "ar": "نسبة مئوية|nisba mi'awiyya",
+        "ru": "процент|protsent",
+        "hi": "प्रतिशत|pratishat",
+        "pt": "por cento",
+        "it": "per cento",
+        "tr": "yüzde",
+        "th": "เปอร์เซ็นต์|peoesen",
+        "ms": "peratus"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "orang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kantor"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "jalan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kendaraan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "motor"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sepeda"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bus"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kereta"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pasar"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "toko"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "harga"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pagi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "siang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sore"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "minggu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tahun"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "anak"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "orang tua"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "ibu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "ayah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kakak"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "adik"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "minuman"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "nasi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "telur"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sayur"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "buah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kopi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "teh"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "ponsel"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "telepon"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "komputer"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "laptop"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "internet"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "wifi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "baterai"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "aplikasi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pesan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "gambar"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "foto"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "video"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "musik"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "lagu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "film"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tugas"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pekerjaan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "ujian"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tabungan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kesehatan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "dokter"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "obat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "cuaca"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "angin"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "laut"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pantai"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "gunung"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "desa"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "negara"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Indonesia"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Jakarta"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Bandung"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Surabaya"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Yogyakarta"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Medan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Makassar"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Denpasar"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Semarang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Palembang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Balikpapan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Malang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Bogor"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Depok"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Tangerang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Bekasi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "Bandara"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "stasiun"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "terminal"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "halte"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "alamat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "lokasi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "peta"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tiket"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "liburan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "wisata"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "hotel"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sarapan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "makan siang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "makan malam"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sarapan pagi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "masalah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "solusi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pertanyaan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "jawaban"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "ide"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "rencana"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "target"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tujuan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pilihan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bantuan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "informasi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "berita"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "aturan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "izin"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "dokumen"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "surat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "email"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "akun"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kata sandi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "password"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "penipuan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "keamanan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "privasi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kebiasaan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "olahraga"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "istirahat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "semangat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "perasaan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bahagia"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "marah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "takut"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "cemas"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "stres"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sayang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "rindu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sakit"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sehat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "capek"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "lelah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "lapar"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "haus"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bosan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "gabut"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bingung"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pusing"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "mudah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sulit"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "lambat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "penting"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "benar"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "salah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "aman"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bahaya"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "murah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "mahal"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "gratis"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "dekat"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "jauh"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "lama"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bersih"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kotor"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "terang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "gelap"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "ramai"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sepi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sibuk"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kosong"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "penuh"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "cukup"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "banyak"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sedikit"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "semua"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sebagian"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sendiri"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bersama"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sekarang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "besok"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kemarin"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "nanti"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tadi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sering"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "jarang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "selalu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "kadang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "mungkin"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "pasti"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "belum"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sudah"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "sedang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "akan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "butuh"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "perlu"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "bisa"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "boleh"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "harus"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "jangan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "tolong"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "silakan"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "permisi"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "selamat siang"
+      }
+    },
+    {
+      "pos": "noun",
+      "t": {
+        "id": "selamat sore"
+      }
+    }
   ]
 }
